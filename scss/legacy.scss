@@ -1,0 +1,38 @@
+// Спецификация
+
+body {
+    font-family: "Avenir Next Cyr", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    background-color: #fff;
+    opacity: 0;
+    transition: .4s;
+}
+
+
+.box__probel{
+    margin-bottom: 180px;
+}
+
+// @media (min-width: 360px) {
+//     .container {
+//         max-width: 1920px;
+//     }
+// }
+
+// Left column menu
+
+.header__logo{
+    padding: 25px;
+}
+
+.kachestvo__logo{
+    padding: 0px 25px;
+}
+
+.logo__kachestvo__1{
+margin-left: 35px;
+}
+.logo__kachestvo__2{
+margin-left: 35px;
+}

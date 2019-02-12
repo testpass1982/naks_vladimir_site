@@ -1,0 +1,49 @@
+.menu {
+    margin-top: 25px; 
+    }
+
+.navbar {
+    // background: transparent;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0px 10px;
+
+    @media screen and (max-width: 992px) {
+        background-color: rgb(124, 124, 124);
+
+        li>a {
+            color: #fff;
+        }
+    }
+
+    li {
+        line-height: 1.8;
+    }
+
+    a {
+        color: #000;
+    }
+
+    a:hover {
+        color: rgb(107, 107, 107);
+    }
+}
+
+.navbar-toggler-icon {
+    padding: 3px 0px;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+
+// .arrow__icon::before {
+//     content: '';
+//     position: absolute;
+//     width: 55px;
+//     height: 55px;
+//     margin-top: 5px;   
+//     left: 20px;   
+//     background: url(/img/arrow__item.png) center 0 no-repeat;
+// }

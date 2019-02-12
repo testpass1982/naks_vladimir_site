@@ -1,0 +1,24 @@
+.menu {
+  margin-top: 25px; }
+
+.navbar {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0px 10px; }
+  @media screen and (max-width: 992px) {
+    .navbar {
+      background-color: #7c7c7c; }
+      .navbar li > a {
+        color: #fff; } }
+  .navbar li {
+    line-height: 1.8; }
+  .navbar a {
+    color: #000; }
+  .navbar a:hover {
+    color: #6b6b6b; }
+
+.navbar-toggler-icon {
+  padding: 3px 0px; }
+
+.navbar-toggler {
+  border: none; }
