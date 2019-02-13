@@ -1,29 +1,24 @@
-
-    .header__box{
-        padding: 3px 0px;
-    }
+.header__box {
+    padding: 3px 0px;
+}
 
 .number {
     font-size: 28px;
     font-weight: 300;
-    margin-bottom: 0;   
+    margin-bottom: 0;
+    // float: left;
 
-    @media screen and (max-width: 696px) {
-        font-size: 24px;
+    @media screen and (max-width: 1537px) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 1440px) {  
+        float: right;     
     }
 }
 
 .block__number {
-    text-align: right;
-
-    @media screen and (max-width: 578px) {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
-    @media screen and (max-width: 575px) {
-        text-align: center;
-    }
+    text-align: right;  
 }
 
 .number__text__small {
@@ -61,39 +56,41 @@
     }
 }
 
-.header__mail{
+.header__mail {
     font-size: 14px;
     font-weight: 400;
     color: #797979;
-    padding: 25px 0px;   
+    padding: 25px 0px;
 }
-
-.text__adres{
-    font-weight: 400;
-    font-size: 14px;
-    color: #000;   
-    margin-bottom: 0px;   
-    
-}
-
-
 
 .text__adres {
     font-weight: 400;
     font-size: 14px;
     color: #000;
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    @media screen and (max-width: 1440px) {
+        font-size: 12px;
+
+    }
 
 }
 
+.click__on__map {
+    margin-top: -15px;
+
+    @media screen and (max-width: 576px) {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+}
 
 .text__adres::before {
     content: '';
     position: absolute;
     width: 55px;
     height: 55px;
-    margin-top: 5px;   
-    left: -25px;       
+    margin-top: 5px;
+    left: -25px;
     background: url(/img/icon_map-01.png) center 0 no-repeat;
 }
 

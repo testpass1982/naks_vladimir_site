@@ -5,19 +5,15 @@
   font-size: 28px;
   font-weight: 300;
   margin-bottom: 0; }
-  @media screen and (max-width: 696px) {
+  @media screen and (max-width: 1537px) {
     .number {
-      font-size: 24px; } }
+      font-size: 20px; } }
+  @media screen and (max-width: 1440px) {
+    .number {
+      float: right; } }
 
 .block__number {
   text-align: right; }
-  @media screen and (max-width: 578px) {
-    .block__number {
-      margin-top: 15px;
-      margin-bottom: 15px; } }
-  @media screen and (max-width: 575px) {
-    .block__number {
-      text-align: center; } }
 
 .number__text__small {
   margin-bottom: 0;
@@ -58,12 +54,16 @@
   font-size: 14px;
   color: #000;
   margin-bottom: 0px; }
+  @media screen and (max-width: 1440px) {
+    .text__adres {
+      font-size: 12px; } }
 
-.text__adres {
-  font-weight: 400;
-  font-size: 14px;
-  color: #000;
-  margin-bottom: 0; }
+.click__on__map {
+  margin-top: -15px; }
+  @media screen and (max-width: 576px) {
+    .click__on__map {
+      font-size: 18px;
+      margin-top: 15px; } }
 
 .text__adres::before {
   content: '';

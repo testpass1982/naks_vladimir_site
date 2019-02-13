@@ -36,6 +36,12 @@
     padding: 0;
     margin-top: 15px;
     margin-bottom: 151px;
+    @media screen and (max-width: 1440px) {
+       margin-bottom: 128px;
+    }
+    @media screen and (max-width: 1440px) {
+       margin-bottom: 90px;
+    }
     a{
         background-color: #db4848;
         color: #fff;

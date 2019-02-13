@@ -1,8 +1,52 @@
+.logo__kachestvo{
+    @media screen and (max-width: 1440px) {
+        width: 35px;
+    }
+    @media screen and (max-width: 1200px) {
+        width: 30px;
+    }
+}
+
+.logo__kachestvo__1{
+margin-left: 35px;
+@media screen and (max-width: 1440px) {
+    width: 35px;
+    margin-left: 15px;
+}
+@media screen and (max-width: 1200px) {
+    width: 30px;
+    margin-left: 10px;
+}
+}
+
+.logo__kachestvo__2{
+margin-left: 35px;
+@media screen and (max-width: 1440px) {
+    width: 35px;
+    margin-left: 15px;
+}
+@media screen and (max-width: 1200px) {
+    width: 30px;
+    margin-left: 10px;
+}
+}
+
+
 .arrow__item {
     margin-top: -3px;
 }
 
-.text__info__basement li {
+.text__info__basement{
+    margin-top: 170px;
+    @media screen and (max-width: 1440px) {
+        margin-top: 145px;
+    }
+    @media screen and (max-width: 1200px) {
+        margin-top: 200px;
+    }
+}
+
+.text__info__basement li {    
     padding: 0px;
     list-style-type: none;
     font-size: 14px;
@@ -37,17 +81,27 @@
         color: #6698e4;
         padding: 10px 35px;  
         vertical-align: middle; 
+        @media screen and (max-width: 1440px) {
+            padding: 8px 15px;  
+    
+        }
+        @media screen and (max-width: 1200px) {
+            padding: 7px 12px;  
+            font-size: 12px;
+    
+        }
         &:hover{
             background-color: #6698e415;
             transition: 0.2s;
+           
         }             
     }   
+    
 }
 
 .feedback{
     border: 1px solid #6698e4;
-    border-radius: 45px;
-    vertical-align: middle;
+    border-radius: 45px;    
 
 }
 
@@ -76,4 +130,12 @@
 
 .site__naks{
     font-size: 14px;
+    @media screen and (max-width: 1440px) {
+       font-size: 10px;
+       font-weight: 500;
+    }
+    @media screen and (max-width: 1440px) {
+       font-size: 12px;
+       font-weight: 500;
+    }
 }

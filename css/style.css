@@ -7,9 +7,6 @@ body {
   opacity: 0;
   transition: .4s; }
 
-.box__probel {
-  margin-bottom: 180px; }
-
 .header__logo {
   padding: 25px; }
 
@@ -157,8 +154,47 @@ input[type=file] {
 .navbar-toggler {
   border: none; }
 
+@media screen and (max-width: 1440px) {
+  .logo__kachestvo {
+    width: 35px; } }
+
+@media screen and (max-width: 1200px) {
+  .logo__kachestvo {
+    width: 30px; } }
+
+.logo__kachestvo__1 {
+  margin-left: 35px; }
+  @media screen and (max-width: 1440px) {
+    .logo__kachestvo__1 {
+      width: 35px;
+      margin-left: 15px; } }
+  @media screen and (max-width: 1200px) {
+    .logo__kachestvo__1 {
+      width: 30px;
+      margin-left: 10px; } }
+
+.logo__kachestvo__2 {
+  margin-left: 35px; }
+  @media screen and (max-width: 1440px) {
+    .logo__kachestvo__2 {
+      width: 35px;
+      margin-left: 15px; } }
+  @media screen and (max-width: 1200px) {
+    .logo__kachestvo__2 {
+      width: 30px;
+      margin-left: 10px; } }
+
 .arrow__item {
   margin-top: -3px; }
+
+.text__info__basement {
+  margin-top: 170px; }
+  @media screen and (max-width: 1440px) {
+    .text__info__basement {
+      margin-top: 145px; } }
+  @media screen and (max-width: 1200px) {
+    .text__info__basement {
+      margin-top: 200px; } }
 
 .text__info__basement li {
   padding: 0px;
@@ -187,14 +223,20 @@ input[type=file] {
     color: #6698e4;
     padding: 10px 35px;
     vertical-align: middle; }
+    @media screen and (max-width: 1440px) {
+      .feedback__button a {
+        padding: 8px 15px; } }
+    @media screen and (max-width: 1200px) {
+      .feedback__button a {
+        padding: 7px 12px;
+        font-size: 12px; } }
     .feedback__button a:hover {
       background-color: #6698e415;
       transition: 0.2s; }
 
 .feedback {
   border: 1px solid #6698e4;
-  border-radius: 45px;
-  vertical-align: middle; }
+  border-radius: 45px; }
 
 .icon__vopros {
   margin-top: -5px;
@@ -208,6 +250,14 @@ input[type=file] {
 
 .site__naks {
   font-size: 14px; }
+  @media screen and (max-width: 1440px) {
+    .site__naks {
+      font-size: 10px;
+      font-weight: 500; } }
+  @media screen and (max-width: 1440px) {
+    .site__naks {
+      font-size: 12px;
+      font-weight: 500; } }
 
 .header__box {
   padding: 3px 0px; }
@@ -216,19 +266,15 @@ input[type=file] {
   font-size: 28px;
   font-weight: 300;
   margin-bottom: 0; }
-  @media screen and (max-width: 696px) {
+  @media screen and (max-width: 1537px) {
     .number {
-      font-size: 24px; } }
+      font-size: 20px; } }
+  @media screen and (max-width: 1440px) {
+    .number {
+      float: right; } }
 
 .block__number {
   text-align: right; }
-  @media screen and (max-width: 578px) {
-    .block__number {
-      margin-top: 15px;
-      margin-bottom: 15px; } }
-  @media screen and (max-width: 575px) {
-    .block__number {
-      text-align: center; } }
 
 .number__text__small {
   margin-bottom: 0;
@@ -269,12 +315,16 @@ input[type=file] {
   font-size: 14px;
   color: #000;
   margin-bottom: 0px; }
+  @media screen and (max-width: 1440px) {
+    .text__adres {
+      font-size: 12px; } }
 
-.text__adres {
-  font-weight: 400;
-  font-size: 14px;
-  color: #000;
-  margin-bottom: 0; }
+.click__on__map {
+  margin-top: -15px; }
+  @media screen and (max-width: 576px) {
+    .click__on__map {
+      font-size: 18px;
+      margin-top: 15px; } }
 
 .text__adres::before {
   content: '';
@@ -345,6 +395,12 @@ input[type=file] {
   padding: 0;
   margin-top: 15px;
   margin-bottom: 151px; }
+  @media screen and (max-width: 1440px) {
+    .button__zayavka {
+      margin-bottom: 128px; } }
+  @media screen and (max-width: 1440px) {
+    .button__zayavka {
+      margin-bottom: 90px; } }
   .button__zayavka a {
     background-color: #db4848;
     color: #fff;
