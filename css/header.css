@@ -1,8 +1,10 @@
+.header__box {
+  padding: 3px 0px; }
+
 .number {
   font-size: 28px;
   font-weight: 300;
-  margin-bottom: 0;
-  margin-top: 15px; }
+  margin-bottom: 0; }
   @media screen and (max-width: 696px) {
     .number {
       font-size: 24px; } }
@@ -44,3 +46,60 @@
       justify-content: center; }
       .feedback__header a {
         color: #fff; } }
+
+.header__mail {
+  font-size: 14px;
+  font-weight: 400;
+  color: #797979;
+  padding: 25px 0px; }
+
+.text__adres {
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 0px; }
+
+.text__adres {
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 0; }
+
+.text__adres::before {
+  content: '';
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  margin-top: 5px;
+  left: -25px;
+  background: url(/img/icon_map-01.png) center 0 no-repeat; }
+
+.sasp__logo::before {
+  content: '';
+  position: absolute;
+  width: 85px;
+  height: 45px;
+  left: 0;
+  margin-top: 20px;
+  background: url(/img/logo__sasp.png) center 0 no-repeat; }
+  @media screen and (max-width: 576px) {
+    .sasp__logo::before {
+      display: none; } }
+
+.sasp__text {
+  margin-left: 80px;
+  color: #002D41;
+  font-weight: 400; }
+  @media screen and (max-width: 576px) {
+    .sasp__text {
+      display: none; } }
+
+.mob__logo__sasp {
+  margin-bottom: 5px; }
+
+.mob__sasp {
+  display: none;
+  font-size: 14px; }
+  @media screen and (max-width: 576px) {
+    .mob__sasp {
+      display: block; } }

@@ -1,0 +1,131 @@
+// Бэкграунд
+
+.background {
+    background: url(/img/background.png) no-repeat;
+    background-size: cover;
+}
+
+.bg__content{
+    padding: 145px 0px 0px 45px;
+}
+
+.header__text__thin{
+    font-size: 42px;
+    font-weight: 350;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.header__text__bold{
+    font-size: 42px;
+    font-weight: 550;
+    color: #fff;
+
+}
+
+.small__bg__text{
+    font-size: 18px;
+    font-weight: 350;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.button__zayavka{
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 151px;
+    a{
+        background-color: #db4848;
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding: 12px 25px;
+        border-radius: 3px;
+        text-decoration: none;
+
+        &:hover{
+            background-color: #e45454;
+            transition: 0.2s;
+        }
+        &:active{
+            background-color: #c73535;
+        }
+        
+    }
+}
+.button__news{
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 60px;
+    a{
+     
+        color: #fff;
+        font-size: 16px;       
+        padding: 5px 25px;
+        border-radius: 25px;
+        border: 1px solid #fff;
+        text-decoration: none;
+
+        &:hover{
+            background-color: #ffffff15;
+            transition: 0.2s;
+        }
+              
+    }
+}
+
+.box__info__menu{
+    padding: 25px 0px 0px 0px;
+}
+
+.info__menu__zayaviteli{
+    padding: 25px;
+    background-color: #28354d;
+    
+}
+
+.header__info__menu{
+    font-size: 22px;
+    font-weight: 400;
+    color:  #fff;
+}
+
+.info__menu{ 
+    padding: 0px;  
+    list-style-type: none;
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 2;
+        padding: 0px 15px;
+        border-left: 2px solid #fff;
+        &:hover{
+            color: #e2e2e2;
+            border-left: 2px solid rgb(126, 160, 255);
+            transition: 0.2s;
+        }
+    }   
+}
+
+.footer{
+    padding: 25px 45px;
+}
+
+.prava__footer{
+    padding: 45px 0px;
+}
+
+.political__footer{
+    padding: 45px 0px 0px;
+}
+
+.razrabotano{
+    padding: 45px 0px 0px;
+    color: rgb(151, 151, 151);
+}

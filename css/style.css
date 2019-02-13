@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Avenir Next Cyr", sans-serif;
   font-size: 12px;
@@ -20,6 +21,116 @@ body {
 
 .logo__kachestvo__2 {
   margin-left: 35px; }
+
+.box__left__column {
+  width: 300px; }
+
+.file-uploader {
+  border-radius: 3px;
+  color: #242424; }
+
+.file-uploader__message-area {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 15px; }
+
+.file-list {
+  background-color: #d0ffd6; }
+
+.file-list__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.file-list li {
+  height: 50px;
+  line-height: 50px;
+  border: none;
+  overflow: hidden;
+  font-size: 18px; }
+
+.removal-button {
+  width: 20%;
+  border: none;
+  color: white;
+  background-color: #ff9999;
+  cursor: pointer; }
+  .removal-button:hover {
+    background-color: #fc8181;
+    transition: 0.2s; }
+  .removal-button:active {
+    background-color: #f76464;
+    transition: 0.2s; }
+  .removal-button::before {
+    content: '\2716'; }
+  .removal-button:focus {
+    outline: 0; }
+
+.file-chooser {
+  padding: 1em;
+  transition: background-color 1s, height 1s;
+  margin-top: 10px; }
+
+.file-uploader {
+  max-width: 400px;
+  height: auto; }
+
+.file-list__name {
+  max-width: 70%;
+  float: left; }
+
+.removal-button {
+  display: inline-block;
+  height: 100%;
+  float: right; }
+
+.file-chooser {
+  padding: 0;
+  background: transparent; }
+
+input[type=file] {
+  border: none; }
+
+.file-chooser__input {
+  margin: 0 auto; }
+
+.file-uploader__submit-button {
+  border-radius: 3px;
+  border: none;
+  margin-top: 15px;
+  color: white;
+  background-color: #8fb6f5;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer; }
+  .file-uploader__submit-button input[type=submit] {
+    border: none; }
+  .file-uploader__submit-button:focus {
+    box-shadow: none;
+    outline: none; }
+  .file-uploader__submit-button:hover {
+    background-color: #325fa8; }
+  .file-uploader__submit-button:active {
+    background-color: #254e8f; }
+
+.file-list li:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.hidden {
+  display: none; }
+  .hidden input {
+    display: none; }
+
+.error {
+  background-color: #d65d38;
+  color: white; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
 
 .menu {
   margin-top: 25px; }
@@ -72,9 +183,9 @@ body {
   border: none; }
   .feedback__button a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     color: #6698e4;
-    padding: 12px 40px;
+    padding: 10px 35px;
     vertical-align: middle; }
     .feedback__button a:hover {
       background-color: #6698e415;
@@ -85,14 +196,9 @@ body {
   border-radius: 45px;
   vertical-align: middle; }
 
-.feedback::before {
-  content: '';
-  position: absolute;
-  width: 55px;
-  height: 55px;
-  margin-top: 3px;
-  left: 35px;
-  background: url(/img/icon_2.png) center 0 no-repeat; }
+.icon__vopros {
+  margin-top: -5px;
+  margin-left: -5px; }
 
 .line__column__small {
   width: 75px;
@@ -103,11 +209,13 @@ body {
 .site__naks {
   font-size: 14px; }
 
+.header__box {
+  padding: 3px 0px; }
+
 .number {
   font-size: 28px;
   font-weight: 300;
-  margin-bottom: 0;
-  margin-top: 15px; }
+  margin-bottom: 0; }
   @media screen and (max-width: 696px) {
     .number {
       font-size: 24px; } }
@@ -149,3 +257,356 @@ body {
       justify-content: center; }
       .feedback__header a {
         color: #fff; } }
+
+.header__mail {
+  font-size: 14px;
+  font-weight: 400;
+  color: #797979;
+  padding: 25px 0px; }
+
+.text__adres {
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 0px; }
+
+.text__adres {
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 0; }
+
+.text__adres::before {
+  content: '';
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  margin-top: 5px;
+  left: -25px;
+  background: url(/img/icon_map-01.png) center 0 no-repeat; }
+
+.sasp__logo::before {
+  content: '';
+  position: absolute;
+  width: 85px;
+  height: 45px;
+  left: 0;
+  margin-top: 20px;
+  background: url(/img/logo__sasp.png) center 0 no-repeat; }
+  @media screen and (max-width: 576px) {
+    .sasp__logo::before {
+      display: none; } }
+
+.sasp__text {
+  margin-left: 80px;
+  color: #002D41;
+  font-weight: 400; }
+  @media screen and (max-width: 576px) {
+    .sasp__text {
+      display: none; } }
+
+.mob__logo__sasp {
+  margin-bottom: 5px; }
+
+.mob__sasp {
+  display: none;
+  font-size: 14px; }
+  @media screen and (max-width: 576px) {
+    .mob__sasp {
+      display: block; } }
+
+.background {
+  background: url(/img/background.png) no-repeat;
+  background-size: cover; }
+
+.bg__content {
+  padding: 145px 0px 0px 45px; }
+
+.header__text__thin {
+  font-size: 42px;
+  font-weight: 350;
+  color: #fff;
+  margin-bottom: 0; }
+
+.header__text__bold {
+  font-size: 42px;
+  font-weight: 550;
+  color: #fff; }
+
+.small__bg__text {
+  font-size: 18px;
+  font-weight: 350;
+  color: #fff;
+  line-height: 1.4; }
+
+.button__zayavka {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 151px; }
+  .button__zayavka a {
+    background-color: #db4848;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 12px 25px;
+    border-radius: 3px;
+    text-decoration: none; }
+    .button__zayavka a:hover {
+      background-color: #e45454;
+      transition: 0.2s; }
+    .button__zayavka a:active {
+      background-color: #c73535; }
+
+.button__news {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 60px; }
+  .button__news a {
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 25px;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    text-decoration: none; }
+    .button__news a:hover {
+      background-color: #ffffff15;
+      transition: 0.2s; }
+
+.box__info__menu {
+  padding: 25px 0px 0px 0px; }
+
+.info__menu__zayaviteli {
+  padding: 25px;
+  background-color: #28354d; }
+
+.header__info__menu {
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff; }
+
+.info__menu {
+  padding: 0px;
+  list-style-type: none; }
+  .info__menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+    padding: 0px 15px;
+    border-left: 2px solid #fff; }
+    .info__menu a:hover {
+      color: #e2e2e2;
+      border-left: 2px solid #7ea0ff;
+      transition: 0.2s; }
+
+.footer {
+  padding: 25px 45px; }
+
+.prava__footer {
+  padding: 45px 0px; }
+
+.political__footer {
+  padding: 45px 0px 0px; }
+
+.razrabotano {
+  padding: 45px 0px 0px;
+  color: #979797; }
+
+/* Modal Window */
+.modal {
+  z-index: 100001; }
+
+.modal-dialog {
+  max-width: 1400px; }
+
+.modal .custom-control-label a {
+  text-decoration: underline; }
+
+.modal .custom-control-label a:hover {
+  text-decoration: none; }
+
+.modal-header {
+  border-bottom: none;
+  background-color: #ffffff;
+  color: #fff;
+  border-top: 15px solid #5ba4dd; }
+
+.modal-footer {
+  justify-content: flex-start;
+  border-top: none;
+  padding: 0px 75px 75px; }
+  @media screen and (max-width: 450px) {
+    .modal-footer {
+      padding: 0px 35px 35px; } }
+
+.modal-content {
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: 0;
+  border: none; }
+
+.form-control-sm {
+  height: 35px;
+  border: transparent;
+  border-radius: 0; }
+
+.modal-content .form-control {
+  background-color: transparent;
+  border-bottom: 1px solid #b6b6b6;
+  color: #333333;
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 10px; }
+  .modal-content .form-control:focus {
+    background-color: #f5f5f5; }
+
+.modal-content .form-control option {
+  color: #000; }
+
+.modal-content .custom-control-label::before {
+  background-color: transparent;
+  border: 1px solid #3f3f3f; }
+
+.modal-content .custom-control-input:checked ~ .custom-control-label::before {
+  color: #3f3f3f;
+  background-color: #3f3f3f; }
+
+.modal-header {
+  position: relative;
+  display: block;
+  border-radius: 0;
+  padding: 45px; }
+
+.custom-control-label::after {
+  cursor: pointer; }
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 0;
+  padding: 0; }
+
+.custom-control-checkbox {
+  padding-left: 0.9rem;
+  cursor: pointer; }
+
+.modal-title {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 200;
+  color: #000; }
+
+.modal-header {
+  padding: 75px 75px 0px; }
+  @media screen and (max-width: 450px) {
+    .modal-header {
+      padding: 35px 25px 15px; } }
+
+.modal-body {
+  padding: 0px 75px 25px;
+  color: #000; }
+  @media screen and (max-width: 450px) {
+    .modal-body {
+      padding: 0px 25px 15px; } }
+
+.modal-header p {
+  font-size: 0.875rem;
+  line-height: 20px;
+  color: #000; }
+
+.modal-header .close {
+  position: absolute;
+  right: 2rem;
+  top: 0;
+  font-size: 2.5rem;
+  font-weight: 100;
+  opacity: 1;
+  line-height: inherit;
+  padding: 1rem;
+  margin: 0; }
+  @media screen and (max-width: 320px) {
+    .modal-header .close {
+      margin-right: -25px; } }
+
+input ~ label[for="soglasie"] {
+  width: 100%;
+  font-size: 16px;
+  margin: 25px 0px 0px 10px;
+  padding: 0px; }
+
+input ~ label[for="sogl"] {
+  width: 100%;
+  font-size: 16px;
+  margin: 10px 0px 0px 10px;
+  padding: 0px; }
+
+.button__to__send_zayavka__formmodal {
+  background-color: #3eb5f1;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 12px 45px; }
+  @media screen and (max-width: 450px) {
+    .button__to__send_zayavka__formmodal {
+      padding: 15px; } }
+
+.button__to__send_zayavka__formmodal:hover {
+  background-color: #47bbf5; }
+
+.button__to__send_zayavka__formmodal:active {
+  background-color: #35a9e4; }
+
+/* Выбор несколько из списка */
+.choose__item .items {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.choose__item .items li {
+  display: block;
+  margin: 10px 0px 0px 0px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 350;
+  border: 1px #8d8d8d solid;
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin: 0px 15px 15px 0px;
+  float: left; }
+
+.choose__item .items li:hover {
+  background-color: #afafaf;
+  transition: 0.5s;
+  transform: scale(1.02, 1.02);
+  color: #fff; }
+
+.choose__item .items li:active {
+  background-color: #7a7a7a; }
+
+.selected {
+  background-color: #7a7a7a;
+  border-radius: 300px;
+  padding: 7px;
+  color: #fff; }
+
+hr {
+  clear: both; }
+
+.checks {
+  opacity: 0; }
+
+.col-form-label-sm {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-weight: 350; }
+
+.modal__title__small__text {
+  font-size: 16px;
+  font-weight: 500; }

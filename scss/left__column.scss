@@ -33,9 +33,9 @@
     border: none;
     a {
         text-decoration: none;        
-        font-size: 18px;
+        font-size: 16px;
         color: #6698e4;
-        padding: 12px 40px;  
+        padding: 10px 35px;  
         vertical-align: middle; 
         &:hover{
             background-color: #6698e415;
@@ -51,15 +51,20 @@
 
 }
 
-.feedback::before {
-    content: '';
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    margin-top: 3px;   
-    left: 35px;       
-    background: url(/img/icon_2.png) center 0 no-repeat;
+.icon__vopros{
+   margin-top: -5px;
+   margin-left: -5px;
 }
+
+// .feedback::before {
+//     content: '';
+//     position: absolute;
+//     width: 55px;
+//     height: 55px;
+//     margin-top: 3px;   
+//     left: 35px;       
+//     background: url(/img/icon_2.png) center 0 no-repeat;
+// }
 
 
 .line__column__small{

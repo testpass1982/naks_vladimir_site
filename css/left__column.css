@@ -24,9 +24,9 @@
   border: none; }
   .feedback__button a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     color: #6698e4;
-    padding: 12px 40px;
+    padding: 10px 35px;
     vertical-align: middle; }
     .feedback__button a:hover {
       background-color: #6698e415;
@@ -37,14 +37,9 @@
   border-radius: 45px;
   vertical-align: middle; }
 
-.feedback::before {
-  content: '';
-  position: absolute;
-  width: 55px;
-  height: 55px;
-  margin-top: 3px;
-  left: 35px;
-  background: url(/img/icon_2.png) center 0 no-repeat; }
+.icon__vopros {
+  margin-top: -5px;
+  margin-left: -5px; }
 
 .line__column__small {
   width: 75px;
