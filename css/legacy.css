@@ -9,6 +9,22 @@ body {
 .header__logo {
   padding: 25px; }
 
+@media screen and (max-width: 1200px) {
+  .header__logo__img {
+    width: 170px; } }
+
+@media screen and (max-width: 992px) {
+  .header__logo__img {
+    width: 200px; } }
+
+@media screen and (max-width: 320px) {
+  .header__logo__img {
+    width: 250px; } }
+
+@media screen and (max-width: 576px) {
+  .header__logo__img {
+    width: 250px; } }
+
 .kachestvo__logo {
   padding: 0px 25px; }
 
@@ -127,3 +143,17 @@ input[type=file] {
 *::before,
 *::after {
   box-sizing: border-box; }
+
+@media screen and (max-width: 576px) {
+  .probel {
+    display: none; } }
+
+@media screen and (max-width: 576px) {
+  .line__grey {
+    border: 0.5px solid #eeeeee;
+    margin-bottom: 5px; } }
+
+@media screen and (max-width: 320px) {
+  .line__grey {
+    border: 0.5px solid #eeeeee;
+    margin-bottom: 5px; } }

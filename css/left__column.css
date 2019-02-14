@@ -1,3 +1,7 @@
+@media screen and (max-width: 992px) {
+  .kachestvo__logo {
+    display: none; } }
+
 @media screen and (max-width: 1440px) {
   .logo__kachestvo {
     width: 35px; } }
@@ -32,13 +36,16 @@
   margin-top: -3px; }
 
 .text__info__basement {
-  margin-top: 170px; }
+  margin-top: 145px; }
   @media screen and (max-width: 1440px) {
     .text__info__basement {
-      margin-top: 145px; } }
+      margin-top: 85px; } }
   @media screen and (max-width: 1200px) {
     .text__info__basement {
-      margin-top: 200px; } }
+      margin-top: 65px; } }
+  @media screen and (max-width: 992px) {
+    .text__info__basement {
+      display: none; } }
 
 .text__info__basement li {
   padding: 0px;
@@ -49,6 +56,19 @@
     color: #080808;
     text-decoration: none; }
     .text__info__basement li a:hover {
+      color: #383838;
+      margin-left: 5px;
+      transition: 0.2s; }
+
+.text__info__basement__mob li {
+  padding: 0px;
+  list-style-type: none;
+  font-size: 12px;
+  margin-bottom: 10px; }
+  .text__info__basement__mob li a {
+    color: #080808;
+    text-decoration: none; }
+    .text__info__basement__mob li a:hover {
       color: #383838;
       margin-left: 5px;
       transition: 0.2s; }
@@ -98,7 +118,7 @@
     .site__naks {
       font-size: 10px;
       font-weight: 500; } }
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1200px) {
     .site__naks {
       font-size: 12px;
       font-weight: 500; } }

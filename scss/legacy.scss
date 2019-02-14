@@ -22,23 +22,42 @@ body {
 
 // Left column menu
 
-.header__logo{
+.header__logo {
     padding: 25px;
 }
 
-.kachestvo__logo{
+.header__logo__img {
+    @media screen and (max-width: 1200px) {
+        width: 170px;
+    }
+
+    @media screen and (max-width: 992px) {
+        width: 200px;
+    }
+
+    @media screen and (max-width: 320px) {
+        width: 250px;
+    }
+  
+    @media screen and (max-width: 576px) {
+        width: 250px;
+    }
+}
+
+.kachestvo__logo {
     padding: 0px 25px;
 }
 
-.logo__kachestvo__1{
-margin-left: 35px;
+.logo__kachestvo__1 {
+    margin-left: 35px;
 }
-.logo__kachestvo__2{
-margin-left: 35px;
+
+.logo__kachestvo__2 {
+    margin-left: 35px;
 }
 
 
-.box__left__column{
+.box__left__column {
     width: 300px;
 }
 
@@ -215,4 +234,22 @@ input[type=file] {
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+
+.probel{
+    @media screen and (max-width: 576px) {
+        display: none;
+    } 
+}
+
+.line__grey{
+    @media screen and (max-width: 576px) {
+              border: 0.5px solid #eeeeee;
+              margin-bottom: 5px;
+    } 
+    @media screen and (max-width: 320px){
+              border: 0.5px solid #eeeeee;
+              margin-bottom: 5px;
+    } 
 }

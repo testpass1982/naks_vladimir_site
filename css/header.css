@@ -1,5 +1,11 @@
 .header__box {
   padding: 3px 0px; }
+  @media screen and (max-width: 320px) {
+    .header__box {
+      text-align: center; } }
+  @media screen and (max-width: 576px) {
+    .header__box {
+      text-align: center; } }
 
 .number {
   font-size: 28px;
@@ -8,46 +14,43 @@
   @media screen and (max-width: 1537px) {
     .number {
       font-size: 20px; } }
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 320px) {
     .number {
-      float: right; } }
+      font-size: 24px; } }
+  @media screen and (max-width: 576px) {
+    .number {
+      font-size: 24px; } }
 
 .block__number {
   text-align: right; }
+  @media screen and (max-width: 320px) {
+    .block__number {
+      text-align: center; } }
+  @media screen and (max-width: 576px) {
+    .block__number {
+      text-align: center; } }
 
 .number__text__small {
   margin-bottom: 0;
   font-weight: 450; }
-
-.feedback__header {
-  margin-top: -15px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  box-shadow: none;
-  color: #4f8ff5;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 0;
-  text-align: right; }
-  .feedback__header a {
-    text-decoration: none; }
-  @media screen and (max-width: 992px) {
-    .feedback__header {
-      background-color: #5e7daf;
-      padding: 10px 25px;
-      margin-top: 10px;
-      border-radius: 3px;
-      justify-content: center; }
-      .feedback__header a {
-        color: #fff; } }
 
 .header__mail {
   font-size: 14px;
   font-weight: 400;
   color: #797979;
   padding: 25px 0px; }
+  @media screen and (max-width: 320px) {
+    .header__mail {
+      margin-bottom: 0;
+      padding: 15px; } }
+  @media screen and (max-width: 576px) {
+    .header__mail {
+      margin-bottom: 0;
+      padding: 15px; } }
+
+@media screen and (max-width: 992px) {
+  .adres__block {
+    padding: 0px 45px; } }
 
 .text__adres {
   font-weight: 400;
@@ -57,6 +60,12 @@
   @media screen and (max-width: 1440px) {
     .text__adres {
       font-size: 12px; } }
+  @media screen and (max-width: 320px) {
+    .text__adres {
+      font-size: 16px; } }
+  @media screen and (max-width: 375px) {
+    .text__adres {
+      font-size: 16px; } }
 
 .click__on__map {
   margin-top: -15px; }
@@ -64,15 +73,12 @@
     .click__on__map {
       font-size: 18px;
       margin-top: 15px; } }
-
-.text__adres::before {
-  content: '';
-  position: absolute;
-  width: 55px;
-  height: 55px;
-  margin-top: 5px;
-  left: -25px;
-  background: url(/img/icon_map-01.png) center 0 no-repeat; }
+  @media screen and (max-width: 320px) {
+    .click__on__map {
+      font-size: 14px; } }
+  @media screen and (max-width: 375px) {
+    .click__on__map {
+      font-size: 14px; } }
 
 .sasp__logo::before {
   content: '';
@@ -103,3 +109,7 @@
   @media screen and (max-width: 576px) {
     .mob__sasp {
       display: block; } }
+
+@media screen and (max-width: 576px) {
+  .mob__sasp__text {
+    margin-bottom: 0px; } }

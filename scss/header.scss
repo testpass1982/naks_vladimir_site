@@ -1,5 +1,12 @@
 .header__box {
     padding: 3px 0px;
+    
+    @media screen and (max-width: 320px) {
+        text-align: center;
+    }
+    @media screen and (max-width: 576px) {
+        text-align: center;
+    }
 }
 
 .number {
@@ -11,56 +18,81 @@
     @media screen and (max-width: 1537px) {
         font-size: 20px;
     }
-
-    @media screen and (max-width: 1440px) {  
-        float: right;     
+    @media screen and (max-width: 320px) {
+        font-size: 24px;
     }
+    @media screen and (max-width: 576px) {
+        font-size: 24px;
+    }
+
+  
 }
 
 .block__number {
-    text-align: right;  
+    text-align: right; 
+    @media screen and (max-width: 320px) {
+        text-align: center;
+    } 
+    @media screen and (max-width: 576px) {
+        text-align: center;
+        
+    } 
 }
 
 .number__text__small {
     margin-bottom: 0;
-    font-weight: 450;
+    font-weight: 450;   
 }
 
-.feedback__header {
-    margin-top: -15px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    box-shadow: none;
-    color: #4f8ff5;
-    font-weight: 500;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0;
-    text-align: right;
+// .feedback__header {
+//     margin-top: -15px;
+//     border: none;
+//     outline: none;
+//     background-color: transparent;
+//     box-shadow: none;
+//     color: #4f8ff5;
+//     font-weight: 500;
+//     font-size: 14px;
+//     cursor: pointer;
+//     padding: 0;
+//     text-align: right;
 
-    a {
-        text-decoration: none;
-    }
+//     a {
+//         text-decoration: none;
+//     }
 
-    @media screen and (max-width: 992px) {
-        background-color: #5e7daf;
-        padding: 10px 25px;
-        margin-top: 10px;
-        border-radius: 3px;
-        justify-content: center;
+//     @media screen and (max-width: 992px) {
+//         background-color: #5e7daf;
+//         padding: 10px 25px;
+//         margin-top: 10px;
+//         border-radius: 3px;
+//         justify-content: center;
 
-        a {
-            color: #fff;
-        }
-    }
-}
+//         a {
+//             color: #fff;
+//         }
+//     }
+// }
 
 .header__mail {
     font-size: 14px;
     font-weight: 400;
     color: #797979;
     padding: 25px 0px;
+    @media screen and (max-width: 320px) {
+        margin-bottom: 0;
+        padding: 15px;
+     }
+    @media screen and (max-width: 576px) {
+        margin-bottom: 0;
+        padding: 15px;
+     }
+}
+
+.adres__block{
+    @media screen and (max-width: 992px) {
+        padding: 0px 45px;
+     }
 }
 
 .text__adres {
@@ -70,7 +102,12 @@
     margin-bottom: 0px;
     @media screen and (max-width: 1440px) {
         font-size: 12px;
-
+    }
+    @media screen and (max-width: 320px) {
+        font-size: 16px;
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 16px;
     }
 
 }
@@ -82,16 +119,12 @@
         font-size: 18px;
         margin-top: 15px;
     }
-}
-
-.text__adres::before {
-    content: '';
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    margin-top: 5px;
-    left: -25px;
-    background: url(/img/icon_map-01.png) center 0 no-repeat;
+    @media screen and (max-width: 320px) {
+        font-size: 14px;
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 14px;
+    }
 }
 
 
@@ -107,6 +140,7 @@
     @media screen and (max-width: 576px) {
         display: none;
     }
+   
 }
 
 .sasp__text {
@@ -129,6 +163,13 @@
 
     @media screen and (max-width: 576px) {
         display: block;
+
+    }
+}
+
+.mob__sasp__text{
+    @media screen and (max-width: 576px) {
+       margin-bottom: 0px;
 
     }
 }

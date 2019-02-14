@@ -17,7 +17,7 @@
     border-bottom: none;
 	background-color: #ffffff;
 	color: #fff;
-	border-top: 15px solid rgb(91, 164, 221);
+	border-top: 15px solid #404447;
 }
 .modal-footer {
 	justify-content: flex-start;
@@ -99,6 +99,7 @@ padding: 0;
 		padding: 35px 25px 15px;
     }
 }
+
 
 .modal-body{
 	padding: 0px 75px 25px;
@@ -226,8 +227,12 @@ hr {
 	font-weight: 350;
 }
 
-
 .modal__title__small__text{
 	font-size: 16px;
 	font-weight: 500;
+}
+
+.accompanying__message__bold{
+	font-size: 18px;
+	font-weight: 400;
 }

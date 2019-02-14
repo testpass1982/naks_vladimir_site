@@ -1,3 +1,9 @@
+.kachestvo__logo{
+    @media screen and (max-width: 992px) {
+        display: none;
+     }
+}
+
 .logo__kachestvo{
     @media screen and (max-width: 1440px) {
         width: 35px;
@@ -37,12 +43,15 @@ margin-left: 35px;
 }
 
 .text__info__basement{
-    margin-top: 170px;
+    margin-top: 145px;
     @media screen and (max-width: 1440px) {
-        margin-top: 145px;
+        margin-top: 85px;
     }
     @media screen and (max-width: 1200px) {
-        margin-top: 200px;
+        margin-top: 65px;
+    }
+    @media screen and (max-width: 992px) {
+        display: none;  
     }
 }
 
@@ -65,6 +74,25 @@ margin-left: 35px;
     margin-bottom: 10px;
 }
 
+.text__info__basement__mob li {    
+    padding: 0px;
+    list-style-type: none;
+    font-size: 12px;
+    a {
+        color: #080808;
+        text-decoration: none;
+
+        &:hover {
+            color: #383838;
+            margin-left: 5px;
+            transition: 0.2s;
+        }
+    }
+
+    margin-bottom: 10px;
+}
+
+
 
 .information__in__the__basement {
     padding: 0px 25px;   
@@ -82,18 +110,16 @@ margin-left: 35px;
         padding: 10px 35px;  
         vertical-align: middle; 
         @media screen and (max-width: 1440px) {
-            padding: 8px 15px;  
+            padding: 8px 15px; 
     
         }
         @media screen and (max-width: 1200px) {
             padding: 7px 12px;  
-            font-size: 12px;
-    
+            font-size: 12px;    
         }
         &:hover{
             background-color: #6698e415;
-            transition: 0.2s;
-           
+            transition: 0.2s;           
         }             
     }   
     
@@ -134,7 +160,7 @@ margin-left: 35px;
        font-size: 10px;
        font-weight: 500;
     }
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1200px) {
        font-size: 12px;
        font-weight: 500;
     }

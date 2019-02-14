@@ -6,10 +6,10 @@
     // background: transparent;
     font-size: 18px;
     text-transform: uppercase;
-    padding: 0px 10px;
+    padding: 15px 10px;
 
     @media screen and (max-width: 992px) {
-        background-color: rgb(124, 124, 124);
+        background-color: #d4d4d4;
 
         li>a {
             color: #fff;
@@ -36,14 +36,3 @@
 .navbar-toggler {
     border: none;
 }
-
-
-// .arrow__icon::before {
-//     content: '';
-//     position: absolute;
-//     width: 55px;
-//     height: 55px;
-//     margin-top: 5px;   
-//     left: 20px;   
-//     background: url(/img/arrow__item.png) center 0 no-repeat;
-// }

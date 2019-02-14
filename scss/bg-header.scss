@@ -1,48 +1,76 @@
-// Бэкграунд
+// Бэкграунд контент
 
 .background {
     background: url(/img/background.png) no-repeat;
     background-size: cover;
+
+    @media screen and (max-width: 992px) {
+        display: none;
+
+    }
 }
 
-.bg__content{
+.bg__content {
     padding: 145px 0px 0px 45px;
 }
 
-.header__text__thin{
+.header__text__thin {
     font-size: 42px;
     font-weight: 350;
     color: #fff;
     margin-bottom: 0;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 36px;
+    }
+
+    @media screen and (max-width: 320px) {
+        font-size: 24px;
+    }
 }
 
-.header__text__bold{
+.header__text__bold {
     font-size: 42px;
     font-weight: 550;
     color: #fff;
 
+    @media screen and (max-width: 320px) {
+        font-size: 24px;
+    }
+
 }
 
-.small__bg__text{
+.small__bg__text {
     font-size: 18px;
     font-weight: 350;
     color: #fff;
     line-height: 1.4;
+
+    @media screen and (max-width: 320px) {
+        font-size: 16px;
+    }
 }
 
-.button__zayavka{
+.button__zayavka {
     border: none;
     background: transparent;
     padding: 0;
     margin-top: 15px;
     margin-bottom: 151px;
+
     @media screen and (max-width: 1440px) {
-       margin-bottom: 128px;
+        margin-bottom: 128px;
     }
+
     @media screen and (max-width: 1440px) {
-       margin-bottom: 90px;
+        margin-bottom: 90px;
     }
-    a{
+
+    @media screen and (max-width: 992px) {
+        margin-bottom: 15px;
+    }
+
+    a {
         background-color: #db4848;
         color: #fff;
         font-size: 16px;
@@ -51,59 +79,67 @@
         border-radius: 3px;
         text-decoration: none;
 
-        &:hover{
+        &:hover {
             background-color: #e45454;
             transition: 0.2s;
         }
-        &:active{
+
+        &:active {
             background-color: #c73535;
         }
-        
+
     }
 }
-.button__news{
+
+.button__news {
     border: none;
     background: transparent;
     padding: 0;
     margin-top: 15px;
     margin-bottom: 60px;
-    a{
-     
+
+    @media screen and (max-width: 992px) {
+        margin-bottom: 25px;
+    }
+
+    a {
         color: #fff;
-        font-size: 16px;       
+        font-size: 16px;
         padding: 5px 25px;
         border-radius: 25px;
         border: 1px solid #fff;
         text-decoration: none;
 
-        &:hover{
+        &:hover {
             background-color: #ffffff15;
             transition: 0.2s;
         }
-              
+
+
     }
 }
 
-.box__info__menu{
+.box__info__menu {
     padding: 25px 0px 0px 0px;
 }
 
-.info__menu__zayaviteli{
+.info__menu__zayaviteli {
     padding: 25px;
     background-color: #28354d;
-    
+
 }
 
-.header__info__menu{
+.header__info__menu {
     font-size: 22px;
     font-weight: 400;
-    color:  #fff;
+    color: #fff;
 }
 
-.info__menu{ 
-    padding: 0px;  
+.info__menu {
+    padding: 0px;
     list-style-type: none;
-    a{
+
+    a {
         text-decoration: none;
         color: #fff;
         font-size: 16px;
@@ -111,27 +147,388 @@
         line-height: 2;
         padding: 0px 15px;
         border-left: 2px solid #fff;
-        &:hover{
+
+        &:hover {
             color: #e2e2e2;
             border-left: 2px solid rgb(126, 160, 255);
             transition: 0.2s;
         }
-    }   
+    }
 }
 
-.footer{
+.footer__mob {
+    @media screen and (max-width: 320px) {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 375px) {
+        text-align: center;
+    }
+}
+
+.footer__box {
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+}
+
+.footer {
     padding: 25px 45px;
+
+    @media screen and (max-width: 992px) {
+        padding: 25px 15px;
+    }
+
+    @media screen and (max-width: 320px) {
+        padding: 15px;
+    }
+
+    @media screen and (max-width: 375px) {
+        padding: 15px;
+    }
 }
 
-.prava__footer{
+.prava__footer {
     padding: 45px 0px;
+
+    @media screen and (max-width: 992px) {
+        font-size: 12px;
+        padding: 25px;
+    }
+
+    @media screen and (max-width: 320px) {
+        font-size: 12px;
+        padding: 15px;
+    }
 }
 
-.political__footer{
-    padding: 45px 0px 0px;
+
+.political__footer {
+    padding: 45px 0px 0px;   
+
 }
 
-.razrabotano{
+.political__footer__mob {
+    
+        padding: 25px;
+        @media screen and (max-width: 320px) {
+            padding: 0px;
+        }
+        @media screen and (max-width: 576px) {
+            padding: 0px;
+        }
+      
+}
+
+.razrabotano {
     padding: 45px 0px 0px;
-    color: rgb(151, 151, 151);
+    color: #979797;
+    margin-bottom: 0;
+}
+
+.razrabotano__footer__mob{
+   
+    @media screen and (max-width: 576px) {
+               margin-bottom: 15px;
+        margin-top: -25px;
+    }
+
+    @media screen and (max-width: 320px) {
+        margin: 0px;
+        margin-bottom: 15px;
+        margin-top: 0px;       
+    }
+    @media screen and (max-width: 992px) {
+        padding: 25px 0px;
+    }
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
+
+}
+
+// Background content mob version
+
+.background__mob {
+    background: url(/img/background.png) no-repeat;
+    background-size: cover;
+    display: none;
+
+    @media screen and (max-width: 992px) {
+        display: block;
+    }
+}
+
+.background__mob {
+    @media screen and (max-width: 992px) {
+        display: block;
+    }
+}
+
+.bg__content__mob {
+    @media screen and (max-width: 992px) {
+        padding: 15px;
+    }
+}
+
+.footer__mob {
+    display: none;
+
+    @media screen and (max-width: 992px) {
+        display: block;
+    }
+}
+
+.spks__logo__img {
+    @media screen and (max-width: 992px) {
+        width: 200px;
+    }
+
+    @media screen and (max-width: 320px) {
+        width: 250px;
+    }
+
+    @media screen and (max-width: 475px) {
+        width: 250px;
+    }
+}
+
+
+.box__info__mob {
+    display: none;
+
+    @media screen and (max-width: 992px) {
+        display: block;
+        padding: 25px;
+        background-color: #f3f3f3;
+    }
+
+}
+
+.small__text__mob {
+    margin-bottom: 0px;
+}
+
+.site__naks {
+    margin-bottom: 0;
+}
+
+.site__naks__mob {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+
+    @media screen and (max-width: 575px) {
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+}
+
+.feedback__button__mob {
+    padding: 0;
+    margin-top: 25px;
+    background-color: transparent;
+    border: none;
+
+    @media screen and (max-width: 992px) {
+        margin-top: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #6698e4;
+        padding: 10px 35px;
+        vertical-align: middle;
+
+        @media screen and (max-width: 1440px) {
+            padding: 8px 15px;
+
+        }
+
+        @media screen and (max-width: 1200px) {
+            padding: 7px 12px;
+            font-size: 12px;
+        }
+
+        &:hover {
+            background-color: #6698e415;
+            transition: 0.2s;
+        }
+    }
+}
+
+.feedback__mob {
+    border: 1px solid #6698e4;
+    border-radius: 45px;
+
+}
+
+.icon__vopros {
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
+.text__info__basement__mob li {
+    padding: 0px;
+    list-style-type: none;
+    font-size: 12px;
+
+    a {
+        color: #080808;
+        text-decoration: none;
+
+        &:hover {
+            color: #383838;
+            margin-left: 5px;
+            transition: 0.2s;
+        }
+    }
+
+    margin-bottom: 10px;
+}
+
+
+// Info block
+
+.box__info__nk_bw_jr {
+    display: none;
+    margin-top: 25px;
+
+    @media screen and (max-width: 992px) {
+        display: block;
+    }
+}
+
+.info__block {
+
+    box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03)
+}
+
+.naks__img__box {
+    background: url(../img/naks_logo.png) no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    width: 200px;
+    height: 142px;
+    margin: 0 auto;
+}
+
+
+.naks__box {
+    padding: 15px;
+    background-color: #4f72ac;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.naks__info__box {
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 25px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.naks__text__box {
+    font-size: 14px;
+    font-weight: 450;
+    border-radius: 0px 0px 3px 3px;
+    margin-bottom: 0px;
+}
+
+// Search work block
+
+.search__box {
+    background: url(../img/search__work.png) no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.search__color__box {
+    background-color: #0066ac;
+    color: #fff;
+    width: 100%;
+    border-radius: 3px 3px 0px 0px;
+}
+
+// .search__work__link {
+//     color: #0066ac;
+//     font-size: 14px;
+//     float: right;
+//     text-align: right;
+//     @media screen and (max-width: 684px) {
+//         float: left;
+//         margin-top: 10px;
+//         margin-bottom: 10px;
+//     }
+// }
+
+.search__box {
+    padding: 25px;
+
+    border-radius: 3px 3px 0px 0px;
+}
+
+.search__info__box {
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 25px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.search__text__box {
+    font-size: 14px;
+    font-weight: 450;
+    border-radius: 0px 0px 3px 3px;
+    margin-bottom: 0px;
+}
+
+.search__link__text {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 650;
+    color: #fbb52f;
+}
+
+.search__text__small {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+
+}
+
+// Journal block
+
+.journal__box {
+    background-color: #4f72ac;
+    border-radius: 3px 3px 0px 0px;
+    padding: 21px 0px 0px 25px;
+}
+
+.journal__img__box {
+    background: url(../img/journal.png) no-repeat;
+    background-size: cover;
+    // border-radius: 3px;
+    width: 162px;
+    height: 150px;
+    float: right;
+    margin-right: 15px;
+
+}
+
+
+.journal__text__small {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0;
+    @media screen and (max-width: 768px) {
+        font-size: 18px;      
+    }
+   
 }
