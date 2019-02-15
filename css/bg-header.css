@@ -118,6 +118,10 @@
   .footer__mob {
     text-align: center; } }
 
+@media screen and (max-width: 425px) {
+  .footer__mob {
+    text-align: center; } }
+
 @media screen and (max-width: 375px) {
   .footer__mob {
     text-align: center; } }

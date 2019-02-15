@@ -7,6 +7,9 @@
     @media screen and (max-width: 576px) {
         text-align: center;
     }
+    @media screen and (max-width: 640px) {
+        text-align: center;
+    }
 }
 
 .number {
@@ -24,6 +27,9 @@
     @media screen and (max-width: 576px) {
         font-size: 24px;
     }
+    @media screen and (max-width: 640px) {
+        text-align: center;
+    }
 
   
 }
@@ -37,6 +43,9 @@
         text-align: center;
         
     } 
+    @media screen and (max-width: 640px) {
+        text-align: center;
+    }
 }
 
 .number__text__small {
@@ -140,6 +149,13 @@
     @media screen and (max-width: 576px) {
         display: none;
     }
+    @media screen and (max-width: 340px) {
+        display: none;
+    }
+    @media screen and (max-width: 640px) {
+        display: none;
+    }
+    
    
 }
 
@@ -151,6 +167,10 @@
     @media screen and (max-width: 576px) {
         display: none;
     }
+    @media screen and (max-width: 640px) {
+        display: none;
+    }
+    
 }
 
 .mob__logo__sasp {
@@ -165,10 +185,18 @@
         display: block;
 
     }
+    @media screen and (max-width: 640px) {
+        display: block;
+
+    }
 }
 
 .mob__sasp__text{
     @media screen and (max-width: 576px) {
+       margin-bottom: 0px;
+
+    }
+    @media screen and (max-width: 640px) {
        margin-bottom: 0px;
 
     }
