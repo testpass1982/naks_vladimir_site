@@ -6,18 +6,8 @@ body {
   opacity: 0;
   transition: .4s; }
 
-@media (min-width: 360px) {
-  .container {
-    max-width: 2000px; } }
-
-.head__left__column {
-  padding: 25px 15px; }
-  @media screen and (max-width: 320px) {
-    .head__left__column {
-      padding: 0px; } }
-  @media screen and (max-width: 992px) {
-    .head__left__column {
-      padding: 0px; } }
+.header__logo {
+  padding: 25px; }
 
 @media screen and (max-width: 1200px) {
   .header__logo__img {
@@ -36,13 +26,16 @@ body {
     width: 250px; } }
 
 .kachestvo__logo {
-  margin-top: 15px; }
+  padding: 0px 25px; }
 
 .logo__kachestvo__1 {
   margin-left: 35px; }
 
 .logo__kachestvo__2 {
   margin-left: 35px; }
+
+.box__left__column {
+  width: 300px; }
 
 .file-uploader {
   border-radius: 3px;

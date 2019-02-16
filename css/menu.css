@@ -6,7 +6,7 @@
 
 .navbar {
   font-size: 18px;
-  padding: 0px; }
+  padding: 15px 10px; }
   @media screen and (max-width: 992px) {
     .navbar {
       background-color: #344463; }
@@ -21,9 +21,6 @@
 
 .navbar-toggler-icon {
   padding: 3px 0px; }
-
-.nav-link {
-  padding: 5px 15px; }
 
 .navbar-toggler {
   border: none; }

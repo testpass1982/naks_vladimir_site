@@ -75,26 +75,17 @@
   @media screen and (max-width: 375px) {
     .text__adres {
       font-size: 16px; } }
-  @media screen and (max-width: 425px) {
-    .text__adres {
-      font-size: 16px; } }
-  @media screen and (max-width: 576px) {
-    .text__adres {
-      font-size: 16px; } }
 
 .click__on__map {
   margin-top: -15px; }
   @media screen and (max-width: 576px) {
     .click__on__map {
-      font-size: 14px;
+      font-size: 18px;
       margin-top: 15px; } }
   @media screen and (max-width: 320px) {
     .click__on__map {
       font-size: 14px; } }
   @media screen and (max-width: 375px) {
-    .click__on__map {
-      font-size: 14px; } }
-  @media screen and (max-width: 425px) {
     .click__on__map {
       font-size: 14px; } }
 

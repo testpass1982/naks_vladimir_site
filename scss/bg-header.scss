@@ -3,7 +3,7 @@
 .background {
     background: url(/img/background.png) no-repeat;
     background-size: cover;
-    padding: 0px;
+
     @media screen and (max-width: 992px) {
         display: none;
 
@@ -256,6 +256,7 @@
     background: url(/img/background.png) no-repeat;
     background-size: cover;
     display: none;
+
     @media screen and (max-width: 992px) {
         display: block;
     }

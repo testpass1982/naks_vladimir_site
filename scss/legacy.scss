@@ -9,28 +9,6 @@ body {
     transition: .4s;
 }
 
-@media (min-width: 360px) {
-    .container {
-        max-width: 2000px;
-             
-    }
-}
-
-.head__left__column{
-    padding: 25px 15px;
-    @media screen and (max-width: 320px) {
-        padding: 0px;
-    }
-    @media screen and (max-width: 992px) {
-        padding: 0px;
-    }
-}
-
-// .null__margin{
-//     margin-right: 0px;
-//     margin-left: 0px;
-//     padding: 0px;
-// }
 
 // .box__probel{
 //     margin-bottom: 180px;
@@ -44,6 +22,9 @@ body {
 
 // Left column menu
 
+.header__logo {
+    padding: 25px;
+}
 
 .header__logo__img {
     @media screen and (max-width: 1200px) {
@@ -57,14 +38,14 @@ body {
     @media screen and (max-width: 320px) {
         width: 250px;
     }
-
+  
     @media screen and (max-width: 576px) {
         width: 250px;
     }
 }
 
 .kachestvo__logo {
-margin-top: 15px;
+    padding: 0px 25px;
 }
 
 .logo__kachestvo__1 {
@@ -76,7 +57,9 @@ margin-top: 15px;
 }
 
 
-
+.box__left__column {
+    width: 300px;
+}
 
 // Upload Files
 //variables
@@ -254,20 +237,19 @@ input[type=file] {
 }
 
 
-.probel {
+.probel{
     @media screen and (max-width: 576px) {
         display: none;
-    }
+    } 
 }
 
-.line__grey {
+.line__grey{
     @media screen and (max-width: 576px) {
-        border: 0.5px solid #eeeeee;
-        margin-bottom: 5px;
-    }
-
-    @media screen and (max-width: 320px) {
-        border: 0.5px solid #eeeeee;
-        margin-bottom: 5px;
-    }
+              border: 0.5px solid #eeeeee;
+              margin-bottom: 5px;
+    } 
+    @media screen and (max-width: 320px){
+              border: 0.5px solid #eeeeee;
+              margin-bottom: 5px;
+    } 
 }

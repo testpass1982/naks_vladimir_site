@@ -1,14 +1,17 @@
 .menu {
-    margin-top: 25px;    
+    margin-top: 25px; 
     }
+
     .navbar li{
         text-transform: uppercase;
-    }    
+    }
 
 .navbar {
     // background: transparent;
-    font-size: 18px; 
-   padding: 0px;
+    font-size: 18px;
+   
+    padding: 15px 10px;
+
     @media screen and (max-width: 992px) {
         background-color: #344463;
 
@@ -32,10 +35,6 @@
 
 .navbar-toggler-icon {
     padding: 3px 0px;
-}
-.nav-link{
-    padding: 5px 15px;
-    // line-height: 2.2;
 }
 
 .navbar-toggler {
@@ -89,4 +88,3 @@
     }
   
 }
-
