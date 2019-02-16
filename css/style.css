@@ -7,8 +7,18 @@ body {
   opacity: 0;
   transition: .4s; }
 
-.header__logo {
-  padding: 25px; }
+@media (min-width: 360px) {
+  .container {
+    max-width: 2000px; } }
+
+.head__left__column {
+  padding: 25px 15px; }
+  @media screen and (max-width: 320px) {
+    .head__left__column {
+      padding: 0px; } }
+  @media screen and (max-width: 992px) {
+    .head__left__column {
+      padding: 0px; } }
 
 @media screen and (max-width: 1200px) {
   .header__logo__img {
@@ -27,16 +37,13 @@ body {
     width: 250px; } }
 
 .kachestvo__logo {
-  padding: 0px 25px; }
+  margin-top: 15px; }
 
 .logo__kachestvo__1 {
   margin-left: 35px; }
 
 .logo__kachestvo__2 {
   margin-left: 35px; }
-
-.box__left__column {
-  width: 300px; }
 
 .file-uploader {
   border-radius: 3px;
@@ -167,7 +174,7 @@ input[type=file] {
 
 .navbar {
   font-size: 18px;
-  padding: 15px 10px; }
+  padding: 0px; }
   @media screen and (max-width: 992px) {
     .navbar {
       background-color: #344463; }
@@ -182,6 +189,9 @@ input[type=file] {
 
 .navbar-toggler-icon {
   padding: 3px 0px; }
+
+.nav-link {
+  padding: 5px 15px; }
 
 .navbar-toggler {
   border: none; }
@@ -300,9 +310,6 @@ input[type=file] {
       color: #383838;
       margin-left: 5px;
       transition: 0.2s; }
-
-.information__in__the__basement {
-  padding: 0px 25px; }
 
 .feedback__button {
   padding: 0;
@@ -428,17 +435,26 @@ input[type=file] {
   @media screen and (max-width: 375px) {
     .text__adres {
       font-size: 16px; } }
+  @media screen and (max-width: 425px) {
+    .text__adres {
+      font-size: 16px; } }
+  @media screen and (max-width: 576px) {
+    .text__adres {
+      font-size: 16px; } }
 
 .click__on__map {
   margin-top: -15px; }
   @media screen and (max-width: 576px) {
     .click__on__map {
-      font-size: 18px;
+      font-size: 14px;
       margin-top: 15px; } }
   @media screen and (max-width: 320px) {
     .click__on__map {
       font-size: 14px; } }
   @media screen and (max-width: 375px) {
+    .click__on__map {
+      font-size: 14px; } }
+  @media screen and (max-width: 425px) {
     .click__on__map {
       font-size: 14px; } }
 
@@ -494,7 +510,8 @@ input[type=file] {
 
 .background {
   background: url(/img/background.png) no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  padding: 0px; }
   @media screen and (max-width: 992px) {
     .background {
       display: none; } }
