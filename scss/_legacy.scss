@@ -49,8 +49,13 @@ body {
 
 .box__items {
     padding: 25px 0px;
+
+    @media screen and (max-width: 992px) {
+       
+        text-align: center;
+    }
     @media screen and (max-width: 576px) {
-        vertical-align: middle;
+       
         text-align: center;
     }
 }
@@ -74,8 +79,8 @@ body {
     font-weight: 300;
     margin-bottom: 0;
 
-    @media screen and (max-width: 696px) {
-        font-size: 24px;
+    @media screen and (max-width: 1400px) {
+        font-size: 22px;
     }
 }
 
@@ -128,7 +133,7 @@ body {
     }
 
     @media screen and (max-width: 992px) {
-        
+
         padding: 10px 25px;
         margin-top: 10px;
         border-radius: 3px;
@@ -145,6 +150,7 @@ body {
     font-size: 14px;
     color: #000;
     margin-bottom: 0;
+    margin-top: 25px;
 
 }
 
@@ -157,7 +163,6 @@ body {
     }
 }
 
-
 .sasp__logo::before {
     content: '';
     position: absolute;
@@ -166,26 +171,11 @@ body {
     left: 0;
     margin-top: 20px;
     background: url(/img/logo__sasp.png) center 0 no-repeat;
-
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 1024px) {
         display: none;
+        
     }
 }
-
-.mob__logo__sasp {
-    margin-bottom: 5px;
-}
-
-.mob__sasp {
-    display: none;
-    font-size: 14px;
-
-    @media screen and (max-width: 576px) {
-        display: block;
-
-    }
-}
-
 
 .sasp__text {
     margin-left: 80px;
@@ -193,9 +183,62 @@ body {
     font-weight: 450;
     font-size: 10px;
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 1024px) {
         display: none;
     }
+}
+
+.number__footer {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+
+.feedback__button__mob {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin-top: 5px;
+
+    a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #6698e4;
+        padding: 7px 20px;
+        vertical-align: middle;
+
+        @media screen and (max-width: 1440px) {
+            padding: 8px 15px;
+
+        }
+
+        @media screen and (max-width: 1200px) {
+            padding: 7px 12px;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 320px) {
+            clear: both;
+        }
+
+        &:hover {
+            background-color: #6698e415;
+            transition: 0.2s;
+        }
+    }
+
+}
+
+.feedback__footer_m {
+    border: 1px solid #6698e4;
+    border-radius: 45px;
+
+}
+
+.icon__vopros {
+    margin-top: -4px;
+    margin-left: -5px;
 }
 
 
@@ -238,7 +281,7 @@ body {
 }
 
 
-.bg__text{
+.bg__text {
     padding: 45px 0px;
 }
 
@@ -248,11 +291,15 @@ body {
     color: #fff;
     vertical-align: middle;
     text-align: center;
+
+    @media screen and (max-width: 320px) {
+        font-size: 20px;
+    }
 }
 
 .bg__text__small {
     font-size: 18px;
-    font-weight: 450;    
+    font-weight: 450;
     color: #fff;
     vertical-align: middle;
     text-align: center;
@@ -268,7 +315,7 @@ body {
     font-weight: 500;
     color: #fff;
     vertical-align: middle;
-    text-align: center; 
+    text-align: center;
 }
 
 .bg__line {
@@ -284,7 +331,7 @@ body {
 .online__zayavka__button {
     vertical-align: middle;
     text-align: center;
-    margin-top: 15px;  
+    margin-top: 15px;
 }
 
 .button__zayavka {
@@ -332,41 +379,45 @@ body {
 }
 
 .feedback__button {
-    padding: 0;   
+    padding: 0;
     background-color: transparent;
     border: none;
     margin-top: 10px;
+
     a {
-        text-decoration: none;        
-        font-size: 12px;      
+        text-decoration: none;
+        font-size: 12px;
         color: #6698e4;
-        padding: 7px 20px;  
-        vertical-align: middle; 
+        padding: 7px 20px;
+        vertical-align: middle;
+
         @media screen and (max-width: 1440px) {
-            padding: 8px 15px; 
-    
+            padding: 8px 15px;
+
         }
+
         @media screen and (max-width: 1200px) {
-            padding: 7px 12px;  
-            font-size: 12px;    
+            padding: 7px 12px;
+            font-size: 12px;
         }
-        &:hover{
+
+        &:hover {
             background-color: #6698e415;
-            transition: 0.2s;           
-        }             
-    }   
-    
+            transition: 0.2s;
+        }
+    }
+
 }
 
-.feedback{
+.feedback {
     border: 1px solid #6698e4;
-    border-radius: 45px;    
+    border-radius: 45px;
 
 }
 
-.icon__vopros{
-   margin-top: -5px;
-   margin-left: -5px;
+.icon__vopros {
+    margin-top: -4px;
+    margin-left: -5px;
 }
 
 // Контентная часть left column
@@ -427,7 +478,7 @@ body {
 .link__read__more a {
     text-decoration: none;
     font-size: 16px;
-    color: #0066ac;    
+    color: #0066ac;
 }
 
 
@@ -481,7 +532,7 @@ body {
     text-decoration: none;
     font-size: 14px;
     color: #0066ac;
-    font-weight: 450;   
+    font-weight: 450;
 }
 
 .block__news a {
@@ -490,7 +541,7 @@ body {
 
 .box__news {
     border: 1px solid #eeeeee;
-        padding: 25px;
+    padding: 25px;
 
     &:hover {
         box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03);
@@ -542,6 +593,7 @@ body {
     margin-bottom: 50px;
     background-color: #fff;
     padding: 25px;
+
     a {
         text-decoration: none;
     }
@@ -592,6 +644,7 @@ body {
     margin-bottom: 50px;
     background-color: #fff;
     padding: 25px;
+
     a {
         text-decoration: none;
     }
@@ -646,171 +699,57 @@ body {
 
 // Footer block
 
-// Mob version footer
-
-.mob__version {
-    display: none;
-
-    @media screen and (max-width: 320px) {
-        display: block;
-    }
-}
-
-.mob__sasp__grey__logo::before {
-    content: '';
-    position: absolute;
-    width: 85px;
-    height: 45px;
-    background: url(/img/logo__sasp_grey.png) center 0 no-repeat;
-    margin-left: -5px;
-
-}
-
-.mob__sasp__grey__text {
-    font-size: 12px;
-    color: #979695;
-    margin-top: 55px;
-    margin-bottom: 45px;
-
-}
-
-.mob__political__footer {
-    color: #000;
-
-}
-
-.mob__line__footer__small {
-    border: 1px solid #e8e8e8;
-    width: 50px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-
-}
-
-.mob__prava__footer {
-    font-size: 12px;
-    color: #9c9c9c;
-
-}
-
-.mob__spks__link__footer a {
+.naks__web__footer a {
     text-decoration: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mob__spks::before {
-    content: '';
-    position: absolute;
-    width: 85px;
-    height: 45px;
-    background: url(/img/spks_logo.png) center 0 no-repeat;
-    margin-left: -20px;
-}
-
-.mob__spks__text {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #000;
-    margin-left: 65px;
-    font-weight: 500;
-    text-decoration: none;
-    margin-bottom: 0;
-    margin-top: 10px;
-
-}
-
-.mob__razrabotano {
-    font-size: 12px;
-    font-weight: 350;
-    color: #c2c2c2;
-    margin-top: 10px;
-}
-
-.web__spks__footer a {
-    text-decoration: none;
-    color: #696969;
+    color: #505050;
 
     &:hover {
-        color: #8d8d8d;
+        color: #0087e0;
     }
 }
 
-.web__spks__footer {
-    text-align: center;
+.naks__web__footer {
     font-size: 14px;
     font-weight: 500;
-    text-align: left;
-    margin-left: 65px;
+    margin-bottom: 10px;
 
 }
 
-// 
-
-.spks__footer a {
-    text-decoration: none;
-    color: #696969;
-
-    &:hover {
-        color: #8d8d8d;
-    }
-}
-
-.spks__footer {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: left;
-    margin-left: 65px;
-
-    @media screen and (max-width: 320px) {
-        display: none;
-    }
-
+.footer__naks__text {
+    margin-bottom: 5px;
 }
 
 .footer__block {
     background-color: #f9f9f9;
-    padding: 35px;
-
-    @media screen and (max-width: 320px) {
+    padding: 35px;  
+ 
+    @media screen and (max-width: 992px) {
         padding: 15px;
+        text-align: center;
     }
 }
 
-.footer__logo {
-    margin-bottom: 25px;
+
+.mob__logo__sasp {
+    margin-bottom: 5px;
 }
 
-.sasp__grey__logo::before {
-    content: '';
-    position: absolute;
-    width: 85px;
-    height: 45px;
-    background: url(/img/logo__sasp_grey.png) center 0 no-repeat;
-    margin-left: -5px;
+.mob__sasp {
+    display: none;
+    font-size: 14px;
+    @media screen and (max-width: 1024px) {
+        display: block;
 
-    @media screen and (max-width: 320px) {
-        display: none;
     }
 }
 
-.sasp__grey__text {
-    font-size: 12px;
-    color: #979695;
-    margin-top: 55px;
-    margin-bottom: 45px;
-
-    @media screen and (max-width: 320px) {
-        display: none;
-    }
-}
 
 .political__footer {
     color: #000;
 
     @media screen and (max-width: 320px) {
         display: none;
+        margin-top: 15px;
     }
 }
 
@@ -828,9 +767,14 @@ body {
 .prava__footer {
     font-size: 12px;
     color: #9c9c9c;
+    margin-bottom: 5px;
+    margin-top: 15px;
+
 
     @media screen and (max-width: 320px) {
-        display: none;
+        display: block;
+        text-align: center;
+        margin-top: 25px;
     }
 }
 
@@ -843,64 +787,6 @@ body {
     @media screen and (max-width: 768px) {
         margin-top: 15px;
     }
-}
-
-.spisok__footer {
-    padding: 0;
-    line-height: 2;
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-
-.spisok__footer li {
-    list-style: none;
-    color: #000;
-}
-
-.spks__link__footer a {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-}
-
-.spks::before {
-    content: '';
-    position: absolute;
-    width: 85px;
-    height: 45px;
-    background: url(/img/spks_logo.png) center 0 no-repeat;
-    margin-left: -20px;
-
-    @media screen and (max-width: 320px) {
-        display: none;
-    }
-
-}
-
-.spks__text {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #000;
-    margin-left: 65px;
-    font-weight: 500;
-    margin-bottom: 0;
-    text-decoration: none;
-
-    @media screen and (max-width: 320px) {
-        display: none;
-    }
-}
-
-.number__footer {
-    font-size: 28px;
-    font-weight: 300;
-    margin-bottom: 0;
-}
-
-.consultation__text {
-    font-size: 12px;
-    margin-bottom: 0;
-    font-weight: 450;
 }
 
 .feedback__footer {
@@ -966,12 +852,16 @@ body {
 }
 
 .razrabotano {
+    margin-top: 15px;
     font-size: 12px;
     font-weight: 350;
     color: #c2c2c2;
+    text-align: right;
 
-    @media screen and (max-width: 320px) {
-        display: none;
+   
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        margin-top: 10px;
     }
 }
 
@@ -1050,6 +940,7 @@ body {
     @media screen and (max-width: 1199px) {
         margin-top: 15px;
     }
+
 }
 
 .political__text__small {
@@ -1452,20 +1343,21 @@ input[type=file] {
 
 // О центре
 
-.link__inside__pages{
+.link__inside__pages {
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.grafik__work{
+.grafik__work {
     font-size: 16px;
     font-weight: 400;
-    p{
+
+    p {
         margin-bottom: 8px;
     }
 }
 
-.grafik__red{
+.grafik__red {
     font-size: 16px;
     font-weight: 400;
     color: red;
@@ -1480,7 +1372,7 @@ input[type=file] {
 
 // Contact page
 
-.contact__header__pages{
+.contact__header__pages {
     font-size: 20px;
     font-weight: 300;
     color: #000;
@@ -1488,22 +1380,22 @@ input[type=file] {
     margin-top: 15px;
 }
 
-.contact__number{
+.contact__number {
     font-size: 20px;
     font-weight: 500;
 }
 
-.adres__ac{
+.adres__ac {
     font-size: 16px;
     font-weight: 500;
 }
 
 .ya__map {
-    margin-bottom: 25px;    
+    margin-bottom: 25px;
 }
 
 // Новости (внутри)
-.header__news{
+.header__news {
     font-size: 24px;
     font-weight: 550;
     color: #000;
@@ -1512,12 +1404,12 @@ input[type=file] {
 }
 
 
-.img__box__news{
-   margin-top: 15px;
-   margin-bottom: 25px;
+.img__box__news {
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
-.small__text__news{
+.small__text__news {
     font-size: 16px;
     font-weight: 400;
     color: #000;
@@ -1525,14 +1417,14 @@ input[type=file] {
     line-height: 1.8;
 }
 
-.news__tag__all-news{
+.news__tag__all-news {
     margin-top: 25px;
     margin-bottom: 10px;
 }
 
-.news__tag__all-news a{
+.news__tag__all-news a {
     font-size: 14px;
-    margin-top: 25px;  
+    margin-top: 25px;
     background-color: transparent;
     border-radius: 55px;
     border: 1px solid #3164a2;
@@ -1540,24 +1432,25 @@ input[type=file] {
     width: 70px;
     color: #3164a2;
     margin-bottom: 5px;
-    &:hover{
+
+    &:hover {
         background-color: rgba(188, 218, 255, 0.1);
     }
 }
 
 
-.page-link{
+.page-link {
     color: #2e3e60;
     font-size: 14px;
     border-radius: 0px;
-    
+
 }
 
 .page-item {
-border-radius: 0px;
+    border-radius: 0px;
 }
 
-.page-link:hover{
+.page-link:hover {
     transition: 0.2s;
 }
 
@@ -1567,12 +1460,12 @@ border-radius: 0px;
 }
 
 
-.date__news__inside{
-font-size: 14px;
-font-weight: 350;
-color: #5a5a5a;
-margin-top: 15px;
-margin-bottom: 15px;
+.date__news__inside {
+    font-size: 14px;
+    font-weight: 350;
+    color: #5a5a5a;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
 }
 
@@ -1581,7 +1474,8 @@ margin-bottom: 15px;
     padding: 10px;
     cursor: pointer;
     margin-right: 5px;
-    &:hover{
+
+    &:hover {
         background-color: #027abb;
     }
 }
@@ -1592,7 +1486,8 @@ margin-bottom: 15px;
     padding: 10px;
     cursor: pointer;
     margin-right: 5px;
-    &:hover{
+
+    &:hover {
         background-color: #dd481b;
     }
 }
@@ -1603,7 +1498,8 @@ margin-bottom: 15px;
     padding: 10px;
     cursor: pointer;
     margin-right: 5px;
-    &:hover{
+
+    &:hover {
         background-color: #0b8bc7;
     }
 }
@@ -1613,21 +1509,23 @@ margin-bottom: 15px;
     background-color: #3f51b5;
     padding: 10px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         background-color: #3647a7;
     }
 }
 
-.to__share{
-margin-bottom: 25px;
+.to__share {
+    margin-bottom: 25px;
 }
 
-.line__news__end{
+.line__news__end {
     border: 0.5px solid #ebebeb;
     margin-top: 25px;
-    margin-bottom: 25px;    
+    margin-bottom: 25px;
 }
-.prikrep__doc{
+
+.prikrep__doc {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 10px;
@@ -1635,11 +1533,12 @@ margin-bottom: 25px;
 
 .soglashenie__button {
     background-color: transparent;
-    border: none;   
-    padding: 0;   
-    a{
+    border: none;
+    padding: 0;
+
+    a {
         text-decoration: none;
-    }   
+    }
 }
 
 .soglashenie__button__text {
@@ -1649,8 +1548,8 @@ margin-bottom: 25px;
     font-size: 14px;
     color: #8d8d8d;
     border-radius: 3px;
-  
-    &:hover{
+
+    &:hover {
         color: #585858;
     }
 }
@@ -1663,7 +1562,7 @@ margin-bottom: 25px;
     background-color: #f1f1f1;
 }
 
-.carousel__slide{
+.carousel__slide {
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -1673,6 +1572,7 @@ margin-bottom: 25px;
     width: 21px;
     height: 34px;
 }
+
 .carousel-control-prev-icon {
     background: url(../img/next__image__arrow-01.png) no-repeat;
 }
@@ -1686,16 +1586,17 @@ margin-bottom: 25px;
     transform: rotate(180deg);
 }
 
-.box__news__inside__block{
+.box__news__inside__block {
     padding: 45px;
     background-color: #fcfcfc;
     margin-top: 30px;
+
     @media screen and (max-width: 320px) {
         padding: 15px;
     }
 }
 
-.header__all__news{
+.header__all__news {
     font-size: 18px;
     font-weight: 300;
     margin-top: 25px;
@@ -1708,32 +1609,32 @@ margin-bottom: 25px;
 
 .link__read__news__inside {
     margin-top: 15px;
-     margin-bottom: 25px;
-     text-align: right;
+    margin-bottom: 25px;
+    text-align: right;
 }
 
 .link__read__news__inside a {
     text-decoration: none;
     font-size: 14px;
     color: #0066ac;
-    font-weight: 450;   
+    font-weight: 450;
 }
 
 
 // Нумерация
-.page-link{
+.page-link {
     color: #2e3e60;
     font-size: 14px;
     border-radius: 0px;
-    
+
 }
 
 .page-item {
-border-radius: 0px;
-margin-top: 25px;
+    border-radius: 0px;
+    margin-top: 25px;
 }
 
-.page-link:hover{
+.page-link:hover {
     transition: 0.2s;
 }
 
