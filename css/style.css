@@ -724,7 +724,8 @@ body {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 400;
-  color: #000; }
+  color: #000;
+  margin-top: 15px; }
   @media screen and (max-width: 1199px) {
     .header__political {
       margin-top: 15px; } }
@@ -1150,7 +1151,11 @@ input[type=file] {
     background-color: #3647a7; }
 
 .to__share {
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  text-align: right; }
+  @media screen and (max-width: 320px) {
+    .to__share {
+      text-align: left; } }
 
 .line__news__end {
   border: 0.5px solid #ebebeb;
@@ -1174,8 +1179,7 @@ input[type=file] {
   padding: 10px 15px;
   display: block;
   font-size: 14px;
-  color: #8d8d8d;
-  border-radius: 3px; }
+  color: #8d8d8d; }
   .soglashenie__button__text:hover {
     color: #585858; }
 

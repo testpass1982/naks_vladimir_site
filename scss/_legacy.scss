@@ -964,6 +964,7 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     color: #000;
+    margin-top: 15px;
 
     @media screen and (max-width: 1199px) {
         margin-top: 15px;
@@ -1563,6 +1564,10 @@ input[type=file] {
 
 .to__share {
     margin-bottom: 25px;
+    text-align: right;
+    @media screen and (max-width: 320px) {
+        text-align: left;
+    }
 }
 
 .line__news__end {
@@ -1593,7 +1598,7 @@ input[type=file] {
     display: block;
     font-size: 14px;
     color: #8d8d8d;
-    border-radius: 3px;
+  
 
     &:hover {
         color: #585858;
