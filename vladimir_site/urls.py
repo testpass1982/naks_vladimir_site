@@ -23,9 +23,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mainapp.index, name='index'),  
     path('news/', mainapp.news, name='news'),  
+    path('all_news/', mainapp.all_news, name='all_news'),  
+    path('news_two/', mainapp.news_two, name='news_two'),  
     path('svarshik/', mainapp.svarshik, name='svarshik'),  
-    path('center/', mainapp.center, name='center'),  
-  
+    path('doc/', mainapp.doc, name='doc'),  
+    path('reestr/', mainapp.reestr, name='reestr'),  
+    path('political/', mainapp.political, name='political'),  
+    path('svarproizvodstva/', mainapp.svarproizvodstva, name='svarproizvodstva'),  
+    path('atestatechonlogy/', mainapp.atestatechonlogy, name='atestatechonlogy'),  
+    path('atestatsvaroborud/', mainapp.atestatsvaroborud, name='atestatsvaroborud'),  
+    path('contacti/', mainapp.contacti, name='contacti'),  
+    path('center/', mainapp.center, name='center'), 
  
 ]
 

@@ -22,6 +22,9 @@ def center(request):
 def political(request):
     return render(request, 'mainapp/political.html')
 
+def all_news(request):
+    return render(request, 'mainapp/all_news.html')
+
 def reestr(request):
     return render(request, 'mainapp/reestr.html')
 
@@ -34,11 +37,8 @@ def svarproizvodstva(request):
 def news_two(request):
     return render(request, 'mainapp/news_two.html')
 
-def atestatetchnology(request):
-    return render(request, 'mainapp/atestatetchnology.html')
+def atestatechonlogy(request):
+    return render(request, 'mainapp/atestatechonlogy.html')
 
 def atestatsvaroborud(request):
     return render(request, 'mainapp/atestatsvaroborud.html')
-
-def all_news(request):
-    return render(request, 'mainapp/all_news.html')
