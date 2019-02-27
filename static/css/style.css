@@ -1406,7 +1406,7 @@ input[type="search"]::placeholder {
 .modal-footer {
   justify-content: flex-start;
   border-top: none;
-  padding: 0px 75px 75px; }
+  padding: 0px 50px 75px; }
   @media screen and (max-width: 450px) {
     .modal-footer {
       padding: 0px 35px 35px; } }

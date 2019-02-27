@@ -20,7 +20,7 @@
             <div class="col-xl-2"></div>
             <div class="col-xl-3">
                                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -33,7 +33,7 @@
                 </div>
                  <div class="line__otstup__inside__pages__news"></div>
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -46,7 +46,7 @@
                 </div>
                  <div class="line__otstup__inside__pages__news"></div>
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -62,7 +62,7 @@
             <div class="line__otstup__inside__pages__news"></div>          
             <div class="col-xl-3">
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -75,7 +75,7 @@
                 </div>
                  <div class="line__otstup__inside__pages__news"></div>
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news_two' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -88,7 +88,7 @@
                 </div>
                  <div class="line__otstup__inside__pages__news"></div>
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news_two' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -104,7 +104,7 @@
                      
             <div class="col-xl-3">
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news_two' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -117,7 +117,7 @@
                 </div>
                  <div class="line__otstup__inside__pages__news"></div>
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news_two' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -130,7 +130,7 @@
                 </div>
                  <div class="line__otstup__inside__pages__news"></div>
                 <div class="block__news">
-                    <a href="news.html" class="link__news">
+                    <a href="{% url 'news_two' %}" class="link__news">
                         <div class="box__news">
                             <p class="data__news__main">25 Декабря 2018</p>
                             <p class="box__news__text">
@@ -146,7 +146,7 @@
                           <li class="page-item disabled">
                             <a class="page-link" href="#" tabindex="-1">Назад</a>
                           </li>
-                          <li class="page-item"><a class="page-link" href="all-news.html#all-news">1</a></li>
+                          <li class="page-item"><a class="page-link" href="all-{% url 'news_two' %}#all-news">1</a></li>
                           <li class="page-item"><a class="page-link" href="#">2</a></li>
                           <li class="page-item"><a class="page-link" href="#">3</a></li>
                           <li class="page-item"><a class="page-link" href="#">4</a></li>
@@ -158,8 +158,7 @@
                       </nav>
             </div>                       
         </div>
-        {% endblock %}
-
+        
 
 
 
