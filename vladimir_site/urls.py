@@ -34,6 +34,7 @@ urlpatterns = [
     path('atestatsvaroborud/', mainapp.atestatsvaroborud, name='atestatsvaroborud'),  
     path('contacti/', mainapp.contacti, name='contacti'),  
     path('center/', mainapp.center, name='center'), 
+    path('profstandarti/', mainapp.profstandarti, name='profstandarti'), 
  
 ]
 
