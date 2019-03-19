@@ -121,6 +121,7 @@ def doc(request):
     return render(request, 'mainapp/doc.html')
 
 def center(request):
+    #TODO test a todo creation - page about us
     return render(request, 'mainapp/center.html')
 
 def political(request):
