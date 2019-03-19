@@ -18,7 +18,7 @@ from .registry_import import Importer, data_url
 def index(request):
 
     """this is mainpage view with forms handler and adapter to messages"""
-    title = "Главная - НАКС Смоленск"
+    title = "Главная - АЦ Владимир"
     tracker = MessageTracker()
     if request.method == 'POST':
         request_to_dict = dict(zip(request.POST.keys(), request.POST.values()))
@@ -81,12 +81,10 @@ def index(request):
     return render(request, 'mainapp/index.html')
 
 def svarshik(request):
-    #TODO Make a view to this
     return render(request, 'mainapp/svarshik.html')
     
 def news(request):
     """this is the news view"""
-    #TODO: make a view to that
     title = "Новости АЦ"
     all_news = Post.objects.all().filter(
         publish_on_news_page=True).order_by('-created_date')
@@ -98,7 +96,6 @@ def news(request):
     print(post_list)
     paginator = Paginator(post_list, 6)
     page = request.GET.get('page')
-    #TODO test this todo
     posts = paginator.get_page(page)
 
     # articles = Article.objects.all().order_by('-created_date')[:3]
@@ -116,10 +113,11 @@ def news(request):
     }
     return render(request, 'mainapp/news.html', content)
 
-def contacti(request):
+def contact(request):
     return render(request, 'mainapp/contacti.html')
 
 def doc(request):
+    #TODO make a controller for document page
     return render(request, 'mainapp/doc.html')
 
 def center(request):
@@ -134,7 +132,7 @@ def all_news(request):
 def reestr(request):
     return render(request, 'mainapp/reestr.html')
 
-def profstandarti(request):
+def profstandard(request):
     return render(request, 'mainapp/profstandarti.html')
 
 def svarproizvodstva(request):
