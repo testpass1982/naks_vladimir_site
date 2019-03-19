@@ -1,3 +1,4 @@
 _version=3.1.0
 repo=naksmedia/ac_vladimir-site
 inject-issue=true
+branches=master

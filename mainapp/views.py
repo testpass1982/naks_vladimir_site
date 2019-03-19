@@ -96,6 +96,7 @@ def news(request):
         post__pk=post.pk).first()}) for post in all_news]
     # показываем несколько новостей на странице
     print(post_list)
+    #TODO: another todo
     paginator = Paginator(post_list, 6)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
