@@ -554,6 +554,11 @@ body {
     font-weight: 450;
 }
 
+.block__news {
+    // border-bottom: 1px solid #e8e8e8;
+    height: 100%;
+}
+
 .block__news a {
     text-decoration: none;
 }
@@ -561,7 +566,7 @@ body {
 .box__news {
     min-height: 100px;
     padding: 25px;
-    border-bottom: 1px solid #e8e8e8;
+    // border-bottom: 1px solid #e8e8e8;
 
 
     &:hover {
