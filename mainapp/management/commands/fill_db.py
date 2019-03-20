@@ -75,7 +75,7 @@ class Command(BaseCommand):
         #make Menus
         for i in range(0, len(menu_urls)):
             mixer.blend(Menu, url_code=menu_urls[i], url=reverse(
-                'detailview', kwargs={'content': 'post', 'pk': Post.objects.first().pk}),
+                'details', kwargs={'content': 'post', 'pk': Post.objects.first().pk}),
                 title=menu_urls_titles[i])
         # for i in range(0, len(images)):
         #     PostPhoto.objects.create(

@@ -82,7 +82,7 @@ def index(request):
 
 def svarshik(request):
     return render(request, 'mainapp/svarshik.html')
-    
+
 def news(request):
     """this is the news view"""
     title = "Новости АЦ"
@@ -117,8 +117,12 @@ def contact(request):
     return render(request, 'mainapp/contacti.html')
 
 def doc(request):
-    #TODO make a controller for document page
-    return render(request, 'mainapp/doc.html')
+    documents = Document.objects.all()
+    content = {
+        'title': 'Documents',
+        'docs': documents
+    }
+    return render(request, 'mainapp/doc.html', content)
 
 def center(request):
     #TODO test a todo creation - page about us

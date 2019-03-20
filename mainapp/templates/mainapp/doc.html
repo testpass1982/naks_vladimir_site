@@ -16,64 +16,13 @@
         <div class="header__inside__pages">Документы</div>
         <p class="header__doc">Список документов ВВР-2ГАЦ</p>
         <p class="doc__name__list">Наименование документов</p>
-        <a href="" download="">
+        {% for doc in docs %}
+        <a href="{{ doc.document.url }}" download="">
           <div class="doc__content">
-            <p class="doc__name">РД 03-495-02 Технологический регламент проведения аттестации сварщиков и <br>
-              специалистов сварочного производства</p>
+            <p class="doc__name">{{ doc.title }}</p>
           </div>
         </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name">Постановление Госгортехнадзора России №36 от 25.06.2002г. Об утверждении новой
-              редакции "Технологического регламента проведения аттестации сварщиков и специалистов сварочного
-              производства"</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name">ПБ-03-273-99 "Правила аттестации сварщиков и <br> специалистов сварочного
-              производства"</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name" id="doc-zayavki">Положение о порядке продления срока действия аттестационных
-              удостоверений
-              сварщиков и специалистов сварочного производства</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name">Перечень групп технических устройств <br> опасных производственных объектов</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name">Инструкция по оформлению заявок на аттестацию <br> и результатов аттестации
-              Заявителей - физических лиц</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name">Требование к кандидатами <br>
-              на аттестацию</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name">Пример заявок <br> на аттестацию</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name">Необходимые документы <br> для заявки</p>
-          </div>
-        </a>
-        <a href="" download="">
-          <div class="doc__content">
-            <p class="doc__name ">Продление срока <br> аттестационных удостоверений</p>
-          </div>
-        </a>
+        {% endfor %}
       </div>
       <div class="col-xl-2">
         <div class="sider__bar">
@@ -81,13 +30,13 @@
             Подать заявку на аттестацию:
           </p>
           <div class="list__service__column">
-                            <p class="small__column__text"><a href="{% url 'svarshik' %}">Специальная подготовка сварщиков 
-и специалистов сварочного производства</a></p>           
-            <p class="small__column__text"><a href="{% url 'svarproizvodstva' %}"> Аттестация сварщиков 
+                            <p class="small__column__text"><a href="{% url 'svarshik' %}">Специальная подготовка сварщиков
 и специалистов сварочного производства</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatsvaroborud' %}"> Аттестация 
+            <p class="small__column__text"><a href="{% url 'svarproizvodstva' %}"> Аттестация сварщиков
+и специалистов сварочного производства</a></p>
+            <p class="small__column__text"><a href="{% url 'atestatsvaroborud' %}"> Аттестация
 сварочного оборудования</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatechonlogy' %}">Аттестация 
+            <p class="small__column__text"><a href="{% url 'atestatechonlogy' %}">Аттестация
 технологий сварки</a></p>
           </div>
         </div>
@@ -104,4 +53,4 @@
     <div class="line__otstup__inside__pages"></div>
   </div>
 
- {% endblock  %}   
+ {% endblock  %}

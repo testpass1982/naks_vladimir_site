@@ -1,4 +1,5 @@
 {% load static %}
+{% load link_holders %}
 <div class="container ">
   <div class="menu__background">
     <div class="row align-items-center">
@@ -31,7 +32,7 @@
                   <a class="nav__link__two dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Центр аттестации</a>
                   <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="komisiya.html#komisiya#head__page">Состав комисиии</a>
+                    <a class="dropdown-item" href="{% link_holder 'KOMISS' %}#head__page">{% title_holder 'KOMISS' %}</a>
                     <a class="dropdown-item" href="{% url 'center' %}#head__page">О центре</a>
                   </div>
                 </li>
@@ -42,7 +43,7 @@
                     <a class="dropdown-item" href="{% url 'svarshik' %}#head__page">Специальная подготовка сварщиков <br> и специалистов сварочного производства</a>
                     <a class="dropdown-item" href="{% url 'svarproizvodstva' %}#head__page">Аттестация сварщиков <br> и специалистов сварочного производства</a>
                     <a class="dropdown-item" href="{% url 'atestatsvaroborud' %}#head__page">Аттестация сварочного оборудования</a>
-                    <a class="dropdown-item" href="{% url 'atestatechonlogy' %}#head__page">Аттестация технологий сварки</a>                    
+                    <a class="dropdown-item" href="{% url 'atestatechonlogy' %}#head__page">Аттестация технологий сварки</a>
 
                   </div>
                 </li>
@@ -58,7 +59,7 @@
                   </a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'contacti' %}#head__page">Контакты
+                  <a class="nav-link" href="{% url 'contact' %}#head__page">Контакты
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>

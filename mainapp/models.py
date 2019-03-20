@@ -83,7 +83,7 @@ class Post(ContentMixin):
         verbose_name_plural = "Страницы"
 
     def get_absolute_url(self):
-        return reverse("detailview",
+        return reverse("details",
                        kwargs={"content": "post", "pk": self.pk})
 
     def publish(self):
