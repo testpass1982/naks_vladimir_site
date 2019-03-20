@@ -84,7 +84,7 @@ class Post(ContentMixin):
 
     def get_absolute_url(self):
         return reverse("details",
-                       kwargs={"content": "post", "pk": self.pk})
+                       kwargs={"pk": self.pk})
 
     def publish(self):
         """unused function"""

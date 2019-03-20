@@ -1,174 +1,60 @@
 {% extends 'mainapp/index.html' %}
 {% load static %}
 {% block content %}
-    <div class="container">
+<div class="container">
 
-        <button class="back__to__main" id="head__page">
-            <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center"
-                    alt="">
-                На главную</a>
-        </button>
+    <button class="back__to__main" id="head__page">
+        <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+                class="arrow__back__to__main text-align-center" alt="">
+            На главную</a>
+    </button>
 
 
-        <div class="row">
-            <div class="col-xl-2">
-                <div class="header__inside__pages">Все новости</div>
+    <div class="row">
+        <div class="col-xl-2">
+            <div class="header__inside__pages">Все новости</div>
+        </div>
+        <div class="col-xl-10">
+            <div class="row">
+                {% for publication in news %}
+                <div class="col-xl-3">
+                    <div class="block__news">
+                        <a href="{% url 'details' publication.post.pk %}" class="link__news">
+                            <div class="box__news">
+                                <p class="data__news__main">{{ publication.post.published_date }}</p>
+                                <p class="box__news__text">
+                                    {{ publication.post.title }}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-xl-2"></div>
-            <div class="col-xl-3">
-                                <div class="block__news">
-                    <a href="{% url 'news' %}" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                 <div class="line__otstup__inside__pages__news"></div>
-                <div class="block__news">
-                    <a href="{% url 'news' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                 <div class="line__otstup__inside__pages__news"></div>
-                <div class="block__news">
-                    <a href="{% url 'news' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="line__otstup__inside__pages__news"></div>
-            </div> 
-            <div class="line__otstup__inside__pages__news"></div>          
-            <div class="col-xl-3">
-                <div class="block__news">
-                    <a href="{% url 'news' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                 <div class="line__otstup__inside__pages__news"></div>
-                <div class="block__news">
-                    <a href="{% url 'news_two' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                 <div class="line__otstup__inside__pages__news"></div>
-                <div class="block__news">
-                    <a href="{% url 'news_two' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="line__otstup__inside__pages__news"></div>
-            </div>              
-                     
-            <div class="col-xl-3">
-                <div class="block__news">
-                    <a href="{% url 'news_two' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                 <div class="line__otstup__inside__pages__news"></div>
-                <div class="block__news">
-                    <a href="{% url 'news_two' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                 <div class="line__otstup__inside__pages__news"></div>
-                <div class="block__news">
-                    <a href="{% url 'news_two' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-end">
-                          <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Назад</a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="all-{% url 'news_two' %}#all-news">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">4</a></li>
-                          <li class="page-item"><a class="page-link" href="#">5</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#">Вперед</a>
-                          </li>
-                        </ul>
-                      </nav>
-            </div>                       
-        </div>
-        
-
-
-
-        <div class="line__otstup__inside__pages"></div>
-
-        <button class="back__to__main">
-            <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center"
-                    alt="">
-                На главную</a>
-        </button>
-        <div class="line__otstup__inside__pages"></div>
     </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Назад</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Вперед</a>
+            </li>
+        </ul>
+    </nav>
+
+    <button class="back__to__main">
+        <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+                class="arrow__back__to__main text-align-center" alt="">
+            На главную</a>
+    </button>
+    <div class="line__otstup__inside__pages"></div>
+</div>
 {% endblock %}

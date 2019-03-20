@@ -1,4 +1,4 @@
-{% load staticfiles %}<!DOCTYPE html>
+{% load staticfiles %}{% load sass_tags %}<!DOCTYPE html>
 <html lang="en">
 
 
@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Аттестационный центр НАКС Владимир</title>
+  <title>АЦ Техкранэнерго</title>
 
     {% block css %}
   <!-- BOOTS -->
@@ -14,7 +14,6 @@
     crossorigin="anonymous">
 
   <!-- SCRIPT -->
-  <script src="js/w3.js"></script>
   <!-- END SCRIPT -->
 
   <!-- <link rel="stylesheet" href="fonts/font.css"> -->
@@ -22,7 +21,7 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'css/animate.css' %}">
   <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% sass_src 'scss/style.scss' %}">
     {% endblock %}
 
 

@@ -111,7 +111,7 @@ def news(request):
         # 'bottom_related': articles
 
     }
-    return render(request, 'mainapp/news.html', content)
+    return render(request, 'mainapp/all_news.html', content)
 
 def contact(request):
     return render(request, 'mainapp/contacti.html')
@@ -143,41 +143,31 @@ def profstandard(request):
 def svarproizvodstva(request):
     return render(request, 'mainapp/svarproizvodstva.html')
 
-def details(request, content=None, pk=None):
+def details(request, pk):
     print(request.resolver_match)
     print(request.resolver_match.url_name)
     return_link = HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-    if request.GET:
-        content = request.GET.get('content_type')
-        pk = request.GET.get('pk')
-
-    content_select = {
-        'post': Post,
-        'article': Article
-    }
-
-    obj = get_object_or_404(content_select[content], pk=pk)
+    obj = get_object_or_404(Post, pk=pk)
     print(obj)
     common_content = {'title': obj.title}
-    if content == 'post':
-        attached_images = PostPhoto.objects.filter(post__pk=pk)
-        attached_documents = Document.objects.filter(post__pk=pk)
+    attached_images = PostPhoto.objects.filter(post__pk=pk)
+    attached_documents = Document.objects.filter(post__pk=pk)
 
-        # side_related = Post.objects.filter(publish_on_news_page=True).exclude(
-        #     id=pk).order_by('-published_date')[:3]
-        side_related = Document.objects.all().order_by('-created_date')[:3]
-        # side_related_posts = [dict({'post': post, 'picture': PostPhoto.objects.filter(
-        #     post__pk=post.pk).first()}) for post in side_related]
-        post_content = {
-            'post': obj,
-            'images': attached_images,
-            'documents': attached_documents,
-            'side_related': side_related,
-            'bottom_related': Article.objects.all().order_by(
-                '-created_date')[:3]
-        }
-    return render(request, 'mainapp/news_two.html')
+    # side_related = Post.objects.filter(publish_on_news_page=True).exclude(
+#     id=pk).order_by('-published_date')[:3]
+    # side_related = Document.objects.all().order_by('-created_date')[:3]
+    # side_related_posts = [dict({'post': post, 'picture': PostPhoto.objects.filter(
+    #     post__pk=post.pk).first()}) for post in side_related]
+    post_content = {
+        'post': obj,
+        'images': attached_images,
+        # 'documents': attached_documents,
+        # 'side_related': side_related,
+        # 'bottom_related': Article.objects.all().order_by(
+            # '-created_date')[:3]
+    }
+    return render(request, 'mainapp/post_details.html', post_content)
 
 def atestatechonlogy(request):
     return render(request, 'mainapp/atestatechonlogy.html')

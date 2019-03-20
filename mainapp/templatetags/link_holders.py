@@ -9,7 +9,7 @@ register = template.Library()
 def link_holder(url_code):
     try:
         post = Post.objects.get(url_code=url_code)
-        link = reverse('detailview', kwargs={'content': 'post', 'pk': post.pk})
+        link = reverse('details', kwargs={'pk': post.pk})
     except Post.DoesNotExist:
         link = '#'
     return link
