@@ -15,6 +15,7 @@ from .message_tracker import MessageTracker
 from .utilites import UrlMaker
 from .registry_import import Importer, data_url
 # Create your views here.
+from django.conf import settings
 def index(request):
 
     """this is mainpage view with forms handler and adapter to messages"""
@@ -44,41 +45,20 @@ def index(request):
             raise ValidationError('form not valid')
 
     main_page_news = Post.objects.filter(
-        publish_on_main_page=True).order_by('-published_date')[:2]
-
-    not_pictured_posts = Post.objects.filter(
-        secondery_main=True).order_by('-published_date')[:3]
-
-    main_page_documents = Document.objects.filter(
-        publish_on_main_page=True).order_by('-created_date')[:3]
-
-    # main_page_secondery_news = Post.objects.filter(
-    #     secondery_main=True).order_by('-published_date')[:4]
-    pictured_posts = {}
-    for post in main_page_news:
-        pictured_posts[post] = PostPhoto.objects.filter(post__pk=post.pk).first()
-    # print(pictured_posts)
-
-    main_page_articles = Article.objects.filter(
-        publish_on_main_page=True).order_by('-published_date')[:3]
-
-    main_page_links = Menu.objects.all()
-
-    # print(request.resolver_match)
-    # print(request.resolver_match.url_name)
+        publish_on_main_page=True).order_by('-published_date')[:4]
 
     content = {
         'title': title,
-        'pictured_posts': pictured_posts,
-        'not_pictured_posts': not_pictured_posts,
-        'articles': main_page_articles,
-        'docs': main_page_documents,
+        # 'pictured_posts': pictured_posts,
+        'posts': main_page_news,
+        # 'articles': main_page_articles,
+        # 'docs': main_page_documents,
         'send_message_form': SendMessageForm(),
         'subscribe_form': SubscribeForm(),
         'ask_question_form': AskQuestionForm(),
     }
 
-    return render(request, 'mainapp/index.html')
+    return render(request, 'mainapp/index.html', content)
 
 def svarshik(request):
     return render(request, 'mainapp/svarshik.html')
@@ -90,11 +70,12 @@ def news(request):
         publish_on_news_page=True).order_by('-created_date')
     # all_documents = Document.objects.all().order_by('-created_date')[:5]
     # side_posts = Post.objects.all().order_by('-created_date')[:4]
-    post_list = [dict({'post': post, 'picture': PostPhoto.objects.filter(
-        post__pk=post.pk).first()}) for post in all_news]
+    # post_list = [dict({'post': post, 'picture': PostPhoto.objects.filter(
+    #     post__pk=post.pk).first()}) for post in all_news]
     # показываем несколько новостей на странице
-    print(post_list)
-    paginator = Paginator(post_list, 6)
+    # print(post_list)
+    # import pdb; pdb.set_trace()
+    paginator = Paginator(all_news, 8)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
 
@@ -103,13 +84,13 @@ def news(request):
     # print(request.resolver_match)
     # print(request.resolver_match.url_name)
     print(posts)
+    # import pdb; pdb.set_trace()
     content = {
         'title': title,
         'news': posts,
         # 'documents': all_documents,
         # 'side_posts': side_posts,
         # 'bottom_related': articles
-
     }
     return render(request, 'mainapp/all_news.html', content)
 
@@ -117,10 +98,23 @@ def contact(request):
     return render(request, 'mainapp/contacti.html')
 
 def doc(request):
-    documents = Document.objects.all()
+    personal_documents = Document.objects.filter(category__name=settings.ACSP_CODE)
+    csp_documents = Document.objects.filter(category__name=settings.CSP_CODE)
+    acso_documents = Document.objects.filter(category__name=settings.ACSO_CODE)
+    acst_documents = Document.objects.filter(category__name=settings.ACST_CODE)
     content = {
         'title': 'Documents',
-        'docs': documents
+        'codes': {
+            'personal': settings.ACSP_CODE,
+            'csp': settings.CSP_CODE,
+            'acso': settings.ACSO_CODE,
+            'acst': settings.ACST_CODE,
+        },
+        'personal_documents': personal_documents,
+        'csp_documents': csp_documents,
+        'acso_documents': acso_documents,
+        'acst_documents': acst_documents,
+        # 'cok_documents': cok_documents,
     }
     return render(request, 'mainapp/doc.html', content)
 
@@ -153,17 +147,17 @@ def details(request, pk):
     common_content = {'title': obj.title}
     attached_images = PostPhoto.objects.filter(post__pk=pk)
     attached_documents = Document.objects.filter(post__pk=pk)
-
-    # side_related = Post.objects.filter(publish_on_news_page=True).exclude(
-#     id=pk).order_by('-published_date')[:3]
+    # import pdb; pdb.set_trace()
+    side_related = Post.objects.filter(publish_on_news_page=True).exclude(
+                id=pk).order_by('-published_date')[:4]
     # side_related = Document.objects.all().order_by('-created_date')[:3]
     # side_related_posts = [dict({'post': post, 'picture': PostPhoto.objects.filter(
     #     post__pk=post.pk).first()}) for post in side_related]
     post_content = {
         'post': obj,
         'images': attached_images,
-        # 'documents': attached_documents,
-        # 'side_related': side_related,
+        'documents': attached_documents,
+        'side_related': side_related,
         # 'bottom_related': Article.objects.all().order_by(
             # '-created_date')[:3]
     }

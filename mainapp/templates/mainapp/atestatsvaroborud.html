@@ -74,30 +74,7 @@
 
             <div class="col-xl-2">
 
-                <div class="sider__bar__service__pages">
-                    <p class="trebovanie__left__column">
-                        Требования к аттестации:
-                    </p>
-                    <a href="" class="trebovanie__list">
-                        <p>
-                            • ПБ 03-273-99</p>
-                    </a>
-                    <a href="" class="trebovanie__list">
-                        <p>
-                            • РД 03-495-02</p>
-                    </a>
-                    <p class="right__column__header">
-                        Подать заявку на аттестацию:
-                    </p>
-                    <div class="list__service__column">
-               <p class="small__column__text"><a href="{% url 'svarshik' %}#head__page">Специальная подготовка сварщиков 
-и специалистов сварочного производства</a></p>           
-            <p class="small__column__text"><a href="{% url 'svarproizvodstva' %}#head__page"> Аттестация сварщиков 
-и специалистов сварочного производства</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatsvaroborud' %}#head__page"> Аттестация 
-сварочного оборудования</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatechonlogy' %}#head__page">Аттестация 
-технологий сварки</a></p>
+                {% include 'mainapp/includes/side_services_panel.html' %}
 
                     </div>
                 </div>
@@ -116,4 +93,4 @@
         <div class="line__otstup__inside__pages"></div>
     </div>
 
- {% endblock  %}        
+ {% endblock  %}

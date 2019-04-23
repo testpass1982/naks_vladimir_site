@@ -10,7 +10,7 @@
 
 
     <div class="row">
-      <div class="col-xl-2">        
+      <div class="col-xl-2">
       </div>
       <div class="col-xl-7">
           <div class="header__inside__pages">О центре</div>
@@ -29,13 +29,13 @@
                   Герасимова Татьяна Васильевна
               </p>
               <p class="rukovodstvo__header">
-                  Заместитель директора 
+                  Заместитель директора
               </p>
               <p class="rukovodstvo">
                   Лопанов Илья Юрьевич
               </p>
               <p class="rukovodstvo__header">
-                  Исполнительный директор 
+                  Исполнительный директор
               </p>
               <p class="rukovodstvo">
                   Сазонов Сергей Феликсович
@@ -45,7 +45,7 @@
               <p class="link__inside__pages"> <a href="{% url 'doc' %}#head__page">Заявки для аттестации в нашем центре</a></p>
               <p class="link__inside__pages"> <a href="{% url 'reestr' %}#head__page">Ресстр САСв нашего центра</a></p>
               <p class="link__inside__pages"> <a href="{% url 'profstandard' %}#head__page">Профстандарты в области сварки</a></p>
-        
+
         <div class="line__inside_pages"></div>
         <p class="small__header__pages">
          Аттестаты соответствия
@@ -69,48 +69,14 @@
                   </a>
                   <a href="{% static '/img/img_at6.jpg' %}" class="img_box" data-fancybox="group1" data-type="image">
                       <img src="{% static '/img/img_at6.jpg' %}" class="img-fluid">
-                  </a>                 
+                  </a>
               </p>
           </main>
       </div>
 
       <div class="col-xl-2">
 
-        <div class="sider__bar__center__page">
-          <p class="trebovanie__left__column">
-            Требования к аттестациям:
-          </p>
-          <a href="" download="#" class="trebovanie__list">
-            <p>
-              • ПБ 03-273-99</p>
-          </a>
-          <a href="" download="#" class="trebovanie__list">
-            <p>
-              • РД 03-615-03</p>
-          </a>
-          <a href="" download="#" class="trebovanie__list">
-            <p>
-              • РД 03-613-03</p>
-          </a>
-          <a href="" download="#" class="trebovanie__list">
-            <p>
-              • РД 03-614-03</p>
-          </a>
-          <p class="right__column__header">
-            Подать заявку на аттестацию:
-          </p>
-          <div class="list__service__column">
-            <p class="small__column__text"><a href="{% url 'svarshik' %}#head__page">Специальная подготовка сварщиков 
-и специалистов сварочного производства</a></p>           
-            <p class="small__column__text"><a href="{% url 'svarproizvodstva' %}#head__page"> Аттестация сварщиков 
-и специалистов сварочного производства</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatsvaroborud' %}#head__page"> Аттестация 
-сварочного оборудования</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatechonlogy' %}#head__page">Аттестация 
-технологий сварки</a></p>
-
-          </div>
-        </div>
+       {% include 'mainapp/includes/side_services_panel.html' %}
       </div>
     </div>
 

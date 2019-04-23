@@ -60,63 +60,23 @@
                 </div>
             </div>
         </div>
+        {% comment %} news_block {% endcomment %}
         <div class="row">
+            {% for post in posts %}
             <div class="col-xl-3">
                 <div class="block__news">
-                    <a href="{% url 'news' %}#head__page" class="link__news">
+                    <a href="{% url 'details' post.pk %}#head__page" class="link__news">
                         <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
+                            <p class="data__news__main">{{ post.published_date }}</p>
                             <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
+                                {{ post.title }}
                             </p>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-xl-3">
-                <div class="block__news">
-                    <a href="{% url 'news' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="block__news">
-                    <a href="{% url 'news' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="block__news">
-                    <a href="{% url 'news' %}#head__page" class="link__news">
-                        <div class="box__news">
-                            <p class="data__news__main">25 Декабря 2018</p>
-                            <p class="box__news__text">
-                                Соглашение о сотрудничестве между Саморегулируемой организацией Ассоциация
-                                "Национальное Агентство Контроля Сварки" и Ассоциацией производителей качественной
-                                продукции
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
         <div class="row">
             <div class="col-xl-3">

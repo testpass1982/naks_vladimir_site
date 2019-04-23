@@ -7,16 +7,41 @@
       <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center" alt="">
         На главную</a>
     </button>
-
-
     <div class="row">
       <div class="col-xl-2">
       </div>
       <div class="col-xl-7">
         <div class="header__inside__pages">Документы</div>
-        <p class="header__doc">Список документов ВВР-2ГАЦ</p>
-        <p class="doc__name__list">Наименование документов</p>
-        {% for doc in docs %}
+        <p class="header__doc">Список документов для аттестации персонала сварочного производства ({{ codes.personal }})</p>
+        <p class="doc__name__list">Наименования документов</p>
+        {% for doc in personal_documents %}
+        <a href="{{ doc.document.url }}" download="">
+          <div class="doc__content">
+            <p class="doc__name">{{ doc.title }}</p>
+          </div>
+        </a>
+        {% endfor %}
+        <p class="header__doc">Список документов для специальной подготовки ({{ codes.csp }})</p>
+        <p class="doc__name__list">Наименования документов</p>
+        {% for doc in csp_documents %}
+        <a href="{{ doc.document.url }}" download="">
+          <div class="doc__content">
+            <p class="doc__name">{{ doc.title }}</p>
+          </div>
+        </a>
+        {% endfor %}
+        <p class="header__doc">Список документов для аттестации сварочного оборудования ({{ codes.acso }})</p>
+        <p class="doc__name__list">Наименования документов</p>
+        {% for doc in acso_documents %}
+        <a href="{{ doc.document.url }}" download="">
+          <div class="doc__content">
+            <p class="doc__name">{{ doc.title }}</p>
+          </div>
+        </a>
+        {% endfor %}
+        <p class="header__doc">Список документов для аттестации сварочных технологий ({{ codes.acst }})</p>
+        <p class="doc__name__list">Наименования документов</p>
+        {% for doc in acst_documents %}
         <a href="{{ doc.document.url }}" download="">
           <div class="doc__content">
             <p class="doc__name">{{ doc.title }}</p>

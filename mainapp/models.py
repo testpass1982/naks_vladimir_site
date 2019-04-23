@@ -13,8 +13,9 @@ from django.utils.text import slugify
 from django.urls import reverse
 #using this as a store for weld orgs:
 from picklefield.fields import PickledObjectField
-# from django_resized import ResizedImageField
+from django.conf import settings
 
+# from django_resized import ResizedImageField
 
 # Create your models here.
 class Tag(models.Model):
@@ -37,8 +38,8 @@ class Category(models.Model):
     name = models.CharField(max_length=64)
 
     class Meta:
-        verbose_name = "Раздел"
-        verbose_name_plural = "Разделы"
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
 
     def __str__(self):
         return self.name
@@ -125,6 +126,16 @@ class Document(models.Model):
     uploaded_at = models.DateTimeField(
         verbose_name='Загружен', default=timezone.now)
     tags = models.ManyToManyField(Tag, verbose_name='Тэги', blank=True)
+    category = models.ForeignKey(Category, blank=True, null=True,
+                                           default=None,
+                                           on_delete=models.SET_NULL, help_text="""
+                                           Используйте это поле для категорий раздела документы:<br>
+                                           В раздел аттестации персонала: категория {},<br>
+                                           В раздел спецподготовки: категория {},<br>
+                                           В раздел аттестации сварочного оборудования: категория {},<br>
+                                           В раздел аттестации сварочных технология: категория {}
+                                           """.format(settings.ACSP_CODE, settings.CSP_CODE,
+                                                      settings.ACSO_CODE, settings.ACST_CODE))
     created_date = models.DateTimeField(
         default=timezone.now, verbose_name='Дата создания')
     post = models.ForeignKey(Post, verbose_name='Страница',

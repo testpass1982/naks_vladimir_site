@@ -178,7 +178,7 @@ body { font-family: "Avenir Next Cyr", sans-serif; font-size: 12px; line-height:
 
 .link__read__news a { text-decoration: none; font-size: 14px; color: #0066ac; font-weight: 450; }
 
-.block__news { height: 100%; }
+.block__news { margin-bottom: 10px; }
 
 .block__news a { text-decoration: none; }
 

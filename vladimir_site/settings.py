@@ -29,6 +29,13 @@ DEBUG = True
 # ALLOWED_HOSTS = ['vladimir_site.minml.ru']
 ALLOWED_HOSTS = ['*']
 
+#ORG PROFILE
+ORG_FULL_NAME = 'Автономная некоммерческая организация Центр экспертизы и сертификации "Техкранэнерго"'
+ORG_SHORT_NAME = 'АНО ЦЭС "Техкранэнерго"'
+ACSP_CODE = 'ВВР-2ГАЦ'
+CSP_CODE = 'ВВР-3ЦСП'
+ACSO_CODE = 'АЦСО-46'
+ACST_CODE = 'АЦСТ-33'
 
 # Application definition
 
@@ -68,7 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                 # 'mainapp.context_processors.menu_urls',
+                'mainapp.context_processors.random_documents',
             ],
         },
     },

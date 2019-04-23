@@ -6,6 +6,8 @@ from mainapp.models import Contact, Document
 from django.conf import settings
 from mixer.backend.django import mixer
 import random
+from django.conf import settings
+
 # from model_mommy.recipe import Recipe, foreign_key, seq
 
 images = [
@@ -36,10 +38,10 @@ menu_urls = [
     'INFO', 'OBLD', 'OBLDATT', 'PROFST', 'REGISTRY', 'RKNK', 'SPECSVAR', 'VSENOVOSTI', 'ZAYAV', 'SOSTAV_KOMISS'
 ]
 menu_urls_titles = [
-    'О центре', 'Аттестация сварщиков и специалистов', 'Аттестация сварщиков', 
+    'О центре', 'Аттестация сварщиков и специалистов', 'Аттестация сварщиков',
     'Аттестация специалистов', 'Аттестация сварочных технологий', 'Центр оценки квалификации',
-    'Контакты', 'Документы и заявки', 'Информация для заявителей', 'Область деятельности', 
-    'Область аттестации', 'Профессиональные стандарты', 'Реестры', 'Разрушающий и неразрушающий контроль', 
+    'Контакты', 'Документы и заявки', 'Информация для заявителей', 'Область деятельности',
+    'Область аттестации', 'Профессиональные стандарты', 'Реестры', 'Разрушающий и неразрушающий контроль',
     'Спецподготовка сварщиков', 'Все новости', 'Заявки', 'Состав комиссии',
 ]
 
@@ -60,7 +62,7 @@ class Command(BaseCommand):
             #make Tags
             mixer.blend(Tag),
             #make Categories
-            mixer.blend(Category),
+            # mixer.blend(Category),
             #make Posts without pictures
             mixer.blend(Post, title=random.choice(news_titles))
             mixer.blend(PostPhoto,
@@ -77,6 +79,11 @@ class Command(BaseCommand):
             mixer.blend(Menu, url_code=menu_urls[i], url=reverse(
                 'details', kwargs={'pk': Post.objects.first().pk}),
                 title=menu_urls_titles[i])
+
+        Category.objects.create(name=settings.ACSP_CODE)
+        Category.objects.create(name=settings.CSP_CODE)
+        Category.objects.create(name=settings.ACSO_CODE)
+        Category.objects.create(name=settings.ACST_CODE)
         # for i in range(0, len(images)):
         #     PostPhoto.objects.create(
         #         title ='image{}'.format(i),

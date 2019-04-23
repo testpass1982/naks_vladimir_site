@@ -505,7 +505,7 @@ body {
 }
 
 .box__service {
-    
+
     padding: 35px;
     // width: 600px;
     background-color: #03274b;
@@ -556,7 +556,7 @@ body {
 
 .block__news {
     // border-bottom: 1px solid #e8e8e8;
-    height: 100%;
+    margin-bottom: 10px;
 }
 
 .block__news a {
@@ -927,7 +927,7 @@ body {
     margin-top: 25px;
     margin-bottom: 25px;
     background-color: #ffffff;
-    padding: 25px;    
+    padding: 25px;
     border-left: 1px solid #c5deff;
     box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03);
 
@@ -1604,7 +1604,7 @@ input[type=file] {
     display: block;
     font-size: 14px;
     color: #8d8d8d;
-  
+
 
     &:hover {
         color: #585858;
@@ -1667,7 +1667,7 @@ input[type=file] {
 .link__read__news__inside {
     margin-top: 15px;
     margin-bottom: 25px;
-    
+
 }
 
 .link__read__news__inside a {

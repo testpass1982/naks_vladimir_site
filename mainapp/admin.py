@@ -74,7 +74,7 @@ get_tag_list.short_description = 'Список тэгов'
 
 @admin.register(Document)
 class DocumentAdmin(admin.ModelAdmin):
-    list_display = ['title', get_tag_list, 'publish_on_main_page']
+    list_display = ['title', get_tag_list, 'publish_on_main_page', 'category']
 
 
 @admin.register(Article)
@@ -123,8 +123,9 @@ class MessageAdmin(admin.ModelAdmin):
 class MenuAdmin(admin.ModelAdmin):
     list_display = ['title', 'url_code', 'url']
 
-admin.site.register(Tag)
 admin.site.register(Category)
+
+admin.site.register(Tag)
 admin.site.register(Contact)
 admin.site.register(Staff)
 admin.site.register(Registry)
