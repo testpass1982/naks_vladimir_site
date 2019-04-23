@@ -27,7 +27,7 @@ SECRET_KEY = 'enc8+q14&-p5k3%qjhu)%b0wca3cse2nhx)g50ipgg1grq1j4!'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['vladimir_site.minml.ru']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
