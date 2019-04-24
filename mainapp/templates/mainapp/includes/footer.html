@@ -10,12 +10,16 @@
                 <p class="naks__web__footer">
                     <a href="http://www.naks.ru" target="_blank" title="Национальное Агентство Контроля Сварки">www.naks.ru
                         &nbsp | &nbsp </a>
-                    <a href="http://www.spks.naks.ru" target="_blank" title="Совет по профессиональным квалификациям в области сварки">www.spks.naks.ru</a>
+                    <a href="http://spks.naks.ru/news/" target="_blank" title="Совет по профессиональным квалификациям в области сварки">www.spks.naks.ru</a>
                 </p>
 
             </div>
             <div class="col-lg-4 col-xl-3">
-                <img src="{% static '/img/rsps__logo.png' %}" alt="" title="Член Российского Сварочного Профессионального Сообщества">
+                <div class="rsps_logo d-inline-block">
+                    <a href="http://www.rsps.site" target="_blank">
+                        <img src="{% static '/img/rsps_logo.png' %}" alt="">
+                    </a>
+                </div>
             </div>
             <div class="col-lg-4 col-xl-2">
                     <div class="info__footer__block">
@@ -51,7 +55,7 @@
             <div class="col-lg-4 col-xl-4">
               
                 <div class="prava__footer">
-                    © 1994 - 2019 ООО АЦ «НАКС Стандарт-Диагностик». Все права защищены.
+                    © 2019 АНО ЦЭС «Техкранэнерго». Все права защищены.
                 </div>
                 <a href="{% url 'political' %}#head__page" class="political__footer d-inline-block">Политика конфиденциальности</a>
                
