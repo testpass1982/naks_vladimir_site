@@ -1,0 +1,35 @@
+.box_content_news {
+    background-color: #eff4ff;
+    padding: 85px 0px 85px;
+}
+
+
+.headline_name_news{
+    font-size: 18px;
+    font-weight: 650;
+    line-height: 1.8;
+    padding: 0px 0px 5px;    
+}
+
+.text_for_news{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.6;
+    padding: 10px 0px 25px;
+}
+
+.more_news {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    a {
+        padding: 10px 40px;
+        border: 1px solid #4e88ff;
+        color: #131313;
+        font-weight: 450;
+        text-decoration: none;
+        font-size: 16px;
+       
+    }
+}

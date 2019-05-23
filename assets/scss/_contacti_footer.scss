@@ -1,0 +1,101 @@
+.box_contacti_footer {
+    background-color: #16376a;
+    padding: 55px 0px 55px;
+}
+
+.number_contacti_footer {
+    a {
+        font-size: 26px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            color: #fbba00;
+            transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -ms-transition: 0.3s;
+            -o-transition: 0.3s;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        text-align: center;
+    }
+
+}
+
+.icon_footer {
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+}
+
+.number_text {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 450;
+
+    @media screen and (max-width: 576px) {
+        text-align: center;
+    }
+}
+
+
+.text_adres {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 450;
+
+    @media screen and (max-width: 576px) {
+        text-align: center;
+    }
+}
+
+.on_map a {
+    color: #fbba00;
+    text-decoration: underline;
+}
+
+.button_footer_feedback {
+    background-color: transparent;
+    border: none;
+    float: right;
+    @media screen and (max-width: 992px) {
+        float: none;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    a {
+        background-color: #007bff;
+        padding: 12px 55px;
+        border-radius: 25px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+
+        &:hover {
+            background-color: #258eff;
+            transition: 0.3s;
+            ;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -ms-transition: 0.3s;
+            -o-transition: 0.3s;
+        }
+    }
+}
+
+.footer_block_items {
+    @media screen and (max-width: 992px) {
+        text-align: center;
+        padding: 0px 0px 10px;
+    }
+}

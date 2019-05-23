@@ -5,14 +5,12 @@ body {
     font-size: 12px;
     line-height: 1.5;
     background-color: #fff;
-    opacity: 0;
-    transition: .4s;
 }
 
 
 @media (min-width: 360px) {
     .container {
-        max-width: 1800px;
+        max-width: 1600px;
     }
 }
 
@@ -20,6 +18,22 @@ body {
     margin-top: 35px;
     margin-bottom: 35px;
 }
+
+.box_content{
+    padding: 85px 0px 85px;
+}
+
+.headline_box_text {
+    font-size: 32px;
+    font-weight: 400;
+    color: #000;
+    padding: 0px 15px 0px;    
+}
+
+.box_headline_include{
+    padding: 0px 0px 35px;
+}
+
 
 .back__to__main {
     border: none;
@@ -33,11 +47,11 @@ body {
         text-decoration: none;
         color: #000000;
         padding: 15px;
-        background-color: rgb(238, 238, 238);
+        border: 1px solid rgb(238, 238, 238);
         border-radius: 3px;
 
         &:hover {
-            background-color: rgb(233, 233, 233);
+            background-color: rgb(243, 243, 243);
         }
     }
 }
@@ -56,12 +70,11 @@ body {
 // Хедр
 
 
-.box__items {
-    padding: 25px 0px;
-
+.box_header_items {
+padding: 40px 0px 40px;
     @media screen and (max-width: 992px) {
-
         text-align: center;
+        padding: 25px 0px 25px;
     }
 
     @media screen and (max-width: 576px) {
@@ -71,9 +84,9 @@ body {
 }
 
 .header__logo {
-    padding: 35px 0px 45px;
     @media screen and (max-width: 1488px) {
-width: 200px;;
+        width: 200px;
+   
     }
 }
 
@@ -88,24 +101,65 @@ width: 200px;;
 }
 
 .number {
-    font-size: 28px;
-    font-weight: 300;
-    margin-bottom: 0;
+    font-size: 20px;
+    // font-weight: 300;
+    // margin-bottom: 0;
+    color: #fff;
 
     @media screen and (max-width: 1400px) {
         font-size: 22px;
     }
 }
 
+.number_header {
+    font-size: 26px;
+    font-weight: 500;
+    color: #242424;
+    @media screen and (max-width: 1400px) {
+        font-size: 22px;
+    }
+    @media screen and (max-width: 992px) {
+        font-size: 14px;
+    }
+}
+
+.enter_system_edo::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 0;
+    margin-top: 5px;
+    background: url(/static/img/enter_system.png) center 0 no-repeat;
+}
+
+.button_edo_header{
+    @media screen and (max-width: 992px) {
+        padding: 25px 0px 25px;
+    }
+}
+
+.enter_system_link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 25px;
+}
+
 .adres__block {
-    margin-top: -10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+
+    @media screen and (min-width: 1000px) {
+        margin-top: 15px;
+    }
 
     a {
         text-decoration: underline;
     }
 
     @media screen and (max-width: 696px) {
-        margin: 0;
+        margin: 10px;
     }
 }
 
@@ -136,7 +190,7 @@ width: 200px;;
     box-shadow: none;
     color: #4f8ff5;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     padding: 0;
     text-align: right;
@@ -161,7 +215,7 @@ width: 200px;;
 .text__adres {
     font-weight: 400;
     font-size: 14px;
-    color: #000;
+    color: #fff;
     margin-bottom: 0;
     margin-top: 25px;
 
@@ -169,10 +223,12 @@ width: 200px;;
 
 .click__on__map {
     margin-top: -15px;
+    font-size: 12px;
+    font-weight: 450;
 
     @media screen and (max-width: 576px) {
-        font-size: 18px;
-        margin-top: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
     }
 }
 
@@ -180,8 +236,12 @@ width: 200px;;
     font-size: 28px;
     font-weight: 300;
     margin-bottom: 0;
+    color: #fff;
 }
 
+.consultation__text {
+    color: #fff;
+}
 
 .feedback__button__mob {
     padding: 0;
@@ -266,32 +326,57 @@ width: 200px;;
 .background {
     background: url(/static/img/background.png) no-repeat;
     background-size: cover;
-}
-
-
-.bg__text {
-    padding: 45px 0px;
-}
-
-.bg__text__head {
-    font-size: 36px;
-    font-weight: 550;
-    color: #fff;
-    vertical-align: middle;
-    text-align: center;
-
-    @media screen and (max-width: 320px) {
-        font-size: 20px;
+    padding: 40px;
+    @media screen and (max-width: 1199px) {
+        padding: 15px;
     }
 }
 
-.bg__text__small {
-    font-size: 18px;
+.bg_left_column_info {
+    background-color: #16386aad;
+    padding: 60px;
+    @media screen and (max-width: 1200px) {
+        padding: 25px;
+    }
+}
+
+.bg_text_head {
+    font-size: 42px;
+    font-weight: 550;
+    color: #fff;
+
+    @media screen and (max-width: 320px) {
+        font-size: 18px;
+    }
+}
+
+.bg_text_headline_right_column {
+    font-size: 22px;
     font-weight: 450;
     color: #fff;
-    vertical-align: middle;
-    text-align: center;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 1199px) {
+        margin-top: 35px;
+        margin-bottom: 20px;
+    }
+}
+
+.bg_padding_info {
+    padding: 50px 0px;
+}
+
+.bg__text_right_column {
+    background-color: #005abb71;
+    padding: 35px;
+}
+
+.bg_text_small {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
     line-height: 1.8;
+    margin-bottom: 0px;
 
     @media screen and (max-width: 320px) {
         font-size: 14px;
@@ -302,8 +387,11 @@ width: 200px;;
     font-size: 16px;
     font-weight: 500;
     color: #fff;
-    vertical-align: middle;
-    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
 .bg__line {
@@ -316,30 +404,27 @@ width: 200px;;
     margin-top: 15px;
 }
 
-.online__zayavka__button {
-    vertical-align: middle;
-    text-align: center;
-    margin-top: 15px;
-}
 
 .button__zayavka {
-    background-color: #3eb5f1;
+    background-color: #fbba00;
     border: none;
-    border-radius: 3px;
-    color: #fff;
-    font-weight: 400;
+    color: rgb(0, 0, 0);
+    font-weight: 450;
     padding: 10px 25px;
-    text-transform: uppercase;
     font-size: 18px;
     cursor: pointer;
 
     &:hover {
-        background-color: #35a9e4;
-        transition: 0.2s;
+        background-color: #fdbe10;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
     }
 
     &:active {
-        background-color: #2891c5;
+        background-color: #e7aa02;
         transition: 0.2s;
     }
 
@@ -349,32 +434,69 @@ width: 200px;;
     }
 }
 
-.naks__web a {
-    text-decoration: none;
-    color: #ffffff;
+.button_services {
+    background-color: transparent;
+    border: none;
 
-    &:hover {
-        color: #0087e0;
+    a {
+        border: 1px solid #fff;
+        padding: 12px 53px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #fff;
+        margin-left: 15px;
+
+        &:hover {
+            background-color: #ffffff2d;
+            transition: 0.2s;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -ms-transition: 0.2s;
+            -o-transition: 0.2s;
+        }
     }
 }
 
-.naks__web {
-    text-align: center;
+.info_box_text {
     font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    color: #ffffff;
+    margin-bottom: 0px;
+}
 
+.info_box_text_small {
+    font-size: 13px;
+    color: #4b5c72;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.naks_link {
+    font-size: 13px;
+    font-weight: 300;
+    text-decoration: underline;
+
+    a {
+        color: #ffffff;
+        line-height: 1.8;
+    }
+
+}
+
+.naks_link .spks_link {
+    margin-left: 10px;
+    text-decoration: underline;
 }
 
 .feedback__button {
     padding: 0;
     background-color: transparent;
     border: none;
-    margin-top: 10px;
+    width: 100%;
+    // margin-top: 10px;
 
     a {
         text-decoration: none;
-        font-size: 12px;
+        // font-size: 12px;
         color: #6698e4;
         padding: 7px 20px;
         vertical-align: middle;
@@ -400,6 +522,7 @@ width: 200px;;
 .feedback {
     border: 1px solid #6698e4;
     border-radius: 45px;
+    width: 100%;
 
 }
 
@@ -412,10 +535,10 @@ width: 200px;;
 
 
 .header__name {
-    color: #000;
+    color: #1d4872;
     font-size: 28px;
     font-weight: 500;
-    margin-top: 60px;
+    padding: 60px 0px 25px;
 }
 
 .text__medium {
@@ -472,61 +595,48 @@ width: 200px;;
 
 // Услуги right column
 
-.button__services a {
-    text-decoration: none;
+
+
+// .box__service:hover {
+//     background-color: #143b63;
+//     -moz-transition: all 0.2s ease-out;
+//     -o-transition: all 0.2s ease-out;
+//     -webkit-transition: all 0.2s ease-out;
+//     -webkit-transform: scale(1.01);
+//     -moz-transform: scale(1.01);
+//     -o-transform: scale(1.01);
+// }
+
+
+
+.box_service {
+    padding: 25px;
+    background-color: rgba(245, 245, 245, 0.37);
+    border-bottom: 4px solid #fbb42f4b;
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: #86bbd852;
+        transition: 0.3s;
+    }
+
+    @media screen and (max-width: 1200px) {
+        margin-bottom: 35px;
+    }
 }
 
-.box__serv a {
-    font-size: 20px;
-    color: #fff;
-}
-
-.box__service {
-width: 420px;
-height: 200px;
-    padding: 35px;
-    // width: 600px;
-    background-color: #03274b;
-    margin-bottom: 35px;
-    margin-top: 35px;
-
-    @media screen and (max-width: 1700px) {
-        width: 320px;
-        height: 190px;
-    }
-    @media screen and (max-width: 767px) {
-       width: 100%;
-    }
-    @media screen and (max-width: 576px) {
-        width: 100%;
-    }
-    @media screen and (max-width: 768px) {
-        margin-bottom: 15px;
-        margin-top: 15px;
-    }
-}
-
-.box__service:hover {
-    background-color: #0a3057;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    -webkit-transition: all 0.2s ease-out;
-    -webkit-transform: scale(1.01);
-    -moz-transform: scale(1.01);
-    -o-transform: scale(1.01);
-}
-
-.services__name {
-    font-size: 22px;
+.short_description {
     font-weight: 400;
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0;
-    @media screen and (max-width: 360px) {
-        font-size: 18px;   
-        text-transform: uppercase;      
-    }
+    font-style: normal;
+    color: #6b6b6b;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0px;
 }
+
 
 // Новости
 
@@ -554,7 +664,9 @@ height: 200px;
 .box__news {
     min-height: 100px;
     padding: 25px;
-    border: 0.5px solid #eee;
+    border: 0.5px solid #ececec5d;
+    border-radius: 3px;
+    background-color: rgba(238, 238, 238, 0.171);
     // border-bottom: 1px solid #e8e8e8;
 
 
@@ -566,163 +678,51 @@ height: 200px;
 .data__news__main {
     color: rgb(168, 168, 168);
     text-decoration: none;
+    margin-bottom: 0px;
+    padding: 15px 0px 0px;
+}
+
+.box__news__headline {
+    color: #303030;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 0;
+    padding: 0px 0px 10px;
 }
 
 .box__news__text {
-    color: #03274b;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.5;
+    color: #303030;
+    font-size: 14px;
+    font-weight: 350;
+    line-height: 1.6;
     margin-bottom: 0;
 }
 
-
-// Информация
-// Naks block
-
-.info__block:hover {
-    box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03);
-    transition: 0.2s;
-    margin-top: -5px;
-}
-
-.naks__img__box {
-    background: url(/static/img/naks_logo.png) no-repeat;
-    background-size: cover;
-    border-radius: 3px;
-    width: 200px;
-    height: 142px;
-    margin: 0 auto;
-}
-
-
-.naks__box {
-    padding: 15px;
-    background-color: #415e94;
-    border-radius: 3px 3px 0px 0px;
-}
-
-.naks__info__box {
-    margin-bottom: 50px;
-    background-color: #fff;
-    padding: 25px;
-
-    a {
-        text-decoration: none;
-    }
-}
-
-.naks__text__box {
-    font-size: 16px;
-    font-weight: 450;
-    border-radius: 0px 0px 3px 3px;
-    margin-bottom: 0px;
-}
-
-// Search work block
-
-.search__box {
-    background: url(/static/img/search__work.png) no-repeat;
-    background-size: cover;
-    border-radius: 3px;
-}
-
-.search__color__box {
-    background-color: #0066ac;
-    color: #fff;
-    width: 100%;
-    border-radius: 3px 3px 0px 0px;
-}
-
-.search__work__link {
-    background-color: #fbb52f;
-    border-radius: 45px;
-    padding: 7px 20px;
-    font-weight: 500;
-    font-size: 16px;
-    float: right;
-    text-align: right;
-    color: #000;
-
-    &:hover {
-        color: #000;
-        background-color: #ffcc6d;
-        transition: 0.2s;
-    }
-
-    @media screen and (max-width: 320px) {
-        margin-top: 15px;
-        float: left;
-        margin-bottom: 15px;
-    }
-}
-
-.search__box {
-    padding: 25px;
-    border-radius: 3px 3px 0px 0px;
-}
-
-.search__info__box {
-    margin-bottom: 50px;
-    background-color: #fff;
-    padding: 25px;
-
-    a {
-        text-decoration: none;
-
-    }
-}
-
-.search__text__box {
-    font-size: 16px;
-    font-weight: 450;
-    border-radius: 0px 0px 3px 3px;
-    margin-bottom: 0px;
-}
-
-.search__link__text {
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: 650;
-    color: #fbb52f;
-}
-
-.search__text__small {
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-
-}
-
-// Journal block
-
-.journal__box {
-    background-color: #415e94;
-    border-radius: 3px 3px 0px 0px;
-    padding: 25px 0px 0px 25px;
-}
-
-.journal__img__box {
-    background: url(/static/img/journal.png) no-repeat;
-    background-size: cover;
-    // border-radius: 3px;
-    width: 162px;
-    height: 150px;
-    margin-top: -3px;
-}
-
-
-.journal__text__small {
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 0;
-}
 
 
 // Footer block
 
-.naks__web__footer a {
+.bg__text__naks a {
+    color: #fbb52f;
+}
+
+.naks_web {
+    color: #fff;
+    border-radius: 25px;
+
+    a {
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 1100px) {
+        border: 0.5px solid #fff;
+        padding: 7px 15px;
+        line-height: 1.9;
+    }
+}
+
+.naks_web__footer a {
     text-decoration: none;
     color: #505050;
 
@@ -736,24 +736,53 @@ height: 200px;
     font-weight: 500;
     margin-bottom: 10px;
 
+    a {
+        color: #fff;
+    }
+
 }
 
-.logo_sasv{
+.enter_icon {
+    margin-right: 10px;
+}
+
+.system_edo_enter {
+    background-color: transparent;
+    border: none;
+
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 450;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 25px;
+        background-color: #16376a;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+    }
+}
+
+.additional_logo {
     text-align: right;
+
     @media screen and (max-width: 768px) {
-       margin-top: 15px;
-       margin-bottom: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
         text-align: center;
     }
 }
 
 .footer__naks__text {
     margin-bottom: 5px;
+    color: #fff;
 }
 
 .footer__block {
-    background-color: #f9f9f9;
-    padding: 35px;
+    background-color: #25292c;
+    padding: 55px 0px 55px;
 
     @media screen and (max-width: 992px) {
         padding: 15px;
@@ -764,7 +793,7 @@ height: 200px;
 
 
 .political__footer {
-    color: #000;
+    color: #fff;
 
     @media screen and (max-width: 320px) {
         display: none;
@@ -785,7 +814,7 @@ height: 200px;
 
 .prava__footer {
     font-size: 12px;
-    color: #9c9c9c;
+    color: #fff;
     margin-bottom: 5px;
     margin-top: 15px;
 
@@ -934,10 +963,11 @@ height: 200px;
 .doc__name::before {
     content: '';
     position: absolute;
-    width: 45px;
-    height: 45px;
+    width: 23px;
+    height: 31px;
+    margin-top: -5px;
     left: 0;
-    background: url(/static/img/icon__file.png) center 0 no-repeat;
+    background: url(/static/img/icon__file.svg) center 0 no-repeat;
 }
 
 .bd-sidebar {
@@ -953,7 +983,7 @@ height: 200px;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 400;
-    color: #000;
+    color: #fff;
     margin-top: 15px;
 
     @media screen and (max-width: 1199px) {
@@ -1146,6 +1176,10 @@ height: 200px;
     top: 4rem;
     z-index: 1000;
     height: calc(55vh);
+}
+
+.online__zayavka__button {
+    padding: 25px 0px 25px;
 }
 
 
@@ -1375,6 +1409,7 @@ input[type=file] {
     font-size: 18px;
     margin-bottom: 5px;
 }
+
 .content__text__kompanyi {
     font-size: 20px;
     font-weight: 400;
@@ -1389,12 +1424,12 @@ input[type=file] {
     height: calc(75vh);
 }
 
-.rukovodstvo__header{
+.rukovodstvo__header {
     font-size: 20px;
     font-weight: 500;
 }
 
-.rukovodstvo{
+.rukovodstvo {
     font-size: 18px;
     font-weight: 400;
     margin-top: -10px;
@@ -1555,6 +1590,7 @@ input[type=file] {
 .to__share {
     margin-bottom: 25px;
     text-align: right;
+
     @media screen and (max-width: 320px) {
         text-align: left;
     }
@@ -1683,4 +1719,3 @@ input[type=file] {
     outline: none;
     box-shadow: none;
 }
-

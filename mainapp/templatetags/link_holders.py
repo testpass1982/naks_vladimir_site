@@ -1,5 +1,5 @@
 from django import template
-from ..models import Menu, Post, Document
+from ..models import Menu, Post, Document, Chunk
 from django.urls import reverse
 # from django.shortcuts import get_object_or_404
 
@@ -31,4 +31,17 @@ def doc_holder(url_code):
     except Document.DoesNotExist:
         url = '#'
     return url
+
+@register.simple_tag
+def chunk(chunk_code):
+    try:
+        chunk = Chunk.objects.get(code=chunk_code)
+        html = chunk.html
+    except Chunk.DoesNotExist:
+        html = """
+            <hr>
+            <i>!!! Создайте вставку с кодом <strong>{}</strong> !!!</i>
+            <hr>
+        """.format(chunk_code)
+    return html
 

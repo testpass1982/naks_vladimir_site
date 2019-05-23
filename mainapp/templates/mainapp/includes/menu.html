@@ -1,80 +1,70 @@
 {% load static %}
 {% load link_holders %}
-<div class="container ">
-  <div class="menu__background">
-    <div class="row align-items-center">
-      <div class="col-xl-12">
-        <div class="menu__navbar">
-          <!--Navbar-->
-          <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<div class="row align-items-center">
+  <div class="col-xl-12 no-otstup">
+    <div class="menu__background">
+      <div class="menu__navbar">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
-            <!-- Navbar brand -->
+          <!-- Navbar brand -->
 
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-              aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+          <!-- Collapse button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="basicExampleNav">
+          <!-- Collapsible content -->
+          <div class="collapse navbar-collapse" id="basicExampleNav">
 
-              <!-- Links -->
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'index' %}">Главная
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">Главная
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
 
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                  <a class="nav__link__two dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Центр аттестации</a>
-                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{% link_holder 'KOMISS' %}#head__page">{% title_holder 'KOMISS' %}</a>
-                    <a class="dropdown-item" href="{% url 'center' %}#head__page">О центре</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav__link__two dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Услуги</a>
-                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{% url 'svarshik' %}#head__page">Специальная подготовка сварщиков <br> и специалистов сварочного производства</a>
-                    <a class="dropdown-item" href="{% url 'svarproizvodstva' %}#head__page">Аттестация сварщиков <br> и специалистов сварочного производства</a>
-                    <a class="dropdown-item" href="{% url 'atestatsvaroborud' %}#head__page">Аттестация сварочного оборудования</a>
-                    <a class="dropdown-item" href="{% url 'atestatechonlogy' %}#head__page">Аттестация технологий сварки</a>
+              <!-- Dropdown -->
+              <li class="nav-item active">
+                <a class="nav-link{% if request.resolver_match.url_name == 'index' %} smoothScroll{% endif %}"
+                  href="{% if request.resolver_match.url_name == 'index' %}#center{% else %}{% url 'index' %}#center{% endif %}">Центр
+                  аттестации
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link{% if request.resolver_match.url_name == 'index' %} smoothScroll{% endif %}"
+                  href="{% if request.resolver_match.url_name == 'index' %}#service{% else %}{% url 'index' %}#service{% endif %}">Услуги
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
 
-                  </div>
-                </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'doc' %}">Документы
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'doc' %}">Центр оценки квалификаций
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link{% if request.resolver_match.url_name == 'index' %} smoothScroll{% endif %}"
+                  href="{% if request.resolver_match.url_name == 'index' %}#contact{% else %}{% url 'index' %}#contact{% endif %}">Контакты
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+            </ul>
 
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'doc' %}#head__page">Документы
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% link_holder 'COK' %}#head__page">{% title_holder 'COK' %}
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'contact' %}#head__page">Контакты
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-              </ul>
+          </div>       
+        </nav>
 
-            </div>
-            <div class="system__button">
-              <a href="https://ac.naks.ru/" target="_blank" class="enter__system">Войти в систему</a>
-            </div>
-          </nav>
-
-          <!--/.Navbar-->
-        </div>
+        <!--/.Navbar-->
       </div>
     </div>
   </div>
+
 </div>
-<!-- Конец меню -->

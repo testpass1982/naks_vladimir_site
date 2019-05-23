@@ -1,81 +1,58 @@
 {% extends 'mainapp/index.html' %}
 {% load static %}
 {% block content %}
-  <div class="container">
+<div class="container">
 
-    <button class="back__to__main" id="head__page">
-      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center" alt="">
-        На главную</a>
-    </button>
-    <div class="row">
-      <div class="col-xl-2">
-      </div>
-      <div class="col-xl-7">
-        <div class="header__inside__pages">Документы</div>
-        <p class="header__doc">Список документов для аттестации персонала сварочного производства ({{ codes.personal }})</p>
-        <p class="doc__name__list">Наименования документов</p>
-        {% for doc in personal_documents %}
+  <button class="back__to__main" id="head__page">
+    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+        class="arrow__back__to__main text-align-center" alt="">
+      На главную</a>
+  </button>
+  <div class="row">
+    <div class="col-xl-2">
+    </div>
+    <div class="col-xl-7">
+      <div class="header__inside__pages">Документы</div>
+      <p class="doc__name__list">Категория - Наименования документов</p>
+      {% for cat in categories %}
+      <h3>{{ cat.name }}</h3>
+      {% for doc in documents %}
+        {% if doc.category == cat %}
         <a href="{{ doc.document.url }}" download="">
           <div class="doc__content">
             <p class="doc__name">{{ doc.title }}</p>
           </div>
         </a>
-        {% endfor %}
-        <p class="header__doc">Список документов для специальной подготовки ({{ codes.csp }})</p>
-        <p class="doc__name__list">Наименования документов</p>
-        {% for doc in csp_documents %}
-        <a href="{{ doc.document.url }}" download="">
-          <div class="doc__content">
-            <p class="doc__name">{{ doc.title }}</p>
-          </div>
-        </a>
-        {% endfor %}
-        <p class="header__doc">Список документов для аттестации сварочного оборудования ({{ codes.acso }})</p>
-        <p class="doc__name__list">Наименования документов</p>
-        {% for doc in acso_documents %}
-        <a href="{{ doc.document.url }}" download="">
-          <div class="doc__content">
-            <p class="doc__name">{{ doc.title }}</p>
-          </div>
-        </a>
-        {% endfor %}
-        <p class="header__doc">Список документов для аттестации сварочных технологий ({{ codes.acst }})</p>
-        <p class="doc__name__list">Наименования документов</p>
-        {% for doc in acst_documents %}
-        <a href="{{ doc.document.url }}" download="">
-          <div class="doc__content">
-            <p class="doc__name">{{ doc.title }}</p>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
-      <div class="col-xl-2">
-        <div class="sider__bar">
-          <p class="right__column__header">
-            Подать заявку на аттестацию:
-          </p>
-          <div class="list__service__column">
-                            <p class="small__column__text"><a href="{% url 'svarshik' %}">Специальная подготовка сварщиков
-и специалистов сварочного производства</a></p>
-            <p class="small__column__text"><a href="{% url 'svarproizvodstva' %}"> Аттестация сварщиков
-и специалистов сварочного производства</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatsvaroborud' %}"> Аттестация
-сварочного оборудования</a></p>
-            <p class="small__column__text"><a href="{% url 'atestatechonlogy' %}">Аттестация
-технологий сварки</a></p>
-          </div>
+        {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="col-xl-3">
+      <div class="sider__bar">
+        <p class="right__column__header">
+          Услуги {{ profile.org_short_name }}:
+        </p>
+        <div class="list__service__column">
+
+          {% for service in services %}
+            <p class="small__column__text"><a href="{% url 'service' service.pk %}">
+              {{ service.title }}</a></p>
+          {% endfor %}
+
         </div>
       </div>
     </div>
-
-
-    <div class="line__otstup__inside__pages"></div>
-
-    <button class="back__to__main">
-      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center" alt="">
-        На главную</a>
-    </button>
-    <div class="line__otstup__inside__pages"></div>
   </div>
 
- {% endblock  %}
+
+  <div class="line__otstup__inside__pages"></div>
+
+  <button class="back__to__main">
+    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+        class="arrow__back__to__main text-align-center" alt="">
+      На главную</a>
+  </button>
+  <div class="line__otstup__inside__pages"></div>
+</div>
+
+{% endblock  %}

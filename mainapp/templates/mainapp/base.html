@@ -12,6 +12,9 @@
   <!-- BOOTS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
 
   <!-- SCRIPT -->
   <!-- END SCRIPT -->
@@ -30,19 +33,17 @@
 
 <body>
 
+
   <!-- Include Modal -->
   {% include 'mainapp/includes/modal-window.html' %}
   <div w3-include-html="includes/modal-window.html"></div>
   <!-- End Include Modal -->
+  {% include 'mainapp/includes/admin_panel.html' %}
 
   <!-- Include HEADER -->
   {% include 'mainapp/includes/header.html' %}
   {% comment %} <div w3-include-html="includes/header.html"  class="animated fadeInDown"></div> {% endcomment %}
   <!-- End Include HEADER -->
-
-  <!-- Include menu -->
-  {% include 'mainapp/includes/menu.html' %}
-  {% comment %} <div w3-include-html="includes/menu.html"></div> {% endcomment %}  <!-- End Include menu -->
 
 
 
@@ -68,13 +69,10 @@
     <script src="{% static 'js/jquery.maskedinput.js' %}"></script>
     <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/docs.js' %}"></script>
 
 
-    <script>
-      $(document).ready(function () {
-        $("body").css("opacity", "1");
-      });
-    </script>
+
   </body>
-  
+
   </html>
