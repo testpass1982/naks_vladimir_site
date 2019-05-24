@@ -14,6 +14,23 @@ body {
     }
 }
 
+.additional_logo{
+    text-align: right;
+    @media screen and (max-width: 992px) {      
+        text-align: center;
+        padding: 10px 0px 10px;
+    }
+}
+
+.logo_one_of{
+    @media screen and (max-width: 992px) {      
+        width: 30px;
+    }
+    @media screen and (max-width: 576px) {      
+        width: 50px;
+    }
+}
+
 .line__otstup__inside__pages {
     margin-top: 35px;
     margin-bottom: 35px;
@@ -21,6 +38,9 @@ body {
 
 .box_content{
     padding: 85px 0px 85px;
+    @media screen and (max-width: 576px) {      
+        padding: 45px 15px 45px;
+    }
 }
 
 .headline_box_text {
@@ -85,9 +105,9 @@ padding: 40px 0px 40px;
 
 .header__logo {
     @media screen and (max-width: 1488px) {
-        width: 200px;
-   
-    }
+        width: 250px;
+           padding: 25px 0px 25px;
+    } 
 }
 
 .center__logo {
@@ -112,32 +132,18 @@ padding: 40px 0px 40px;
 }
 
 .number_header {
-    font-size: 26px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     color: #242424;
     @media screen and (max-width: 1400px) {
-        font-size: 22px;
-    }
+        font-size: 15px;
+    }   
     @media screen and (max-width: 992px) {
         font-size: 14px;
-    }
+    }   
 }
 
-.enter_system_edo::before {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    left: 0;
-    margin-top: 5px;
-    background: url(/static/img/enter_system.png) center 0 no-repeat;
-}
 
-.button_edo_header{
-    @media screen and (max-width: 992px) {
-        padding: 25px 0px 25px;
-    }
-}
 
 .enter_system_link {
     font-size: 14px;
@@ -335,7 +341,8 @@ padding: 40px 0px 40px;
 .bg_left_column_info {
     background-color: #16386aad;
     padding: 60px;
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 576px) {
+        text-align: center;
         padding: 25px;
     }
 }
@@ -345,8 +352,8 @@ padding: 40px 0px 40px;
     font-weight: 550;
     color: #fff;
 
-    @media screen and (max-width: 320px) {
-        font-size: 18px;
+    @media screen and (max-width: 992px) {
+        font-size: 26px;
     }
 }
 
@@ -413,6 +420,10 @@ padding: 40px 0px 40px;
     padding: 10px 25px;
     font-size: 18px;
     cursor: pointer;
+    @media screen and (max-width: 477px) {
+        padding: 7px 15px;
+        margin-bottom: 25px;
+    }
 
     &:hover {
         background-color: #fdbe10;
@@ -445,6 +456,10 @@ padding: 40px 0px 40px;
         text-decoration: none;
         color: #fff;
         margin-left: 15px;
+        @media screen and (max-width: 477px) {
+            padding: 8px 35px;
+            margin-left: 0px;
+        }
 
         &:hover {
             background-color: #ffffff2d;
@@ -607,7 +622,36 @@ padding: 40px 0px 40px;
 //     -o-transform: scale(1.01);
 // }
 
+.enter_icon {
+    margin-right: 10px;
+}
 
+.system_edo_enter {
+    background-color: transparent;
+    border: none;
+
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 450;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 25px;
+        background-color: #16376a;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+        @media screen and (max-width: 1500px) {
+            font-size: 12px;
+            font-weight: 400;
+            padding: 12px 15px;
+        }
+        @media screen and (max-width: 1255px) {
+          display: none;
+        }
+    }
+}
 
 .box_service {
     padding: 25px;
@@ -679,7 +723,7 @@ padding: 40px 0px 40px;
     color: rgb(168, 168, 168);
     text-decoration: none;
     margin-bottom: 0px;
-    padding: 15px 0px 0px;
+    padding: 5px 0px 0px;
 }
 
 .box__news__headline {
@@ -699,219 +743,6 @@ padding: 40px 0px 40px;
     margin-bottom: 0;
 }
 
-
-
-// Footer block
-
-.bg__text__naks a {
-    color: #fbb52f;
-}
-
-.naks_web {
-    color: #fff;
-    border-radius: 25px;
-
-    a {
-        text-decoration: none;
-    }
-
-    @media screen and (max-width: 1100px) {
-        border: 0.5px solid #fff;
-        padding: 7px 15px;
-        line-height: 1.9;
-    }
-}
-
-.naks_web__footer a {
-    text-decoration: none;
-    color: #505050;
-
-    &:hover {
-        color: #0087e0;
-    }
-}
-
-.naks__web__footer {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 10px;
-
-    a {
-        color: #fff;
-    }
-
-}
-
-.enter_icon {
-    margin-right: 10px;
-}
-
-.system_edo_enter {
-    background-color: transparent;
-    border: none;
-
-    a {
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 450;
-        color: #fff;
-        padding: 12px 25px;
-        border-radius: 25px;
-        background-color: #16376a;
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        -ms-border-radius: 25px;
-        -o-border-radius: 25px;
-    }
-}
-
-.additional_logo {
-    text-align: right;
-
-    @media screen and (max-width: 768px) {
-        margin-top: 15px;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-}
-
-.footer__naks__text {
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-.footer__block {
-    background-color: #25292c;
-    padding: 55px 0px 55px;
-
-    @media screen and (max-width: 992px) {
-        padding: 15px;
-        text-align: center;
-    }
-}
-
-
-
-.political__footer {
-    color: #fff;
-
-    @media screen and (max-width: 320px) {
-        display: none;
-        margin-top: 15px;
-    }
-}
-
-.line__footer__small {
-    border: 1px solid #e8e8e8;
-    width: 50px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-
-    @media screen and (max-width: 320px) {
-        display: none;
-    }
-}
-
-.prava__footer {
-    font-size: 12px;
-    color: #fff;
-    margin-bottom: 5px;
-    margin-top: 15px;
-
-
-    @media screen and (max-width: 320px) {
-        display: block;
-        text-align: center;
-        margin-top: 25px;
-    }
-}
-
-.header__text__footer {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #415e94;
-    margin-bottom: 10px;
-
-    @media screen and (max-width: 768px) {
-        margin-top: 15px;
-    }
-}
-
-.feedback__footer {
-    margin-top: -15px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    box-shadow: none;
-    font-weight: 500;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0;
-    color: #fff;
-    text-align: right;
-
-    a {
-        text-decoration: none;
-    }
-
-    @media screen and (max-width: 992px) {
-        background-color: #5e7daf;
-        padding: 10px 25px;
-        margin-top: 10px;
-        border-radius: 3px;
-        color: #fff;
-        justify-content: center;
-
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
-    }
-
-}
-
-.adres__footer__block {
-    margin-top: 40px;
-    font-weight: 500;
-}
-
-.adres__footer__text {
-    margin-bottom: 0px;
-}
-
-.click__on__map_footer {
-    font-weight: 300;
-
-    @media screen and (max-width: 320px) {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-}
-
-.email__link__footer {
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.email__text__footer {
-    margin-bottom: 10px;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.razrabotano {
-    margin-top: 15px;
-    font-size: 12px;
-    font-weight: 350;
-    color: #c2c2c2;
-    text-align: right;
-
-
-    @media screen and (max-width: 768px) {
-        text-align: center;
-        margin-top: 10px;
-    }
-}
 
 // Документы
 .header__inside__pages {
@@ -1179,7 +1010,7 @@ padding: 40px 0px 40px;
 }
 
 .online__zayavka__button {
-    padding: 25px 0px 25px;
+    padding: 25px 0px 25px;    
 }
 
 
@@ -1193,8 +1024,7 @@ padding: 40px 0px 40px;
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 15px;
-    cursor: pointer;
-
+    cursor: pointer;    
     &:hover {
         background-color: #093663;
         transition: 0.2s;

@@ -86,7 +86,7 @@ def index(request):
             raise ValidationError('form not valid')
 
     main_page_news = Post.objects.filter(
-        publish_on_main_page=True).order_by('-published_date')[:4]
+        publish_on_main_page=True).order_by('-published_date')[:3]
 
     content = {
         'title': title,

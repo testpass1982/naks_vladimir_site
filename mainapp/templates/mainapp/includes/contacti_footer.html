@@ -8,11 +8,11 @@
                             <img src="{% static '/img/phone.png' %}" class="icon_footer mr-3 mt-2" alt="...">
                             <div class="media-body">
                              <div class="number_contacti_footer">
-                                   <a href="tel:(3519) 58-09-07" title="Позвонить">
-                                        (3519) 58-09-07
+                                   <a href="tel:{{ profile.org_main_phone }}" title="Позвонить">
+                                        {{ profile.org_main_phone }}
                                    </a>
                                    <div class="number_text">
-                                        Консультация специалиста
+                                        {{profile.org_main_phone_text}}
                                    </div>
                              </div>
                              
@@ -20,17 +20,18 @@
                           </div>
                </div>
             </div>
+            {% if profile.org_secondary_phone %}
             <div class="col-xl-3">
                 <div class="footer_block_items">
                         <div class="media">
                                 <img src="{% static '/img/phone.png' %}" class="icon_footer mr-3 mt-2" alt="...">
                                 <div class="media-body">
                                  <div class="number_contacti_footer">
-                                       <a href="tel:(3519) 58-09-07" title="Позвонить">
-                                            (3519) 58-09-07
+                                       <a href="tel:{{ profile.org_secondary_phone }}" title="Позвонить">
+                                            {{ profile.org_secondary_phone }}
                                        </a>
                                        <div class="number_text">
-                                            Аттестационный пункг  в г. Иваново
+                                            {{ profile.org_secondary_phone_text }}
                                        </div>
                                  </div>
                                  
@@ -38,6 +39,7 @@
                               </div>
                 </div>
             </div>
+            {% endif %}
             <div class="col-xl-3">
   <div class="footer_block_items">
         <div class="adres_contacti_footer">

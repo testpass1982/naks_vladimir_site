@@ -8,25 +8,27 @@
                 </div>
             </div>
         </div>
+        {% comment %} block_news {% endcomment %}
         <div class="row">
+            {% for post in posts %}
             <div class="col-xl-4">
                 <div class="block_news">
                     <div class="headline_name_news">
-                        IX отраслевое совещание «Состояние и основные направления развития сварочного
-                        производства ПАО
-                        «Газпром»
+                        {{ post.title }}
                     </div>
+                    <p class="data__news__main">{{ post.published_date|date:"d M. Y"}}</p>
                     <div class="text_for_news">
                         13–15 ноября в ООО "Газпром ВНИИГАЗ" прошло IX отраслевое совещание "Состояние и основные
                         направления развития сварочного производства ПАО "Газпром".
                     </div>
-                </div>
-                <button class="more_news">
+                    <button class="more_news">
                         <a href="">
-                              Читать
+                            Читать
                         </a>
-                      </button>
+                    </button>
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>

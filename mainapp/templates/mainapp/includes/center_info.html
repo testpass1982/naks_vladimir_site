@@ -1,23 +1,22 @@
+{% load link_holders %}
 {% load static %}
 <div class="box_content">
     <div class="container">
-  <div class="box_headline_include">
-        <div class="row">
+        <div class="box_headline_include">
+            <div class="row">
                 <div class="oragne_left_line"></div>
                 <div class="headline_box_text">
                     О Центре
                 </div>
             </div>
-  </div>
+        </div>
+
         <div class="row">
-            <div class="col-xl-4">
+
+            <div class="col-xl-6">
                 <div class="center_info_headline">
                     АНО Центр экспертизы и сертификации "Техкранэнерго"
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-5">
                 <div class="box_center_info_left_column">
                     <div class="center_info_text">
                         Центр осуществляет аттестационную деятельность в рамках Системы аттестации сварочного
@@ -30,14 +29,19 @@
                     </div>
                     <div class="list_center_info">
                         <ul>
-                            <a href="">
+                            <a href="{% link_holder 'CENTER' %}">
                                 <li>
-                                    Подробнее о центре
+                                    {% title_holder 'CENTER' %}
                                 </li>
                             </a>
                             <a href="">
                                 <li>
                                     Профстандарты в области сварки
+                                </li>
+                            </a>
+                            <a href="{% url 'doc' %}">
+                                <li>
+                                    Разрешительные документы
                                 </li>
                             </a>
                         </ul>
