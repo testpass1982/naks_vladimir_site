@@ -1,7 +1,10 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 
+
 {% block content  %}
+
+{% comment %} {{ request.resolver_match.url_name }} {% endcomment %}
   <!-- Include background -->
   {% include 'mainapp/includes/background-block.html' %}
   {% comment %} <div w3-include-html="includes/background-block.html"></div> {% endcomment %}
@@ -27,3 +30,5 @@
   {% comment %}<div w3-include-html="includes/contacti_footer.html"></div> {% endcomment %}
   <!-- End Include contacti_footer -->
 {% endblock  %}
+
+

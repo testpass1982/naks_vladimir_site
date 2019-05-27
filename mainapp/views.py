@@ -102,6 +102,8 @@ def index(request):
 
 def svarshik(request):
     return render(request, 'mainapp/svarshik.html')
+def contacti(request):
+    return render(request, 'mainapp/contacti.html')
 
 def news(request):
     """this is the news view"""
@@ -164,20 +166,14 @@ def center(request):
     }
     return render(request, 'mainapp/center.html', content)
 
-def political(request):
-    return render(request, 'mainapp/political.html')
-
 def all_news(request):
     return render(request, 'mainapp/all_news.html')
 
 def reestr(request):
     return render(request, 'mainapp/reestr.html')
 
-def profstandard(request):
+def profstandarti(request):
     return render(request, 'mainapp/profstandarti.html')
-
-def svarproizvodstva(request):
-    return render(request, 'mainapp/svarproizvodstva.html')
 
 def details(request, pk):
     print(request.resolver_match)
@@ -213,9 +209,3 @@ def service(request, pk):
         'other_services': Service.objects.all().exclude(pk=service.pk).order_by('number')
     }
     return render(request, 'mainapp/service_template.html', content)
-
-def atestatechonlogy(request):
-    return render(request, 'mainapp/atestatechonlogy.html')
-
-def atestatsvaroborud(request):
-    return render(request, 'mainapp/atestatsvaroborud.html')

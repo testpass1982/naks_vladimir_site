@@ -1,7 +1,7 @@
 .box_content_services {
     background-color: #fbfbfb;
     padding: 85px 0px 85px;
-    @media screen and (max-width: 576px) {      
+    @media screen and (max-width: 1200px) {      
         padding: 45px 15px 45px;
        }
 }
@@ -17,7 +17,7 @@
 
 .block_services {
     background-color: #0000004b;
-    padding: 195px 45px 95px;
+    padding: 120px 45px 95px;
 
     &:hover {
         background-color: #ffbd3d4b;
@@ -27,15 +27,30 @@
         -ms-transition: 0.3s;
         -o-transition: 0.3s;
     }
+    
+    @media screen and (max-width: 1200px) {
+        padding: 120px 25px 65px;        
+    }
 }
 
-
+.box_services{
+    padding: 0px 0px 45px;   
+    @media screen and (max-width: 992px) {
+       padding: 0px 0px 45px;       
+    }
+}
 
 .name_service {
     color: #fff;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 550;
     padding: 0px 0px 25px;
+    @media screen and (max-width: 1200px) {
+       font-size: 24px;
+    }
+    @media screen and (max-width: 576px) {
+       font-size: 18px;
+    }
 }
 
 .line_service_yellow {
@@ -53,28 +68,33 @@
     font-weight: 450;
     color: #2c2c2c;
     padding: 25px 0px 35px;
+    @media screen and (max-width: 992px) {
+        font-size: 14px;
+    }
 }
 
 .more_services {
     background-color: transparent;
     border: none;
     padding: 0px;
+
     a {
         padding: 12px 35px;
-        border: 1px solid #16376a;
+        border: 1px solid #242424;
         color: #131313;
         font-weight: 450;
         text-decoration: none;
         font-size: 16px;
 
         &:hover {
-            border: 1px solid #ffbd3d;
-            color: #ffbd3d;
+           background-color: #16376a;
+           border: 1px solid #16376a;
+            color: #fff;
             transition: 0.2s;
             -webkit-transition: 0.2s;
             -moz-transition: 0.2s;
             -ms-transition: 0.2s;
             -o-transition: 0.2s;
-}
+        }
     }
 }

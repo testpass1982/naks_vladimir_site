@@ -1,68 +1,47 @@
 {% extends 'mainapp/index.html' %}
 {% load static %}
 {% block content %}
-  <div class="container">
+<div class="container">
 
-    <button class="back__to__main" id="head__page">
-      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center" alt="">
-        На главную</a>
-    </button>
+  <button class="back__to__main" id="head__page">
+    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+        class="arrow__back__to__main text-align-center" alt="">
+      На главную</a>
+  </button>
 
 
-    <div class="row">
-      <div class="col-xl-2">
-        <div class="header__inside__pages">Контакты</div>
-      </div>
-      <div class="col-xl-5">
-          <p class="header__doc">Контакты {{ profile.org_short_name }}</p>
-      <p class="contact__header__pages">
-       </div>
+  <div class="row">
+    <div class="col-xl-2">
+      <div class="header__inside__pages">Контакты</div>
     </div>
-    <div class="row">
-        <div class="col-xl-2">
-        </div>
-        <div class="col-xl-3">
-                <p class="contact__header__pages">
-          </p>
-
-
-          {% for contact in contacts %}
-                    <p class="contact__header__pages">
-                        {{ contact.title }}
-                    </p>
-                    <p class="contact__number">
-                       {{ contact.phone }}
-                    </p>
-
-                    <div class="email__block">
-                          <a href="mailto:{{ contact.email }}" class="email__link__footer">{{ contact.email }}</a>
-                      </div>
-                      <hr>
-          {% endfor %}
-        </div>
-
-        <div class="col-xl-6">
-                <p class="contact__header__pages">Адрес
-                    </p>
-                    <p class="adres__ac">
-                        {{ profile.org_address }}
-                    </p>
-                    <p id="map" class="contact__header__pages">
-                            Наше местоположение
-                        </p>
-                        <div class="ya__map">
-                            <script type="text/javascript" charset="utf-8" async src="{{ profile.org_address_map_link }}"></script>
-                             </div>
-        </div>
-    </div>
-
-
-    <div class="line__otstup__inside__pages"></div>
-
-    <button class="back__to__main">
-      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center" alt="">
-        На главную</a>
-    </button>
-    <div class="line__otstup__inside__pages"></div>
   </div>
+  <div class="row">
+
+    <div class="col-xl-6">
+      <p class="contact__header__pages">Адрес
+      </p>
+      <p class="adres__ac">
+        {{ profile.org_address }}
+      </p>
+      <p id="map" class="contact__header__pages">
+        Наше местоположение
+      </p>
+      <div class="ya__map">
+        <script type="text/javascript" charset="utf-8" async src="{{ profile.org_address_map_link }}"></script>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div class="line__otstup__inside__pages"></div>
+
+  <button class="back__to__main">
+    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+        class="arrow__back__to__main text-align-center" alt="">
+      На главную</a>
+  </button>
+  <div class="line__otstup__inside__pages"></div>
+</div>
 {% endblock %}

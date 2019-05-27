@@ -1,6 +1,6 @@
-{% load staticfiles %}{% load sass_tags %}<!DOCTYPE html>
+{% load staticfiles %}{% load sass_tags %}
+<!DOCTYPE html>
 <html lang="en">
-
 
   <head>
     <meta charset="UTF-8">
@@ -37,11 +37,19 @@
   <!-- End Include Modal -->
   {% include 'mainapp/includes/admin_panel.html' %}
 
+
   <!-- Include HEADER -->
   {% include 'mainapp/includes/header.html' %}
   {% comment %} <div w3-include-html="includes/header.html"  class="animated fadeInDown"></div> {% endcomment %}
   <!-- End Include HEADER -->
 
+  <!-- Include bg-menu-info -->
+  {% if request.resolver_match.url_name == 'index' %}
+  {% else %}
+    {% include 'mainapp/includes/bg-inner-page.html' %}
+  {% endif %}
+  {% comment %} <div w3-include-html="includes/bg-menu-info.html" ></div> {% endcomment %}
+  <!-- End Include bg-menu-info -->   
 
 
 {% block content  %}

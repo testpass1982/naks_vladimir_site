@@ -11,7 +11,7 @@
             <div class="col-xl-6">
              <div class="block_ac_info_footer">
                 <div class="logo_ac_footer">
-                    <img src="{% static 'img/logo_ac_footer.png' %}" alt="">
+                    <img src="{% static 'img/logo_ac_footer.png' %}" class="logo_ac_footer_small" alt="">
                 </div>
                 <p class="footer_naks_member">
                     Организация является членом Саморегулируемой <br> организации Ассоциация «НАКС».
@@ -34,18 +34,15 @@
                         <a href="">
                             <li>Главная</li>
                         </a>
-                        <a href="">
-                            <li>О Центре</li>
+                        <a href="{% link_holder 'CENTER' %}">
+                            <li>{% title_holder 'CENTER' %}</li>
                         </a>
-                        <a href="">
+                        <a href="{% url 'doc' %}">
                             <li>Документы</li>
                         </a>
                         <a href="{% link_holder 'CENTER_OCENKI_KVAL' %}">
                             <li>{% title_holder 'CENTER_OCENKI_KVAL' %}</li>
-                        </a>
-                        <a href="">
-                            <li>Контакты</li>
-                        </a>
+                        </a>                       
                    </div>
                       
                     </ul>

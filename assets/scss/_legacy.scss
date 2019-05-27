@@ -38,16 +38,23 @@ body {
 
 .box_content{
     padding: 85px 0px 85px;
-    @media screen and (max-width: 576px) {      
+    @media screen and (max-width: 1200px) {      
         padding: 45px 15px 45px;
-    }
+       }
 }
 
 .headline_box_text {
     font-size: 32px;
     font-weight: 400;
     color: #000;
-    padding: 0px 15px 0px;    
+    padding: 0px 15px 0px;
+    p{
+        font-size: 14px;
+        a{
+            color: #16376a;
+            text-decoration: underline;
+        }
+    }    
 }
 
 .box_headline_include{
@@ -140,6 +147,9 @@ padding: 40px 0px 40px;
     }   
     @media screen and (max-width: 992px) {
         font-size: 14px;
+    }   
+    @media screen and (max-width: 320px) {
+        font-size: 18px;
     }   
 }
 
@@ -370,7 +380,7 @@ padding: 40px 0px 40px;
 }
 
 .bg_padding_info {
-    padding: 50px 0px;
+    padding: 40px 0px;
 }
 
 .bg__text_right_column {
@@ -720,10 +730,10 @@ padding: 40px 0px 40px;
 }
 
 .data__news__main {
-    color: rgb(168, 168, 168);
+    color: #525252;
     text-decoration: none;
     margin-bottom: 0px;
-    padding: 5px 0px 0px;
+    padding: 5px 0px 10px;
 }
 
 .box__news__headline {
@@ -737,8 +747,8 @@ padding: 40px 0px 40px;
 
 .box__news__text {
     color: #303030;
-    font-size: 14px;
-    font-weight: 350;
+    font-size: 16px;
+    font-weight: 450;
     line-height: 1.6;
     margin-bottom: 0;
 }
@@ -748,8 +758,6 @@ padding: 40px 0px 40px;
 .header__inside__pages {
     font-size: 28px;
     font-weight: 500;
-    margin-top: 25px;
-
 }
 
 
@@ -764,7 +772,31 @@ padding: 40px 0px 40px;
 .doc__name__list {
     font-size: 18px;
     font-weight: 300;
+    color: #000;  
+    margin-top: 10px;
+}
+
+.headline_section_doc{
+    font-size: 20px;
+    font-weight: 450;
     color: #000;
+}
+
+.right__column__header{
+    font-size: 18px;
+    font-weight: 450;
+    color: #000;
+}
+
+.small__column__text a{  
+    font-size: 16px;
+    font-weight: 450;
+    color: #16376a;    
+}
+
+
+.doc__name__list h4 {
+margin-bottom: 15px;
 }
 
 .doc__content {
@@ -773,13 +805,11 @@ padding: 40px 0px 40px;
     background-color: #ffffff;
     padding: 25px;
     border-left: 1px solid #c5deff;
-    box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03);
 
     &:hover {
         background-color: #f5f5f5;
         transition: 0.2s;
         border-left: 1px solid #2785ff;
-
     }
 }
 
@@ -831,91 +861,6 @@ padding: 40px 0px 40px;
     margin-bottom: 15px;
 }
 
-// Профстандарты в области сварки
-
-.box__standart {
-    box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03);
-    margin-top: 25px;
-    padding: 35px;
-    border-radius: 3px;
-    border: 1px solid #f3f3f3;
-
-    &:hover {
-        border: 1px solid rgb(199, 223, 255);
-        transition: 0.2s;
-    }
-}
-
-.header__standart {
-    font-size: 16px;
-    font-weight: 350;
-    margin-bottom: 10px;
-}
-
-.name__standart {
-    font-size: 16px;
-    font-weight: 500;
-    color: #000;
-}
-
-.info__standart {
-    font-size: 16px;
-    font-weight: 350;
-    color: #000;
-    margin-bottom: 5px;
-}
-
-.number__standart {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.box__standart__line__two {
-    padding: 70px 0px;
-}
-
-.download__standart {
-    background-color: rgb(206, 206, 206);
-    border: none;
-    border-radius: 3px;
-    padding: 10px;
-    margin-top: 10px;
-
-    a {
-        padding: 25px;
-        font-size: 14px;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    &:hover {
-        background-color: rgb(155, 155, 155);
-        transition: 0.2s;
-    }
-}
-
-.right__column__header {
-    font-size: 18px;
-    font-weight: 500;
-    padding: 25px 0px 0px;
-}
-
-.list__service__column {
-    a {
-        text-decoration: none;
-        color: #000;
-
-        &:hover {
-            color: rgb(121, 121, 121);
-        }
-    }
-}
-
-.small__column__text {
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
 
 // Услуги центра (внутреннее страницы)
 
@@ -1501,6 +1446,14 @@ input[type=file] {
     @media screen and (max-width: 320px) {
         padding: 15px;
     }
+}
+
+.box__news__inside p{
+    font-size: 16px;
+    font-weight: 450;
+    color: #000;
+    margin-top: 15px;
+    line-height: 1.8;
 }
 
 .header__all__news {

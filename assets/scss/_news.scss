@@ -1,7 +1,7 @@
 .box_content_news {
     background-color: #eff4ff;
     padding: 85px 0px 85px;
-    @media screen and (max-width: 576px) {      
+    @media screen and (max-width: 1200px) {      
         padding: 45px 15px 45px;
        }
 }
@@ -21,7 +21,7 @@
 }
 
 .text_for_news{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: #000;
     line-height: 1.6;
@@ -41,4 +41,11 @@
         font-size: 14px;
        
     }
+}
+
+.headline_all_news a{
+    font-size: 14px;
+    font-weight: 400;
+    color: #16376a;
+    text-decoration: underline;
 }

@@ -15,10 +15,10 @@
       <div class="header__inside__pages">Документы</div>
       <p class="doc__name__list">Категория - Наименования документов</p>
       {% for cat in categories %}
-      <h3>{{ cat.name }}</h3>
+      <div class="headline_section_doc">{{ cat.name }}</div>
       {% for doc in documents %}
         {% if doc.category == cat %}
-        <a href="{{ doc.document.url }}" download="">
+        <a href="{{ doc.document.url }}" title="Скачать" download="">
           <div class="doc__content">
             <p class="doc__name">{{ doc.title }}</p>
           </div>

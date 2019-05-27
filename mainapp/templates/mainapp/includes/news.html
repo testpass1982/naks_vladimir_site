@@ -5,13 +5,18 @@
                 <div class="oragne_left_line"></div>
                 <div class="headline_box_text">
                     Новости
+                    <p class="all_news">
+                        <a href="{% url 'news' %}">
+                            Все новости
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
         {% comment %} block_news {% endcomment %}
         <div class="row">
             {% for post in posts %}
-            <div class="col-xl-4">
+            <div class="col-md-4 col-xl-4">
                 <div class="block_news">
                     <div class="headline_name_news">
                         {{ post.title }}
