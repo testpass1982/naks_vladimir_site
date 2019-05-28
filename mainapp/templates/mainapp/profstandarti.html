@@ -3,63 +3,66 @@
 {% block content %}
 <div class="container">
 
-    <button class="back__to__main" id="head__page">
-        <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
-                class="arrow__back__to__main text-align-center" alt=""> На главную</a>
-    </button>
+    <div class="box_content_pages">
+        <button class="back__to__main" id="head__page">
+            <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+                    class="arrow__back__to__main text-align-center" alt=""> На главную</a>
+        </button>
 
 
-    <div class="row">
-        <div class="col-xl-9">
-            <h3 class="mb-5">Утвержденные профессиональные стандарты</h3>
-            <div class="standart-info">
-                <div class="row">
-                    <div class="col-sm-4 col-xl-4">
-                        <p class="head__standart text-secondary mb-3 mb-sm-4">Профессиональный стандарт</p>
-                        <p class="name__standart">Сварщик-оператор полностью механизированной, автоматической и
-                            роботизированной сварки</p>
-                    </div>
-                    <div class="col-md-3 col-xl-4">
-                        <p class="head__standart mb-3 mb-sm-4">Информация о стандарте</p>
-                        <div class="row text-small mb-3">
-                            <div class="col-md-4 col-xl-2">
-                                <p class="mb-1"><strong>Код</strong></p>
-                                <p class="number__standart">40.109</p>
-                            </div>
-                            <div class="col-md-4 col-xl-6">
-                                <p class="mb-1"><strong>Регистрационный номер</strong></p>
-                                <p class="number__standart">№ 664</p>
-                            </div>
+        <div class="row">
+            <div class="col-xl-9">
+                <h3 class="mb-5">Утвержденные профессиональные стандарты</h3>
+                <div class="standart-info">
+                    <div class="row">
+                        <div class="col-sm-4 col-xl-4">
+                            <p class="head__standart text-secondary mb-3 mb-sm-4">Профессиональный стандарт</p>
+                            <p class="name__standart">Сварщик-оператор полностью механизированной, автоматической и
+                                роботизированной сварки</p>
                         </div>
-                        <p class="text__prikaz__standart  mb-4 mb-sm-0">Приказ Минтруда России № 916н от 01.12.2015 г.,
-                            зарегистрирован Минюстом России 31.12.2015 г., рег. № 40426</p>
+                        <div class="col-md-3 col-xl-4">
+                            <p class="head__standart mb-3 mb-sm-4">Информация о стандарте</p>
+                            <div class="row text-small mb-3">
+                                <div class="col-md-4 col-xl-2">
+                                    <p class="mb-1"><strong>Код</strong></p>
+                                    <p class="number__standart">40.109</p>
+                                </div>
+                                <div class="col-md-4 col-xl-6">
+                                    <p class="mb-1"><strong>Регистрационный номер</strong></p>
+                                    <p class="number__standart">№ 664</p>
+                                </div>
+                            </div>
+                            <p class="text__prikaz__standart  mb-4 mb-sm-0">Приказ Минтруда России № 916н от 01.12.2015
+                                г.,
+                                зарегистрирован Минюстом России 31.12.2015 г., рег. № 40426</p>
+                        </div>
+
+
+
                     </div>
+                    <div class="row">
 
-
-
-                </div>
-                <div class="row">
-
-                    <div class="col-xl-2">
-                        <button class="download_document_standart">
-                            <a href="#" title="Скачать документ" download="">Скачать</a>
-                        </button>
+                        <div class="col-xl-2">
+                            <button class="download_document_standart">
+                                <a href="#" title="Скачать документ" download="">Скачать</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
+
+
+
+
+
+        <button class="back__to__main">
+            <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+                    class="arrow__back__to__main text-align-center" alt=""> На главную</a>
+        </button>
     </div>
-
-
-
-
-
-
-<button class="back__to__main">
-    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
-            class="arrow__back__to__main text-align-center" alt=""> На главную</a>
-</button>
 </div>
 
 {% endblock  %}

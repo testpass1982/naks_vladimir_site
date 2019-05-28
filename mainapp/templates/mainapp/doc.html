@@ -3,20 +3,21 @@
 {% block content %}
 <div class="container">
 
-  <button class="back__to__main" id="head__page">
-    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
-        class="arrow__back__to__main text-align-center" alt="">
-      На главную</a>
-  </button>
-  <div class="row">
-    <div class="col-xl-2">
-    </div>
-    <div class="col-xl-7">
-      <div class="header__inside__pages">Документы</div>
-      <p class="doc__name__list">Категория - Наименования документов</p>
-      {% for cat in categories %}
-      <div class="headline_section_doc">{{ cat.name }}</div>
-      {% for doc in documents %}
+  <div class="box_content_pages">
+    <button class="back__to__main" id="head__page">
+      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+          class="arrow__back__to__main text-align-center" alt="">
+        На главную</a>
+    </button>
+    <div class="row">
+      <div class="col-xl-2">
+      </div>
+      <div class="col-xl-7">
+        <div class="header__inside__pages">Документы</div>
+        <p class="doc__name__list">Категория - Наименования документов</p>
+        {% for cat in categories %}
+        <div class="headline_section_doc">{{ cat.name }}</div>
+        {% for doc in documents %}
         {% if doc.category == cat %}
         <a href="{{ doc.document.url }}" title="Скачать" download="">
           <div class="doc__content">
@@ -24,35 +25,35 @@
           </div>
         </a>
         {% endif %}
-      {% endfor %}
-      {% endfor %}
-    </div>
-    <div class="col-xl-3">
-      <div class="sider__bar">
-        <p class="right__column__header">
-          Услуги {{ profile.org_short_name }}:
-        </p>
-        <div class="list__service__column">
+        {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="col-xl-3">
+        <div class="sider__bar">
+          <p class="right__column__header">
+            Услуги {{ profile.org_short_name }}:
+          </p>
+          <div class="list__service__column">
 
-          {% for service in services %}
+            {% for service in services %}
             <p class="small__column__text"><a href="{% url 'service' service.pk %}">
-              {{ service.title }}</a></p>
-          {% endfor %}
+                {{ service.title }}</a></p>
+            {% endfor %}
 
+          </div>
         </div>
       </div>
     </div>
+
+
+
+    <button class="back__to__main">
+      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+          class="arrow__back__to__main text-align-center" alt="">
+        На главную</a>
+    </button>
+
   </div>
-
-
-  <div class="line__otstup__inside__pages"></div>
-
-  <button class="back__to__main">
-    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
-        class="arrow__back__to__main text-align-center" alt="">
-      На главную</a>
-  </button>
-  <div class="line__otstup__inside__pages"></div>
 </div>
 
 {% endblock  %}
