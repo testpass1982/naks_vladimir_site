@@ -342,8 +342,10 @@ class Service(models.Model):
             будет создан пункт меню в разделе "Услуги", в котором они
             сортируются в соответствии с порядком сортировки
         """)
+    short_description = models.CharField(u'Краткое описание услуги', max_length=200, blank=True, null=True, default=None)
     html = RichTextUploadingField(u'Описание услуги')
     number = models.SmallIntegerField(u'Порядок сортировки', blank=True, null=True, default=None)
+    bg_photo = models.ImageField(u'Картинка для главной', upload_to="upload/", null=True, blank=True, default=None)
 
     class Meta:
         verbose_name = 'Услуга'
@@ -390,7 +392,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.org_short_name
-
 class Attestat(models.Model):
     title = models.CharField(u'Название аттестата(сертификата)', max_length=60)
     image = models.ImageField(u'Скан аттестата', upload_to="upload/")
@@ -399,6 +400,32 @@ class Attestat(models.Model):
     class Meta:
         verbose_name = 'Аттестат соответствия'
         verbose_name_plural = 'Аттестаты соответствия'
+
+    def __str__(self):
+        return self.title
+
+class SidePanel(models.Model):
+    title = models.CharField(u'Название', max_length=200)
+    text = RichTextUploadingField(verbose_name='Текст')
+
+    class Meta:
+        verbose_name = 'Боковая панель'
+        verbose_name_plural = 'Боковые панели'
+
+    def __str__(self):
+        return self.title
+
+class Profstandard(models.Model):
+    title = models.CharField(u'Название профстандарта', max_length=200)
+    info = models.CharField(u'Информация о стандарте(код)', max_length=300)
+    reg_number = models.CharField(u'Регистрационный номер', max_length=20)
+    mintrud_prikaz = models.CharField(u'Приказ минтруда', max_length=100)
+    document = models.FileField(u'Файл', upload_to='upload/')
+    number = models.SmallIntegerField(u'Порядок сортировки')
+
+    class Meta:
+        verbose_name = 'Профстандарт'
+        verbose_name_plural = 'Профстандарты'
 
     def __str__(self):
         return self.title

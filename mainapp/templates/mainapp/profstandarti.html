@@ -11,30 +11,30 @@
 
 
         <div class="row">
-            <div class="col-xl-9">
+
+
+            {% for ps in profstandards %}
+            <div class="col-md-9 col-xl-6">
                 <h3 class="mb-5">Утвержденные профессиональные стандарты</h3>
                 <div class="standart-info">
                     <div class="row">
                         <div class="col-sm-4 col-xl-4">
                             <p class="head__standart text-secondary mb-3 mb-sm-4">Профессиональный стандарт</p>
-                            <p class="name__standart">Сварщик-оператор полностью механизированной, автоматической и
-                                роботизированной сварки</p>
+                            <p class="name__standart">{{ps.title}}</p>
                         </div>
                         <div class="col-md-3 col-xl-4">
                             <p class="head__standart mb-3 mb-sm-4">Информация о стандарте</p>
                             <div class="row text-small mb-3">
                                 <div class="col-md-4 col-xl-2">
                                     <p class="mb-1"><strong>Код</strong></p>
-                                    <p class="number__standart">40.109</p>
+                                    <p class="number__standart">{{ ps.info }}</p>
                                 </div>
                                 <div class="col-md-4 col-xl-6">
                                     <p class="mb-1"><strong>Регистрационный номер</strong></p>
-                                    <p class="number__standart">№ 664</p>
+                                    <p class="number__standart">{{ ps.reg_number }}</p>
                                 </div>
                             </div>
-                            <p class="text__prikaz__standart  mb-4 mb-sm-0">Приказ Минтруда России № 916н от 01.12.2015
-                                г.,
-                                зарегистрирован Минюстом России 31.12.2015 г., рег. № 40426</p>
+                            <p class="text__prikaz__standart  mb-4 mb-sm-0">{{ ps.mintrud_prikaz }}</p>
                         </div>
 
 
@@ -50,6 +50,7 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
         </div>
 

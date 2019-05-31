@@ -176,7 +176,9 @@ class Command(BaseCommand):
                         <hr>
                         <p>Страница в разработке</p>
                         <hr>
-                """)
+                """,
+                short_description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                )
 
         print('Загружаем демо-документы...')
         for i in range(0, len(documents)):
