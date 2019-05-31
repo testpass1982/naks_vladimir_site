@@ -4,10 +4,13 @@ from django.utils.encoding import force_text
 from django.utils.html import format_html
 
 from .models import Post, Category, Tag, Document, PostPhoto, Article, Message, Contact
-from .models import Staff, Registry, Menu
+from .models import ChlenKomissii, Chunk, Profile, Service, DocumentCategory
+from .models import Attestat
+from scribbler.models import Scribble
 # from .models import WeldData
 # from .domain_model import WeldOrg, Welder
 # Register your models here.
+
 
 def get_picture_preview(obj):
     if obj.pk:  # if object has already been saved and has a primary key, show picture preview
@@ -74,7 +77,7 @@ get_tag_list.short_description = 'Список тэгов'
 
 @admin.register(Document)
 class DocumentAdmin(admin.ModelAdmin):
-    list_display = ['title', get_tag_list, 'publish_on_main_page', 'category']
+    list_display = ['title', get_tag_list, 'publish_on_main_page']
 
 
 @admin.register(Article)
@@ -102,7 +105,8 @@ class PostAdmin(admin.ModelAdmin):
     inlines = [PostPhotoInline, DocumentInline]
 
     def view_on_site(self, obj):
-        url = reverse('details', kwargs={'pk': obj.pk})
+        url = reverse('details', kwargs={
+                      'pk': obj.pk})
         return 'http://127.0.0.1:8000'+url
 
 
@@ -119,16 +123,38 @@ class MessageAdmin(admin.ModelAdmin):
     list_display = ['title', 'typeof', 'params', 'sender_email', 'status']
 
 # admin.site.register(Menu)
-@admin.register(Menu)
-class MenuAdmin(admin.ModelAdmin):
-    list_display = ['title', 'url_code', 'url']
+# @admin.register(Menu)
+# class MenuAdmin(admin.ModelAdmin):
+#     list_display = ['title', 'url_code', 'url']
 
-admin.site.register(Category)
+from django import forms
+class ProfileModelForm(forms.ModelForm):
+    org_short_name = forms.CharField(widget=forms.Textarea, required=True)
+    org_full_name = forms.CharField(widget=forms.Textarea, required=False)
+    org_intro = forms.CharField(widget=forms.Textarea, required=False)
+    org_phones = forms.CharField(widget=forms.Textarea, required=False)
+    org_email = forms.CharField(widget=forms.Textarea, required=False)
+    org_header_emails = forms.CharField(widget=forms.Textarea, required=False)
+    org_header_phones = forms.CharField(widget=forms.Textarea, required=False)
+    org_address = forms.CharField(widget=forms.Textarea, required=False)
+    # org_ac_codes = forms.CharField()
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    form = ProfileModelForm
 
 admin.site.register(Tag)
+admin.site.register(Category)
+admin.site.register(DocumentCategory)
 admin.site.register(Contact)
-admin.site.register(Staff)
-admin.site.register(Registry)
+# admin.site.register(Staff)
+# admin.site.register(Registry)
+admin.site.register(ChlenKomissii)
+admin.site.register(Scribble)
+# admin.site.register(Profile)
+admin.site.register(Chunk)
+admin.site.register(Service)
+admin.site.register(Attestat)
 #another_test
 #test
 # admin.site.register(WeldOrg)

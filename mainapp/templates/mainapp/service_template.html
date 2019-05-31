@@ -1,0 +1,56 @@
+{% extends 'mainapp/index.html' %}
+{% load static %}{% load link_holders %}
+{% block content %}
+<div class="container">
+
+    <div class="box_content_pages">
+            <button class="back__to__main" id="head__page">
+                    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+                            class="arrow__back__to__main text-align-center" alt="">
+                        На главную</a>
+                </button>
+            
+            
+                <div class="row">
+            
+                    <div class="col-xl-2">
+            
+                    </div>
+            
+                    <div class="col-xl-7">
+                        <div class="header__inside__pages">Услуги центра</div>
+                        <div class="box__service__inside__pages">
+                            <p class="header__service   ">{{ service.title }}</p>
+                            <div class="inside__pages__online__zayavka__button">
+                                <button class="button__zayavka__inside__pages" data-toggle="modal"
+                                    data-target="#modal-statement">Оставить
+                                    заявку</button>
+                            </div>
+            
+                            {% autoescape off %}
+                            {{ service.html }}
+                            {% endautoescape %}
+            
+                        </div>
+            
+                    </div>
+            
+                    <div class="col-xl-2">
+            
+                        {% include 'mainapp/includes/side_services_panel.html' %}
+            
+            
+                    </div>
+                </div>
+            </div>
+            
+            <button class="back__to__main">
+                <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+                        class="arrow__back__to__main text-align-center" alt="">
+                    На главную</a>
+            </button>
+    </div>
+</div>
+
+
+{% endblock  %}

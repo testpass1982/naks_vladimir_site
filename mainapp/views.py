@@ -6,16 +6,57 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post, PostPhoto, Tag, Category, Document, Article, Message, Contact
-from .models import Registry, Menu
-from .models import Staff
-from .forms import PostForm, ArticleForm, DocumentForm
+from .models import Registry, Menu, Service, Attestat
+from .models import Staff, DocumentCategory, Profile
+from .forms import PostForm, ArticleForm, DocumentForm, ProfileImportForm
 from .forms import SendMessageForm, SubscribeForm, AskQuestionForm, DocumentSearchForm, SearchRegistryForm
 from .adapters import MessageModelAdapter
 from .message_tracker import MessageTracker
 from .utilites import UrlMaker
 from .registry_import import Importer, data_url
+# from django.core.files import File
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+from django.conf import settings
+
+
 # Create your views here.
 from django.conf import settings
+from .utilites import update_from_dict
+
+def import_profile(request):
+    content = {}
+    if request.method == "POST":
+        if len(request.FILES) > 0:
+            form = ProfileImportForm(request.POST, request.FILES)
+            if form.is_valid():
+                data = request.FILES.get('file')
+                file = data.readlines()
+                import_data = {}
+                for line in file:
+                    string = line.decode('utf-8')
+                    if string.startswith('#') or string.startswith('\n'):
+                        print('Пропускаем: ', string)
+                        continue
+                    splitted = string.split("::")
+                    import_data.update({splitted[0].strip(): splitted[1].strip()})
+                    print('Импортируем:', string)
+                profile = Profile.objects.first()
+                if profile is None:
+                    profile = Profile.objects.create(org_short_name="DEMO")
+                try:
+                    #updating existing record with imported fields
+                    update_from_dict(profile, import_data)
+                    content.update({'profile_dict': '{}'.format(profile.__dict__)})
+                    content.update({'profile': profile})
+                    print('***imported***')
+                except Exception as e:
+                    print("***ERRORS***", e)
+                    content.update({'errors': e})
+        else:
+            content.update({'errors': 'Файл для загрузки не выбран'})
+        return render(request, 'mainapp/includes/profile_load.html', content)
+
 def index(request):
 
     """this is mainpage view with forms handler and adapter to messages"""
@@ -45,7 +86,7 @@ def index(request):
             raise ValidationError('form not valid')
 
     main_page_news = Post.objects.filter(
-        publish_on_main_page=True).order_by('-published_date')[:4]
+        publish_on_main_page=True).order_by('-published_date')[:3]
 
     content = {
         'title': title,
@@ -57,11 +98,12 @@ def index(request):
         'subscribe_form': SubscribeForm(),
         'ask_question_form': AskQuestionForm(),
     }
-
     return render(request, 'mainapp/index.html', content)
 
 def svarshik(request):
     return render(request, 'mainapp/svarshik.html')
+def contacti(request):
+    return render(request, 'mainapp/contacti.html')
 
 def news(request):
     """this is the news view"""
@@ -95,35 +137,34 @@ def news(request):
     return render(request, 'mainapp/all_news.html', content)
 
 def contact(request):
-    return render(request, 'mainapp/contacti.html')
+    contacts = Contact.objects.all().order_by('number')
+
+    content = {
+        'title': 'Контакты',
+        'contacts': contacts,
+    }
+
+    return render(request, 'mainapp/contacti.html', content)
 
 def doc(request):
-    personal_documents = Document.objects.filter(category__name=settings.ACSP_CODE)
-    csp_documents = Document.objects.filter(category__name=settings.CSP_CODE)
-    acso_documents = Document.objects.filter(category__name=settings.ACSO_CODE)
-    acst_documents = Document.objects.filter(category__name=settings.ACST_CODE)
+    """view for documents page"""
+
     content = {
-        'title': 'Documents',
-        'codes': {
-            'personal': settings.ACSP_CODE,
-            'csp': settings.CSP_CODE,
-            'acso': settings.ACSO_CODE,
-            'acst': settings.ACST_CODE,
-        },
-        'personal_documents': personal_documents,
-        'csp_documents': csp_documents,
-        'acso_documents': acso_documents,
-        'acst_documents': acst_documents,
-        # 'cok_documents': cok_documents,
+        'title': 'Документы',
+        'documents': Document.objects.all().order_by('number'),
+        'categories': DocumentCategory.objects.all().order_by('number'),
+        'services': Service.objects.all().order_by('number'),
     }
+
     return render(request, 'mainapp/doc.html', content)
 
 def center(request):
     #TODO test a todo creation - page about us
-    return render(request, 'mainapp/center.html')
-
-def political(request):
-    return render(request, 'mainapp/political.html')
+    content = {
+        'title': 'О центре',
+        'attestats': Attestat.objects.all().order_by('number')
+    }
+    return render(request, 'mainapp/center.html', content)
 
 def all_news(request):
     return render(request, 'mainapp/all_news.html')
@@ -131,11 +172,8 @@ def all_news(request):
 def reestr(request):
     return render(request, 'mainapp/reestr.html')
 
-def profstandard(request):
+def profstandarti(request):
     return render(request, 'mainapp/profstandarti.html')
-
-def svarproizvodstva(request):
-    return render(request, 'mainapp/svarproizvodstva.html')
 
 def details(request, pk):
     print(request.resolver_match)
@@ -163,8 +201,11 @@ def details(request, pk):
     }
     return render(request, 'mainapp/post_details.html', post_content)
 
-def atestatechonlogy(request):
-    return render(request, 'mainapp/atestatechonlogy.html')
-
-def atestatsvaroborud(request):
-    return render(request, 'mainapp/atestatsvaroborud.html')
+def service(request, pk):
+    service = get_object_or_404(Service, pk=pk)
+    content = {
+        'title': 'Описание услуги',
+        'service': service,
+        'other_services': Service.objects.all().exclude(pk=service.pk).order_by('number')
+    }
+    return render(request, 'mainapp/service_template.html', content)

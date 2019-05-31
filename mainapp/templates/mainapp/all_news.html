@@ -11,13 +11,13 @@
 
 
     <div class="row">
-        <div class="col-xl-2">
-            <div class="header__inside__pages">Все новости</div>
+        <div class="col-xl-2">          
         </div>
         <div class="col-xl-10">
+                <div class="header__inside__pages">Все новости</div>    
             <div class="row">
                 {% for publication in news %}
-                <div class="col-xl-3">
+                <div class="col-xl-6">
                     <div class="block__news">
                         <a href="{% url 'details' publication.pk %}" class="link__news">
                             <div class="box__news">
@@ -26,10 +26,14 @@
                                     {{ publication.title }}
                                 </p>
                             </div>
+                                    <p class="content_news_text">
+                                        13–15 ноября в ООО "Газпром ВНИИГАЗ" прошло IX отраслевое совещание "Состояние и основные направления развития сварочного производства ПАО "Газпром".
+                                    </p>
                         </a>
                     </div>
+                    <div class="line_all_news"></div>
                 </div>
-                {% endfor %}
+                {% endfor %}              
             </div>
         </div>
     </div>

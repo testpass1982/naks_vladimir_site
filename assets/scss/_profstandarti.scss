@@ -1,0 +1,70 @@
+.header__prostandart {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 35px;
+}
+
+.header__utverjdenie__standarti {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 35px;
+}
+
+.standart-info {
+    padding: 45px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    @media screen and (max-width: 1199px) {
+        max-width: 100%;
+    }
+}
+
+
+.head__standart {
+    font-size: 18px;
+    font-weight: 450;
+    color: #747474;
+}
+
+.name__standart {
+    font-size: 18px;
+    font-weight: 450;
+    color: #000000;
+  padding: 15px 0px 35px;
+}
+
+.number__standart {
+    font-size: 14px;
+    font-weight: 550;
+    color: #000000;
+    margin-bottom: 0px;
+}
+
+.text__prikaz__standart {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.download_document_standart {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    a {
+        padding: 12px 45px;
+        text-decoration: none;
+        background-color: #16376a;
+        font-size: 14px;
+        color: #fff;
+        border-radius: 3px;
+        ;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+}

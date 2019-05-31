@@ -1,0 +1,148 @@
+.box_content_information{
+    padding: 85px 0px 85px;
+    @media screen and (max-width: 1200px) {      
+        padding: 45px 15px 45px;
+       }
+}
+
+
+
+
+.info__block {
+    box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03);
+    margin-top: -5px;
+}
+
+.naks__img__box {
+    background: url(/static/img/naks_logo.png) no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    width: 200px;
+    height: 142px;
+    margin: 0 auto;
+}
+
+
+.naks__box {
+    padding: 15px;
+    background-color: #415e94;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.naks__info__box {
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 25px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.naks__text__box {
+    font-size: 16px;
+    font-weight: 450;
+    border-radius: 0px 0px 3px 3px;
+    margin-bottom: 0px;
+}
+
+// Search work block
+
+.search__box {
+    background: url(/static/img/search__work.png) no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.search__color__box {
+    background-color: #0066ac;
+    color: #fff;
+    width: 100%;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.search__work__link {
+    background-color: #fbb52f;
+    border-radius: 45px;
+    padding: 7px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    float: right;
+    text-align: right;
+    color: #000;
+
+    &:hover {
+        color: #000;
+        background-color: #ffcc6d;
+        transition: 0.2s;
+    }
+
+    @media screen and (max-width: 320px) {
+        margin-top: 15px;
+        float: left;
+        margin-bottom: 15px;
+    }
+}
+
+.search__box {
+    padding: 25px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.search__info__box {
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 25px;
+
+    a {
+        text-decoration: none;
+
+    }
+}
+
+.search__text__box {
+    font-size: 16px;
+    font-weight: 450;
+    border-radius: 0px 0px 3px 3px;
+    margin-bottom: 0px;
+}
+
+.search__link__text {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 650;
+    color: #fbb52f;
+}
+
+.search__text__small {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+
+}
+
+// Journal block
+
+.journal__box {
+    background-color: #415e94;
+    border-radius: 3px 3px 0px 0px;
+    padding: 25px 0px 0px 25px;
+}
+
+.journal__img__box {
+    background: url(/static/img/journal.png) no-repeat;
+    background-size: cover;
+    // border-radius: 3px;
+    width: 162px;
+    height: 150px;
+    margin-top: -3px;
+}
+
+
+.journal__text__small {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0;
+}
+

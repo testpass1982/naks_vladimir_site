@@ -1,13 +1,34 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 
+
 {% block content  %}
+
+{% comment %} {{ request.resolver_match.url_name }} {% endcomment %}
   <!-- Include background -->
   {% include 'mainapp/includes/background-block.html' %}
   {% comment %} <div w3-include-html="includes/background-block.html"></div> {% endcomment %}
   <!-- End Include background -->
-  <!-- End Include content -->
-  {% include 'mainapp/includes/content.html' %}
-  {% comment %}<div w3-include-html="includes/content.html"></div> {% endcomment %}
-  <!-- End Include content -->
+  <!-- End Include center_info -->
+  {% include 'mainapp/includes/center_info.html' %}
+  {% comment %}<div w3-include-html="includes/center_info.html"></div> {% endcomment %}
+  <!-- End Include center_info -->
+  <!-- End Include services -->
+  {% include 'mainapp/includes/services.html' %}
+  {% comment %}<div w3-include-html="includes/services.html"></div> {% endcomment %}
+  <!-- End Include services -->
+  <!-- End Include news -->
+  {% include 'mainapp/includes/news.html' %}
+  {% comment %}<div w3-include-html="includes/news.html"></div> {% endcomment %}
+  <!-- End Include news -->
+  <!-- End Include block_information -->
+  {% include 'mainapp/includes/block_information.html' %}
+  {% comment %}<div w3-include-html="includes/block_information.html"></div> {% endcomment %}
+  <!-- End Include block_information -->
+  <!-- End Include contacti_footer -->
+  {% include 'mainapp/includes/contacti_footer.html' %}
+  {% comment %}<div w3-include-html="includes/contacti_footer.html"></div> {% endcomment %}
+  <!-- End Include contacti_footer -->
 {% endblock  %}
+
+

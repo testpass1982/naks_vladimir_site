@@ -4,7 +4,7 @@
 }
 
 .modal-dialog{
-	max-width: 1400px;
+	max-width: 800px;
 }
 
 .modal .custom-control-label a {
@@ -17,7 +17,7 @@
     border-bottom: none;
 	background-color: #ffffff;
 	color: #fff;
-	border-top: 15px solid  #03274b;
+	border-top: 15px solid  #16376a;
 }
 .modal-footer {
 	justify-content: flex-start;
@@ -42,16 +42,18 @@
 }
 
 .modal-content .form-control {
-	// border: 1px #333333 solid;
+	//border: 1px #333333 solid;
 	background-color: transparent;
-	border-bottom: 1px solid rgb(182, 182, 182);
+	border: 1px solid #eee;
 	color: #333333;
 	font-weight: 300;
 	font-size: 20px;
 	margin-bottom: 10px;
-	&:focus{
-		background-color: #f5f5f5;
-	}		
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
 }
 .modal-content .form-control option {
 	color: #000;
@@ -88,8 +90,8 @@ padding: 0;
 .modal-title{
 	margin-bottom: 10px;
 	font-size: 28px;
-	font-weight: 200;
-	color: #000;
+	font-weight: 500;
+	color: #16376a;
 }
 
 .modal-header{
@@ -111,11 +113,7 @@ padding: 0;
     }
 }
 
-.modal-header p {
-	font-size: 0.875rem;
-	line-height: 20px;
-	color: #000;	
-}
+
 
 
 .modal-header .close {
@@ -149,7 +147,7 @@ input ~ label[for="soglasie"] {
  }
 
 .button__to__send_zayavka__formmodal{
-    background-color:  #03274b;
+    background-color:  #16376a;
 border: none;
 color: #fff;
 font-size: 16px;
@@ -164,11 +162,11 @@ padding: 12px 45px;
 
 
 .button__to__send_zayavka__formmodal:hover {
-	background-color:  #083b6d;
+	background-color:  #16376a;
 }
 
 .button__to__send_zayavka__formmodal:active {
-	background-color:  #04203b;
+	background-color:  #16376a;
 }
 
 /* Выбор несколько из списка */
@@ -231,6 +229,8 @@ hr {
 
 
 .modal__title__small__text{
-	font-size: 16px;
-	font-weight: 500;
+	font-size: 18px;
+	font-weight: 450;
+	line-height: 1.8;
+	color: #000;
 }

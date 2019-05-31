@@ -1,6 +1,6 @@
 <div class="sider__bar__service__pages">
     <p class="trebovanie__left__column">
-        Документы Аттестационного центра:
+        Наши документы:
     </p>
     {% for doc in random_documents %}
     <a href="{{ doc.document.url }}" class="trebovanie__list">
@@ -11,16 +11,22 @@
 
     <a href="{% url 'doc' %}" target="_blank">В раздел "Документы"</a>
     <p class="right__column__header">
-        Услуги Аттестационного центра:
+        Наши услуги:
     </p>
     <div class="list__service__column">
-        <p class="small__column__text"><a href="{% url 'svarshik' %}#head__page">Специальная подготовка сварщиков
-                и специалистов сварочного производства</a></p>
-        <p class="small__column__text"><a href="{% url 'svarproizvodstva' %}#head__page"> Аттестация сварщиков
-                и специалистов сварочного производства</a></p>
-        <p class="small__column__text"><a href="{% url 'atestatsvaroborud' %}#head__page"> Аттестация
-                сварочного оборудования</a></p>
-        <p class="small__column__text"><a href="{% url 'atestatechonlogy' %}#head__page">Аттестация
-                технологий сварки</a></p>
+
+        {% for service in other_services %}
+        <p class="small__column__text"><a href="{% url 'service' service.pk %}#head__page">
+            {{ service.title }}
+        </a></p>
+        {% endfor %}
+
+        {% if not other_services %}
+            {% for service in all_services %}
+            <p class="small__column__text"><a href="{% url 'service' service.pk %}#head__page">
+            {{ service.title }}
+            {% endfor %}
+        </a></p>
+        {% endif %}
 
     </div>

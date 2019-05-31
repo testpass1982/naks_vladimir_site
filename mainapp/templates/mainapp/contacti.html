@@ -1,68 +1,47 @@
 {% extends 'mainapp/index.html' %}
 {% load static %}
 {% block content %}
-  <div class="container">
+<div class="container">
 
-    <button class="back__to__main" id="head__page">
-      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center" alt="">
-        На главную</a>
-    </button>
+  <button class="back__to__main" id="head__page">
+    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+        class="arrow__back__to__main text-align-center" alt="">
+      На главную</a>
+  </button>
 
 
-    <div class="row">
-      <div class="col-xl-2">
-        <div class="header__inside__pages">Контакты</div>
-      </div>
-      <div class="col-xl-5">
-          <p class="header__doc">Контакты аттестационного центра</p>
-      <p class="contact__header__pages">
-       </div>
+  <div class="row">
+    <div class="col-xl-2">
+      <div class="header__inside__pages">Контакты</div>
     </div>
-    <div class="row">
-        <div class="col-xl-2">
-        </div>
-        <div class="col-xl-3">
-                <p class="contact__header__pages">Телефоны
-          </p>
-          <p class="contact__number">
-              (3519) 58-09-07
-          </p>
-          <p class="contact__number">
-              (4922)53-24-86
-          </p>
-          <p class="contacti__number__text">
-              аттестационный пункт в
-              г. Иваново
-          </p>
-          <p class="contact__header__pages">Почта
-          <div class="email__block">
-                <a href="mailto:gac@tke.ru" class="email__link__footer">gac@tke.ru</a>
-            </div>
-        </div>
-
-        <div class="col-xl-4">
-                <p class="contact__header__pages">Адрес
-                    </p>
-                    <p class="adres__ac">
-                        г. Владимир,
-                        улица Полины Осипенко, дом 66
-                    </p>
-                    <p class="contact__header__pages">
-                            Наше местоположение
-                        </p>
-                        <div class="ya__map">
-                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aff2cef1965078d977cb518e5946d888d3d594a75d5081febdc6d67a51660d8c4&amp;width=649&amp;height=497&amp;lang=ru_RU&amp;scroll=true"></script>
-                             </div>
-        </div>
-    </div>
-
-
-    <div class="line__otstup__inside__pages"></div>
-
-    <button class="back__to__main">
-      <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}" class="arrow__back__to__main text-align-center" alt="">
-        На главную</a>
-    </button>
-    <div class="line__otstup__inside__pages"></div>
   </div>
+  <div class="row">
+
+    <div class="col-xl-6">
+      <p class="contact__header__pages">Адрес
+      </p>
+      <p class="adres__ac">
+        {{ profile.org_address }}
+      </p>
+      <p id="map" class="contact__header__pages">
+        Наше местоположение
+      </p>
+      <div class="ya__map">
+        <script type="text/javascript" charset="utf-8" async src="{{ profile.org_address_map_link }}"></script>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div class="line__otstup__inside__pages"></div>
+
+  <button class="back__to__main">
+    <a href="{% url 'index' %}"> <img src="{% static '/img/back__arrow-01.png' %}"
+        class="arrow__back__to__main text-align-center" alt="">
+      На главную</a>
+  </button>
+  <div class="line__otstup__inside__pages"></div>
+</div>
 {% endblock %}
