@@ -60,7 +60,7 @@ def import_profile(request):
 def index(request):
 
     """this is mainpage view with forms handler and adapter to messages"""
-    title = "Главная - АЦ Владимир"
+    title = "Главная страница"
     tracker = MessageTracker()
     if request.method == 'POST':
         request_to_dict = dict(zip(request.POST.keys(), request.POST.values()))
@@ -97,7 +97,9 @@ def index(request):
         'send_message_form': SendMessageForm(),
         'subscribe_form': SubscribeForm(),
         'ask_question_form': AskQuestionForm(),
+        'attestats': Attestat.objects.all().order_by('number'),
     }
+    # import pdb; pdb.set_trace()
     return render(request, 'mainapp/index.html', content)
 
 def svarshik(request):
@@ -173,7 +175,9 @@ def reestr(request):
     return render(request, 'mainapp/reestr.html')
 
 def profstandarti(request):
-    return render(request, 'mainapp/profstandarti.html')
+    from .models import Profstandard
+    profstandards = Profstandard.objects.all().order_by=('number')
+    return render(request, 'mainapp/profstandarti.html', {'profstandards': profstandards})
 
 def details(request, pk):
     print(request.resolver_match)

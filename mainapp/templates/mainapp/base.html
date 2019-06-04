@@ -1,5 +1,5 @@
-{% load staticfiles %}{% load sass_tags %}
-<!DOCTYPE html>
+<!DOCTYPE html>{% load staticfiles %}{% load sass_tags %}
+
 <html lang="en">
 
   <head>
@@ -11,7 +11,7 @@
     <!-- BOOTS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
+
 
   <!-- SCRIPT -->
   <!-- END SCRIPT -->
@@ -49,7 +49,7 @@
     {% include 'mainapp/includes/bg-inner-page.html' %}
   {% endif %}
   {% comment %} <div w3-include-html="includes/bg-menu-info.html" ></div> {% endcomment %}
-  <!-- End Include bg-menu-info -->   
+  <!-- End Include bg-menu-info -->
 
 
 {% block content  %}
