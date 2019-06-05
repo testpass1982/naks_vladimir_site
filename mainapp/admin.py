@@ -143,6 +143,9 @@ class ProfileModelForm(forms.ModelForm):
 class ProfileAdmin(admin.ModelAdmin):
     form = ProfileModelForm
 
+from .models import Profstandard
+
+admin.site.register(Profstandard)
 admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(DocumentCategory)

@@ -18,6 +18,8 @@ from .registry_import import Importer, data_url
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from django.conf import settings
+from .models import Profstandard
+
 
 
 # Create your views here.
@@ -175,9 +177,10 @@ def reestr(request):
     return render(request, 'mainapp/reestr.html')
 
 def profstandarti(request):
-    from .models import Profstandard
-    profstandards = Profstandard.objects.all().order_by=('number')
-    return render(request, 'mainapp/profstandarti.html', {'profstandards': profstandards})
+    profstandards = Profstandard.objects.all().order_by('number')
+    content = {'profstandards': profstandards}
+    return render(request, 'mainapp/profstandarti.html', content)
+
 
 def details(request, pk):
     print(request.resolver_match)
