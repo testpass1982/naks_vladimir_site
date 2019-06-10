@@ -218,7 +218,7 @@ body { font-family: "Avenir Next Cyr", sans-serif; font-size: 12px; line-height:
 
 .system_edo_enter { background-color: transparent; border: none; }
 
-.system_edo_enter a { text-decoration: none; font-size: 14px; font-weight: 450; color: #fff; padding: 12px 25px; border-radius: 25px; background-color: #16376a; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; -o-border-radius: 25px; }
+.system_edo_enter a { white-space: nowrap; text-decoration: none; font-size: 14px; font-weight: 450; color: #fff; padding: 12px 25px; border-radius: 25px; background-color: #16376a; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; -o-border-radius: 25px; }
 
 @media screen and (max-width: 1500px) { .system_edo_enter a { font-size: 12px; font-weight: 400; padding: 12px 15px; } }
 
