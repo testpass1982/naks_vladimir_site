@@ -149,8 +149,61 @@ $(document).ready(function() {
     var $value = $(this).parent().next();
     $value.addClass("added").text($(this).val().replace(/C:\\fakepath\\/i, ''));
   });
-  $("#phone").mask("+8 (9999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
-  $("#phone2").mask("+8 (9999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
+  $("#phone").mask("+7 (999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
+  $("#id_phone").mask("+7 (999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
+
+  $('.button__to__send_zayavka__formmodal').click(
+    function(event) {
+      event.preventDefault();
+      let data = $('#ask_question_form').serializeArray();
+      $.post("", data)
+        .done(response=>{
+          if (response['question_id']) {
+            var id = response['question_id']
+            $('.modal-title:visible').text('Спасибо!')
+            $('.modal__title__small__text:visible').hide();
+            $('.modal-body:visible').html(`
+            <h3 class="text text-info">
+              Обращение зарегистрировано, идентификатор вопроса ${id}
+            </h3>
+            <p class="text text-primary py-3">
+              В ближайшее время с Вами свяжется наш специалист
+            </p>
+            `);
+            $('.modal-footer:visible').hide();
+          }
+
+          if (response['errors']) {
+              // console.log(response['errors'], typeof response['errors'])
+              for (let key in response['errors']) {
+                console.log(
+                  key, ":", response['errors'][key]
+                  );
+                let form = $("#ask_question_form");
+                let element = form.find(`input[name="${key}"]`);
+
+                // element.after(`<small class="text-danger">${response['errors'][key]}</small>`);
+                element.addClass('is-invalid border border-danger');
+                element.after(`<div class="invalid-feedback">${response['errors'][key]}</div>`);
+                if (key == 'captcha') {
+                  let captcha_div = $('#captcha_check');
+                  captcha_div.addClass('border border-danger');
+                  captcha_div.css("border-radius", "3px");
+                  $('#captcha_error_message').html(`
+                  <p class="text text-danger">
+                    ${response['errors'][key]}
+                  </p>
+                  `
+                  );
+                }
+              }
+            }
+        })
+        .fail(response=>{
+          console.log('FAIL', response);
+        });
+    }
+  );
 
   // //jQuery plugin
   // (function ($) {

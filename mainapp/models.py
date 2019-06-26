@@ -429,3 +429,15 @@ class Profstandard(models.Model):
 
     def __str__(self):
         return self.title
+
+class Question(models.Model):
+    name = models.CharField(u'Имя контакта', max_length=50)
+    phone = models.CharField(u'Телефон контакта', max_length=50)
+    ready = models.BooleanField(u'Вопрос решен', default=False, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Вопрос'
+        verbose_name_plural = 'Вопросы'
+
+    def __str__(self):
+        return self.name

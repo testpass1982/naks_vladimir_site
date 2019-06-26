@@ -5,7 +5,7 @@ from django.utils.html import format_html
 
 from .models import Post, Category, Tag, Document, PostPhoto, Article, Message, Contact
 from .models import ChlenKomissii, Chunk, Profile, Service, DocumentCategory
-from .models import Attestat
+from .models import Attestat, Question
 from scribbler.models import Scribble
 # from .models import WeldData
 # from .domain_model import WeldOrg, Welder
@@ -143,9 +143,14 @@ class ProfileModelForm(forms.ModelForm):
 class ProfileAdmin(admin.ModelAdmin):
     form = ProfileModelForm
 
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ['name', 'phone', 'ready']
+
 from .models import Profstandard
 
 admin.site.register(Profstandard)
+# admin.site.register(Question)
 admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(DocumentCategory)

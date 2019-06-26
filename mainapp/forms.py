@@ -1,8 +1,9 @@
 from django import forms
 from django.core.validators import FileExtensionValidator, validate_email
+from captcha.fields import CaptchaField
 import os
 
-from .models import Post, Article, Document, Menu, Profile
+from .models import Post, Article, Document, Menu, Profile, Question
 
 
 class ContentForm(forms.ModelForm):
@@ -69,22 +70,49 @@ class SubscribeForm(forms.Form):
                    'placeholder': 'Введите e-mail'}))
 
 
-class AskQuestionForm(forms.Form):
-    name = forms.CharField(max_length=50, widget=forms.TextInput(
-        attrs={'class': 'modal__form_input'}))
-    phone = forms.CharField(max_length=20, widget=forms.TextInput(
-        attrs={'class': 'modal__form_input'}))
-    email = forms.EmailField(widget=forms.EmailInput(
-        attrs={'class': 'modal__form_input'}))
-    comment = forms.CharField(
-        required=False, max_length=256, widget=forms.Textarea(
-            attrs={'class': 'modal__form_textarea'}))
-    pdata = forms.BooleanField(
-        error_messages={
-            'required': 'Вы должны принять условия обработки \
-            персональных данных в соответствии с 152-ФЗ'},
-        initial=True, required=True, widget=forms.CheckboxInput(
-            attrs={'class': 'checkmark'}))
+# class AskQuestionForm(forms.Form):
+#     name = forms.CharField(max_length=50, widget=forms.TextInput(
+#         attrs={'class': 'modal__form_input'}))
+#     phone = forms.CharField(max_length=20, widget=forms.TextInput(
+#         attrs={'class': 'modal__form_input'}))
+#     email = forms.EmailField(widget=forms.EmailInput(
+#         attrs={'class': 'modal__form_input'}))
+#     comment = forms.CharField(
+#         required=False, max_length=256, widget=forms.Textarea(
+#             attrs={'class': 'modal__form_textarea'}))
+#     pdata = forms.BooleanField(
+#         error_messages={
+#             'required': 'Вы должны принять условия обработки \
+#             персональных данных в соответствии с 152-ФЗ'},
+#         initial=True, required=True, widget=forms.CheckboxInput(
+#             attrs={'class': 'checkmark'}))
+
+class AskQuestionForm(forms.ModelForm):
+    captcha = CaptchaField()
+    class Meta:
+        model = Question
+        fields = ['name', 'phone']
+        # widgets = {
+        #     'name': forms.TextInput(max_length=50, widget=forms.TextInput(
+        #     attrs={'class': 'form-control form-control-sm'})),
+        #     'phone': forms.TextInput(max_length=20, widget=forms.TextInput(
+        #         attrs={'class': 'form-control form-control-sm'})),
+        # }
+        widgets = {
+                'name': forms.TextInput({
+                'placeholder': "Ваше имя",
+                'class': 'form-control form-control-sm',
+                }),
+                'phone': forms.TextInput({
+                    'placeholder': '',
+                    'class': 'form-control form-control-sm',
+                    'type': 'text',
+                }),
+                # <input type="text" class="form-control form-control-sm" placeholder=""  type="text" id="phone2" required="">
+            }
+
+
+
 
 
 class DocumentSearchForm(forms.Form):

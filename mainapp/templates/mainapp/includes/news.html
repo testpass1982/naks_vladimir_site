@@ -14,17 +14,14 @@
             </div>
         </div>
         {% comment %} block_news {% endcomment %}
-        <div class="row">
+        <div class="row align-items-stretch">
             {% for post in posts %}
             <div class="col-md-4 col-xl-4">
                 <div class="block_news">
                     <div class="headline_name_news">
-                        {{ post.title }}
+                        {{ post.title|truncatechars:60 }}
                     </div>
                     <p class="data__news__main">{{ post.published_date|date:"d M. Y"}}</p>
-                    <div class="text_for_news">
-                     
-                    </div>
                     <button class="more_news">
                         <a href="{% url 'details' post.pk %}">
                             Читать

@@ -1,14 +1,16 @@
 .box_content_news {
     background-color: #eff4ff;
     padding: 85px 0px 85px;
-    @media screen and (max-width: 1200px) {      
+    @media screen and (max-width: 1200px) {
         padding: 45px 15px 45px;
        }
 }
 
 
 .block_news{
-    @media screen and (max-width: 1200px) {      
+    position: relative;
+    min-height: 150px;
+    @media screen and (max-width: 1200px) {
         padding: 15px 0px 15px;
        }
 }
@@ -17,7 +19,7 @@
     font-size: 18px;
     font-weight: 650;
     line-height: 1.8;
-    padding: 0px 0px 5px;    
+    padding: 0px 0px 5px;
 }
 
 .text_for_news{
@@ -29,6 +31,10 @@
 }
 
 .more_news {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    align-self: baseline;
     background-color: transparent;
     border: none;
     padding: 0px;
@@ -49,8 +55,8 @@
             -ms-transition: 0.2s;
             -o-transition: 0.2s;
         }
-       
-    }    
+
+    }
 }
 
 .headline_all_news a{

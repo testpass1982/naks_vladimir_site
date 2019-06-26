@@ -19,7 +19,9 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from django.conf import settings
 from .models import Profstandard
-
+from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.urls import resolve
 
 
 # Create your views here.
@@ -63,29 +65,54 @@ def index(request):
 
     """this is mainpage view with forms handler and adapter to messages"""
     title = "Главная страница"
-    tracker = MessageTracker()
+    # tracker = MessageTracker()
+    # current_url = resolve(request.path_info).url_name
     if request.method == 'POST':
-        request_to_dict = dict(zip(request.POST.keys(), request.POST.values()))
-        form_select = {
-            'send_message_button': SendMessageForm,
-            'subscribe_button': SubscribeForm,
-            'ask_question': AskQuestionForm,
-        }
-        for key in form_select.keys():
-            if key in request_to_dict:
-                print('got you!', key)
-                form_class = form_select[key]
-        form = form_class(request_to_dict)
+        form = AskQuestionForm(request.POST)
+        # import pdb; pdb.set_trace()
         if form.is_valid():
-
-            # saving form data to messages (need to be cleaned in future)
-            adapted_data = MessageModelAdapter(request_to_dict)
-            adapted_data.save_to_message()
-            print('adapted data saved to database')
-            tracker.check_messages()
-            tracker.notify_observers()
+            current_absolute_url = request.build_absolute_uri()
+            email_address_arr = ['popov.anatoly@gmail.com']
+            if '8000' not in current_absolute_url:
+                email_address_arr += ['it@naks.ru', 'vladimir@naks.ru']
+            instance = form.save()
+            send_mail(
+                'Заполнена форма на сайте',
+                """На сайте {url} заполнена форма с обратой связью.
+                   Имя {name}, телефон {phone}""".format(
+                    url=current_absolute_url,
+                    name=instance.name,
+                    phone=instance.phone
+                ),
+                settings.EMAIL_HOST_USER,
+                email_address_arr,
+                fail_silently=False,
+            )
+            return JsonResponse({'message': 'ok', 'question_id': instance.pk })
         else:
-            raise ValidationError('form not valid')
+            return JsonResponse({'errors': form.errors})
+
+        # request_to_dict = dict(zip(request.POST.keys(), request.POST.values()))
+        # form_select = {
+        #     # 'send_message_button': SendMessageForm,
+        #     # 'subscribe_button': SubscribeForm,
+        #     'ask_question': AskQuestionForm,
+        # }
+        # for key in form_select.keys():
+        #     if key in request_to_dict:
+        #         print('got you!', key)
+        #         form_class = form_select[key]
+        # form = form_class(request_to_dict)
+        # if form.is_valid():
+
+        #     # saving form data to messages (need to be cleaned in future)
+        #     adapted_data = MessageModelAdapter(request_to_dict)
+        #     adapted_data.save_to_message()
+        #     print('adapted data saved to database')
+        #     tracker.check_messages()
+        #     tracker.notify_observers()
+        # else:
+        #     raise ValidationError('form not valid')
 
     main_page_news = Post.objects.filter(
         publish_on_main_page=True).order_by('-published_date')[:3]
@@ -96,8 +123,8 @@ def index(request):
         'posts': main_page_news,
         # 'articles': main_page_articles,
         # 'docs': main_page_documents,
-        'send_message_form': SendMessageForm(),
-        'subscribe_form': SubscribeForm(),
+        # 'send_message_form': SendMessageForm(),
+        # 'subscribe_form': SubscribeForm(),
         'ask_question_form': AskQuestionForm(),
         'attestats': Attestat.objects.all().order_by('number'),
     }
