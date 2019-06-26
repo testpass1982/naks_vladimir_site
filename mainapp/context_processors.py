@@ -1,6 +1,6 @@
 from .models import Document
 from .models import Profile, Chunk, Service
-from .forms import ProfileImportForm
+from .forms import ProfileImportForm, OrderForm
 import random
 
 def random_documents(request):
@@ -23,3 +23,7 @@ def services(request):
 def profile_import(request):
     profile_import_form = ProfileImportForm()
     return {'profile_import_form': profile_import_form}
+
+def order_form(request):
+    order_form = OrderForm()
+    return {'order_form': order_form}

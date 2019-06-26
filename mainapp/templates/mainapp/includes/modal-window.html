@@ -17,20 +17,23 @@
                 </button>
             </div>
 
-            <form>
+            <form id="order_form">
+                {% csrf_token %}
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="" class="col-form-label col-form-label-sm">Имя</label>
-                                <input type="text" class="form-control form-control-sm" id="" required="">
+                                {% comment %} <input name="name" type="text" class="form-control form-control-sm" id="" required=""> {% endcomment %}
+                                {{ order_form.name }}
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="" class="col-form-label col-form-label-sm">Номер телефона</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="" type="text" id="phone"
-                                    required="">
+                                {% comment %} <input name="phone" class="form-control form-control-sm" placeholder="" type="text" id="phone"
+                                    required=""> {% endcomment %}
+                                    {{ order_form.phone }}
                             </div>
                         </div>
                         <div class="col-xl-9">
@@ -38,15 +41,13 @@
                                 <label for="" class="col-form-label col-form-label-sm">Вид заявки(-ок)</label>
                                 <div class="choose__item">
                                     <ul class="items">
-                                        <li data-selected="0" data-guid="3">Аттестация технологий
+                                        <li data-selected="0" data-guid="3" data-order="attst">Аттестация технологий
                                             сварки</li>
-                                        <li data-selected="0" data-guid="3">Аттестация сварочных
-                                            материалов</li>
-                                        <li data-selected="0" data-guid="3">Аттестация сварочного
+                                        <li data-selected="0" data-guid="3" data-order="attso">Аттестация сварочного
                                             оборудования</li>
-                                        <li data-selected="0" data-guid="2">Аттестация сварщиков <br>
+                                        <li data-selected="0" data-guid="2" data-order="attsvsp">Аттестация сварщиков <br>
                                             и специалистов сварочного производства</li>
-                                        <li data-selected="0" data-guid="1">Лаборатория разрушающего <br>
+                                        <li data-selected="0" data-guid="1" data-order="lab">Лаборатория разрушающего <br>
                                             и неразрушающего контроля</li>
                                     </ul>
                                 </div>
@@ -54,28 +55,15 @@
                         </div>
 
                     </div>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <form method="post" class="file-uploader" action="" enctype="multipart/form-data">
-                                <div class="file-uploader__message-area">
-                                    <p>Выбрать файл</p>
-                                </div>
-                                <div class="file-chooser">
-                                    <input class="file-chooser__input" type="file">
-                                </div>
-                                <!-- <input class="file-uploader__submit-button" type="submit" value="Загрузить"> -->
-                            </form>
-                        </div>
-                    </div>
+
                     <div class="custom-control-checkbox custom-checkbox d-inline-block">
                         <input type="checkbox" class="custom-control-input" id="soglasie" required="">
-                        <label class="custom-control-label" for="soglasie"><small>Я даю <a href="{% url 'index' %}">согласие на
-                                    обработку персональных данных</a></small></label>
+                        <label class="custom-control-label" for="soglasie"><small>Я даю <a href="{% link_holder 'SOGLASIE' %}">{% title_holder 'SOGLASIE' %}</a></small></label>
+                        {{ order_form.captcha }}
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="button__to__send_zayavka__formmodal d-inline-block">Отправить заявку</button>
-
+                    <button id="order_service_button" type="submit" class="button__to__send_zayavka__formmodal d-inline-block">Отправить заявку</button>
                 </div>
             </form>
         </div>
@@ -135,7 +123,7 @@
                 </div>
                 </div>
                 <div class="modal-footer pb-5 px-3 px-sm-5">
-                    <button type="submit" class="button__to__send_zayavka__formmodal">Отправить</button>
+                    <button id="ask_question_button" type="submit" class="button__to__send_zayavka__formmodal">Отправить</button>
                 </div>
             </form>
         </div>

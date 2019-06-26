@@ -3,7 +3,7 @@ from django.core.validators import FileExtensionValidator, validate_email
 from captcha.fields import CaptchaField
 import os
 
-from .models import Post, Article, Document, Menu, Profile, Question
+from .models import Post, Article, Document, Menu, Profile, Question, OrderService
 
 
 class ContentForm(forms.ModelForm):
@@ -98,6 +98,24 @@ class AskQuestionForm(forms.ModelForm):
         #     'phone': forms.TextInput(max_length=20, widget=forms.TextInput(
         #         attrs={'class': 'form-control form-control-sm'})),
         # }
+        widgets = {
+                'name': forms.TextInput({
+                'placeholder': "Ваше имя",
+                'class': 'form-control form-control-sm',
+                }),
+                'phone': forms.TextInput({
+                    'placeholder': '',
+                    'class': 'form-control form-control-sm',
+                    'type': 'text',
+                }),
+                # <input type="text" class="form-control form-control-sm" placeholder=""  type="text" id="phone2" required="">
+            }
+
+class OrderForm(forms.ModelForm):
+    captcha = CaptchaField()
+    class Meta:
+        model = OrderService
+        fields = ['name', 'phone', 'compound']
         widgets = {
                 'name': forms.TextInput({
                 'placeholder': "Ваше имя",

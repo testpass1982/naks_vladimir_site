@@ -36,6 +36,7 @@ urlpatterns = [
     path('import_profile/', mainapp.import_profile, name='import_proflie'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('captcha/', include('captcha.urls')),
+    path('accept_order/', mainapp.accept_order, name="accept_order"),
 ]
 
 if settings.DEBUG:

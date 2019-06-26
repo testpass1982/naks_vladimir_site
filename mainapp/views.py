@@ -10,6 +10,7 @@ from .models import Registry, Menu, Service, Attestat
 from .models import Staff, DocumentCategory, Profile
 from .forms import PostForm, ArticleForm, DocumentForm, ProfileImportForm
 from .forms import SendMessageForm, SubscribeForm, AskQuestionForm, DocumentSearchForm, SearchRegistryForm
+from .forms import OrderForm
 from .adapters import MessageModelAdapter
 from .message_tracker import MessageTracker
 from .utilites import UrlMaker
@@ -19,7 +20,7 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from django.conf import settings
 from .models import Profstandard
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.core.mail import send_mail
 from django.urls import resolve
 
@@ -60,6 +61,44 @@ def import_profile(request):
         else:
             content.update({'errors': 'Файл для загрузки не выбран'})
         return render(request, 'mainapp/includes/profile_load.html', content)
+
+def accept_order(request):
+    if request.method == 'POST':
+        print(request.POST)
+        data = {
+            "name": request.POST.get('name'),
+            "phone": request.POST.get('phone'),
+            "captcha_1": request.POST.get('captcha_1'),
+            "captcha_0": request.POST.get('captcha_0'),
+            }
+        if any([request.POST.get('attst'), request.POST.get('attso'), request.POST.get('attsvsp'), request.POST.get('attlab')]):
+            order_compound = {
+                "АЦСТ": 'attst' in request.POST,
+                "АЦСО": 'attso' in request.POST,
+                "АЦСП": 'attso' in request.POST,
+                "АттЛаб": 'attlab' in request.POST,
+            }
+            data.update({"compound": "{}".format(order_compound)})
+        form = OrderForm(data)
+        if form.is_valid():
+            instance = form.save()
+            current_absolute_url = request.build_absolute_uri()
+            email_address_arr = ['popov.anatoly@gmail.com']
+            if '8000' not in current_absolute_url:
+                email_address_arr += ['it@naks.ru', 'vladimir@naks.ru']
+            send_mail(
+                'Заполнена заявка на сайте',
+                """
+Заполнена заявка на сайте {url}
+Имя: {name}, Телефон: {phone},
+Заявлено: {compound}
+                """.format(url=current_absolute_url, name=instance.name, phone=instance.phone, compound=instance.compound),
+                settings.EMAIL_HOST_USER,
+                email_address_arr
+            )
+            return JsonResponse({'message': 'ok'})
+        else:
+            return JsonResponse({'errors': form.errors})
 
 def index(request):
 

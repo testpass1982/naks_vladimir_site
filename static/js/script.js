@@ -152,7 +152,7 @@ $(document).ready(function() {
   $("#phone").mask("+7 (999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
   $("#id_phone").mask("+7 (999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
 
-  $('.button__to__send_zayavka__formmodal').click(
+  $('#ask_question_button').click(
     function(event) {
       event.preventDefault();
       let data = $('#ask_question_form').serializeArray();
@@ -202,8 +202,31 @@ $(document).ready(function() {
         .fail(response=>{
           console.log('FAIL', response);
         });
-    }
-  );
+    });
+
+    $('#order_service_button').click(function(event) {
+      event.preventDefault();
+      order = $('#order_form').serializeArray();
+      $('.choose__item ul li').each(function() {
+          if ($(this).hasClass('selected')) {
+            // console.log('DATA', $(this).data('order'));
+            order.push({"name": $(this).data('order'), "value": "selected"});
+          }
+        });
+      // console.table(order);
+      console.log(order)
+      $.post('/accept_order/', order)
+        .done(response=>{
+          console.log('done');
+          console.log(response)
+          }
+        )
+        .fail(response=>{
+          console.log('fail');
+          }
+        );
+    });
+
 
   // //jQuery plugin
   // (function ($) {
