@@ -1,5 +1,6 @@
 <div class="sider__bar__service__pages">
-        {% if service.documents|length != 0 %}
+        {% if service.documents.all|length != 0 %}
+        {% autoescape off %}
             <p class="trebovanie__left__column">
                 Документы услуги "{{ service.title }}":
             </p>
@@ -9,6 +10,7 @@
                    {{ doc.title }}</p>
             </a>
             {% endfor %}
+        {% endautoescape %}
         {% else %}
         <p class="trebovanie__left__column">
             Наши документы:

@@ -34,10 +34,9 @@
             Услуги {{ profile.org_short_name }}:
           </p>
           <div class="list__service__column">
-
             {% for service in services %}
             <p class="small__column__text"><a href="{% url 'service' service.pk %}">
-                {{ service.title }}</a></p>
+                {{ service.title|safe }}</a></p>
             {% endfor %}
 
           </div>
