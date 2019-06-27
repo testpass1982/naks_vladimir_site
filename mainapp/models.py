@@ -445,7 +445,7 @@ class Question(models.Model):
 class OrderService(models.Model):
     name = models.CharField(u'Имя контакта', max_length=50)
     phone = models.CharField(u'Телефон контакта', max_length=50)
-    compound = models.CharField(u'Состав заявки', max_length=100, default=None, blank=True, null=True)
+    compound = models.CharField(u'Состав заявки', max_length=300, default=None, blank=True, null=True)
     ready = models.BooleanField(u'Вопрос решен', default=False, blank=True, null=True)
 
     class Meta:

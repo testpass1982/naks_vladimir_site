@@ -71,12 +71,13 @@ def accept_order(request):
             "captcha_1": request.POST.get('captcha_1'),
             "captcha_0": request.POST.get('captcha_0'),
             }
-        if any([request.POST.get('attst'), request.POST.get('attso'), request.POST.get('attsvsp'), request.POST.get('attlab')]):
+        order_variants = ['attst', 'attso', 'attsvsp', 'attlab']
+        if any([request.POST.get(order_item) for order_item in order_variants]):
             order_compound = {
-                "АЦСТ": 'attst' in request.POST,
-                "АЦСО": 'attso' in request.POST,
-                "АЦСП": 'attso' in request.POST,
-                "АттЛаб": 'attlab' in request.POST,
+                "Аттестация технологий": 'attst' in request.POST,
+                "Аттестация оборудования": 'attso' in request.POST,
+                "Аттестация персонала": 'attso' in request.POST,
+                "Аттестация лаборатории": 'attlab' in request.POST,
             }
             data.update({"compound": "{}".format(order_compound)})
         form = OrderForm(data)
@@ -84,19 +85,23 @@ def accept_order(request):
             instance = form.save()
             current_absolute_url = request.build_absolute_uri()
             email_address_arr = ['popov.anatoly@gmail.com']
+            order_arr = []
+            for key in order_compound.keys():
+                if order_compound[key] is True:
+                    order_arr.append(key)
             if '8000' not in current_absolute_url:
                 email_address_arr += ['it@naks.ru', 'vladimir@naks.ru']
             send_mail(
                 'Заполнена заявка на сайте',
-                """
+"""
 Заполнена заявка на сайте {url}
 Имя: {name}, Телефон: {phone},
-Заявлено: {compound}
-                """.format(url=current_absolute_url, name=instance.name, phone=instance.phone, compound=instance.compound),
+Заявлено: {order_string}
+""".format(url=current_absolute_url, name=instance.name, phone=instance.phone, order_string=", ".join(order_arr)),
                 settings.EMAIL_HOST_USER,
                 email_address_arr
             )
-            return JsonResponse({'message': 'ok'})
+            return JsonResponse({'message': 'ok', 'order_id': instance.pk})
         else:
             return JsonResponse({'errors': form.errors})
 
@@ -276,9 +281,21 @@ def details(request, pk):
 
 def service(request, pk):
     service = get_object_or_404(Service, pk=pk)
+    side_documents = []
+    try:
+        for document in Document.objects.all():
+            # print('TEST', document.category.name, service.title)
+            if service.title == document.category.name:
+                side_documents.append(document)
+                # print(document.category.name)
+    except Exception as e:
+        print('ERROR', e)
+    # print('SIDE_DOCS', side_documents)
     content = {
         'title': 'Описание услуги',
         'service': service,
-        'other_services': Service.objects.all().exclude(pk=service.pk).order_by('number')
+        'other_services': Service.objects.all().exclude(pk=service.pk).order_by('number'),
+        'side_documents': side_documents
     }
+    # import pdb; pdb.set_trace()
     return render(request, 'mainapp/service_template.html', content)

@@ -1,13 +1,25 @@
 <div class="sider__bar__service__pages">
-    <p class="trebovanie__left__column">
-        Наши документы:
-    </p>
-    {% for doc in random_documents %}
-    <a href="{{ doc.document.url }}" class="trebovanie__list">
-        <p>
-            • {{ doc.title }}</p>
-    </a>
-    {% endfor %}
+        {% if side_documents %}
+            <p class="trebovanie__left__column">
+                Документы услуги "{{ service.title }}":
+            </p>
+            {% for doc in side_documents %}
+            <a href="{{ doc.document.url }}" class="trebovanie__list">
+                <p>
+                    {{ doc.title }}</p>
+            </a>
+            {% endfor %}
+        {% else %}
+        <p class="trebovanie__left__column">
+            Наши документы:
+        </p>
+            {% for doc in random_documents %}
+            <a href="{{ doc.document.url }}" class="trebovanie__list">
+                <p>
+                    {{ doc.title }}</p>
+            </a>
+            {% endfor %}
+    {% endif %}
 
     <a href="{% url 'doc' %}" target="_blank">В раздел "Документы"</a>
     <p class="right__column__header">

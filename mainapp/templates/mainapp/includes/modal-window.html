@@ -23,14 +23,14 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="" class="col-form-label col-form-label-sm">Имя</label>
+                                <label for="id_name" class="col-form-label col-form-label-sm">Имя</label>
                                 {% comment %} <input name="name" type="text" class="form-control form-control-sm" id="" required=""> {% endcomment %}
                                 {{ order_form.name }}
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="" class="col-form-label col-form-label-sm">Номер телефона</label>
+                                <label for="id_phone" class="col-form-label col-form-label-sm">Номер телефона</label>
                                 {% comment %} <input name="phone" class="form-control form-control-sm" placeholder="" type="text" id="phone"
                                     required=""> {% endcomment %}
                                     {{ order_form.phone }}
@@ -47,7 +47,7 @@
                                             оборудования</li>
                                         <li data-selected="0" data-guid="2" data-order="attsvsp">Аттестация сварщиков <br>
                                             и специалистов сварочного производства</li>
-                                        <li data-selected="0" data-guid="1" data-order="lab">Лаборатория разрушающего <br>
+                                        <li data-selected="0" data-guid="1" data-order="attlab">Лаборатория разрушающего <br>
                                             и неразрушающего контроля</li>
                                     </ul>
                                 </div>
@@ -58,8 +58,11 @@
 
                     <div class="custom-control-checkbox custom-checkbox d-inline-block">
                         <input type="checkbox" class="custom-control-input" id="soglasie" required="">
-                        <label class="custom-control-label" for="soglasie"><small>Я даю <a href="{% link_holder 'SOGLASIE' %}">{% title_holder 'SOGLASIE' %}</a></small></label>
+                        <label class="custom-control-label" for="soglasie"><small>Я даю <a id="soglasie" href="{% link_holder 'SOGLASIE' %}">{% title_holder 'SOGLASIE' %}</a></small></label>
+                        <div id="order_captcha_check">
                         {{ order_form.captcha }}
+                        <div id="order_captcha_message"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
