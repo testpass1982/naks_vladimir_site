@@ -281,21 +281,9 @@ def details(request, pk):
 
 def service(request, pk):
     service = get_object_or_404(Service, pk=pk)
-    side_documents = []
-    try:
-        for document in Document.objects.all():
-            # print('TEST', document.category.name, service.title)
-            if service.title == document.category.name:
-                side_documents.append(document)
-                # print(document.category.name)
-    except Exception as e:
-        print('ERROR', e)
-    # print('SIDE_DOCS', side_documents)
     content = {
         'title': 'Описание услуги',
         'service': service,
         'other_services': Service.objects.all().exclude(pk=service.pk).order_by('number'),
-        'side_documents': side_documents
     }
-    # import pdb; pdb.set_trace()
     return render(request, 'mainapp/service_template.html', content)

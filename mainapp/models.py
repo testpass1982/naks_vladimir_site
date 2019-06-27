@@ -346,6 +346,7 @@ class Service(models.Model):
     html = RichTextUploadingField(u'Описание услуги')
     number = models.SmallIntegerField(u'Порядок сортировки', blank=True, null=True, default=None)
     bg_photo = models.ImageField(u'Картинка для главной', upload_to="upload/", null=True, blank=True, default=None)
+    documents = models.ManyToManyField(Document, blank=True)
 
     class Meta:
         verbose_name = 'Услуга'

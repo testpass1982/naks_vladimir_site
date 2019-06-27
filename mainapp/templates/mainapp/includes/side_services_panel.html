@@ -1,12 +1,12 @@
 <div class="sider__bar__service__pages">
-        {% if side_documents %}
+        {% if service.documents|length != 0 %}
             <p class="trebovanie__left__column">
                 Документы услуги "{{ service.title }}":
             </p>
-            {% for doc in side_documents %}
+            {% for doc in service.documents.all %}
             <a href="{{ doc.document.url }}" class="trebovanie__list">
                 <p>
-                    {{ doc.title }}</p>
+                   {{ doc.title }}</p>
             </a>
             {% endfor %}
         {% else %}
@@ -16,7 +16,7 @@
             {% for doc in random_documents %}
             <a href="{{ doc.document.url }}" class="trebovanie__list">
                 <p>
-                    {{ doc.title }}</p>
+                  {{ doc.title }}</p>
             </a>
             {% endfor %}
     {% endif %}
