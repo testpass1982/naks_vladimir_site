@@ -103,3 +103,8 @@ static/admin/
 *style.css
 *style.css.map
 node_modules/
+media/
+**/migrations/**
+media/upload/*
+media/documents/*
+log/**

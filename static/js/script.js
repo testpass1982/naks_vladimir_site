@@ -261,6 +261,7 @@ $(document).ready(function() {
         )
         .fail(response=>{
           console.log('fail');
+          console.log(response);
           }
         );
     });
